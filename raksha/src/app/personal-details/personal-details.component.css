@@ -1,0 +1,39 @@
+.card {
+    padding: 30px 40px;
+    margin-top: auto;
+    margin-bottom: auto;
+    border: none !important;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
+}
+.inputstl 
+{ 
+    padding: 10px; 
+    border: solid 2px #c2dcee; 
+    width:100%;
+    outline: 0; 
+    background: -webkit(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #CDDBE4), to(#FFFFFF)); 
+    background: -moz-linear-gradient(top, #FFFFFF, #9ec9e4 1px, #FFFFFF 25px); 
+    box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+    text-align: center;
+}
+.icon {
+    padding: 5px;
+    width: 70px;
+    text-align: left;
+}
+.input-icons i {
+    position: absolute;
+    padding:9px;
+    top: 36px;
+}
+  
+.input-icons {
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+}
+  
+
+  
