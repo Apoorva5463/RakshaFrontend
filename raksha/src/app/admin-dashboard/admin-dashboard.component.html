@@ -1,1 +1,51 @@
-<p>admin-dashboard works!</p>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">full name</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Phone num</th>
+                <th scope="col">Photo ID type</th>
+                <th scope="col">photo id details</th>
+                <th scope="col" colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let u of usersList">
+                <td>{{u.id}}</td>
+                <td>{{'u.fname'}} {{'u.mname'}} {{'u.lname'}}</td>
+                <td>{{'u.gmail'}}</td>
+                <td>{{'u.mobileNo'}}</td>
+                <td>{{'u.photoId'}}</td>
+                <td>{{'u.photoIdType'}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="row">
+        <!-- counter -->
+        <div class="col-md-3 col-sm-6 text-center counter-section "> <img class="img-fluid" width="100" height="200" src="https://www.shareicon.net/data/512x512/2015/12/27/694182_secure_512x512.png" alt="insured">
+            <h1>1120</h1>
+            <p>VEHICLES INSURED</p>
+        </div>
+        <!-- end counter -->
+        <!-- counter -->
+        <div class="col-md-3 col-sm-6 text-center counter-section "> <img class="img-fluid" width="100" height="200" src="https://pngimage.net/wp-content/uploads/2018/05/accident-png.png" alt="third party">
+            <h1>600</h1>
+            <p>THIRD-PARTY INSURANCES SOLD</p>
+        </div>
+        <!-- end counter -->
+        <!-- counter -->
+        <div class="col-md-3 col-sm-6 text-center counter-section "> <img class="img-fluid" width="100" height="200" src="https://image.flaticon.com/icons/png/512/130/130172.png" alt="comprehensive">
+            <h1>500</h1>
+            <p>COMPREHENSIVE INSURANCES SOLD</p>
+        </div>
+        <!-- end counter -->
+        <!-- counter -->
+        <div class="col-md-3 col-sm-6 text-center counter-section "> <img class="img-fluid" width="100" height="200" src="https://image.flaticon.com/icons/png/512/2190/2190516.png" alt="customers">
+            <h1>2980</h1>
+            <p>HAPPY CUSTOMERS</p>
+        </div>
+        <!-- end counter -->
+    </div>
+</div>
