@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+
 import { CarService } from '../service/car.service';
 
 @Component({
@@ -21,12 +22,14 @@ export class CarInsuranceComponent implements OnInit {
       this.brandList = data;
       console.log(this.selectedBrand);
     });
-   
+  
+    
     this.service.getModelFromBrand(this.selectedBrand).then((data)=>{
       this.modelList=data;
     });
-  
+   
   }
    
 
 }
+

@@ -28,7 +28,7 @@
            <div class=" row justify-content-between text-left ">
               <div class="form-group col-sm-8 flex-column d-flex ">
                 <label for="Inputselect" class="form-control-label px-3">Model</label>
-                <select class="form-control inputstl  form-group col-sm-6 flex-column d-flex  form-control-label px-3"[(ngModel)]="selectedModel" name="model"  >
+                <select class="form-control inputstl  form-group col-sm-6 flex-column d-flex  form-control-label px-3"  [(ngModel)]="selectedModel" name="model"  >
                   <option *ngFor="let model of modelList" [value]= "this.model" >{{ model }}</option>
                  
                 </select>
