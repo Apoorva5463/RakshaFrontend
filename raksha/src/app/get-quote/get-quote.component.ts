@@ -3,6 +3,10 @@ import { Router } from '@angular/router';
 import { Vehicle } from 'src/vehicle.model';
 import { VehicleService } from 'src/app/service/vehicle.service'
 import { Car } from 'src/Car.model';
+import { not, variable } from '@angular/compiler/src/output/output_ast';
+import { invalid } from '@angular/compiler/src/render3/view/util';
+import { ERROR_COMPONENT_TYPE } from '@angular/compiler';
+
 
 
 @Component({
@@ -18,14 +22,18 @@ export class GetQuoteComponent implements OnInit {
   private vehicle : any ;
   private carModel: any;
   private bikeModel:any;
-  i:number=0;
+  private brand:string='';
+  private toInsuranceData: any ={
+    model:'',
+    year : 0,
+    price: 0.0,
+    vehicleNumber:''
+  };
+ 
 
   ngOnInit(): void {
   }
-  submit(){
-    this.router.navigate(['Bikeinsurance']);
-    
-  }
+
   save() {
     this.service.getVehicleDetails(this.vehicleNumber).then((data)=>{
       this.vehicle=data;
@@ -37,25 +45,46 @@ export class GetQuoteComponent implements OnInit {
         this.service.getCarModelDetails(modelId).then((data)=>{
           this.carModel=data;
           console.log(this.carModel.brand);
+          this.toInsuranceData.model=this.carModel.variant;
+           this.toInsuranceData.year=this.carModel.year ;
+           this.toInsuranceData.price = this.carModel.price ;
+           this.toInsuranceData.vehicleNumber=this.vehicleNumber;
+          console.log(this.toInsuranceData);
+          this.router.navigate(['insurance',this.toInsuranceData]);
+         
         });
       }
-        else{
+        if(this.vehicle.vehicleType == "Bike"){
           this.service.getBikeModelDetails(modelId).then((data)=>{
             this.bikeModel=data;
             console.log(this.bikeModel.brand);
+            this.toInsuranceData.model=this.bikeModel.model;
+            this.toInsuranceData.year=this.bikeModel.year;
+            this.toInsuranceData.price= this.bikeModel.price;
+            this.toInsuranceData.vehicleNumber=this.vehicleNumber;
+            console.log(this.toInsuranceData);
+            this.router.navigate(['insurance',this.toInsuranceData]);
           });
 
         } 
+       else{
+         if(this.vehicle.modelTypeId == "undefined"){
+         throw new Error("$invalid");
+
+       }
+      }
+
     });
     
     //this.vehicleModel=this.service.vehicleDetails(this.vehicleNumber)
-    this.router.navigate(['insurance']);
+    
     
   }
 
   
 
 }
+
 function elseif(vehicleType: any) {
   throw new Error('Function not implemented.');
 }

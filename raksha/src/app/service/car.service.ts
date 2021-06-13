@@ -12,10 +12,17 @@ export class CarService {
    constructor(private http: HttpClient ) {} 
   
    public async getBrandList()  {
-    return this.http.get<string[]>(this.baseUrl + "/getBrands").toPromise();
+    return this.http.get<string[]>(this.baseUrl + "/getCarBrands").toPromise();
     }
     public  async getModelFromBrand(selectedBrand:string){
-      return this.http.get<string[]>(this.baseUrl+ "/getModelFromBrand/" +selectedBrand).toPromise();
-    }
+      // selectedBrand = selectedBrand.replace(" ","_");
+       return this.http.get<string[]>(this.baseUrl+"/getCarModelFromBrand/" +selectedBrand).toPromise();
+     }
+     public  async getCarVariantFromBrandModel(selectedBrand:string,selectedModel:string){
+      // selectedBrand = selectedBrand.replace(" ","_");
+      selectedModel=selectedModel.replace(" ","_");
+       return this.http.get<string[]>(this.baseUrl+"/getCarVariantFromBrandModel/" +selectedBrand+"/"+selectedModel).toPromise();
+     }
+   
     
 }

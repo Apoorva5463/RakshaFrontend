@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-
 import { CarService } from '../service/car.service';
 
 @Component({
@@ -12,24 +11,46 @@ import { CarService } from '../service/car.service';
 export class CarInsuranceComponent implements OnInit {
   public brandList:string[]=[];
   public modelList:string[]=[];
+  public variantList:string[]=[];
   public selectedBrand: string = '';
   public selectedModel:string='';
+  selectedVariant:string='';
+  public year:number=0;
+  private toInsuranceData: any ={
+   model:'',
+   year : 0,
+   price: 60000,
+ };
 
-  constructor(private service:CarService) { }
+
+  constructor(private service:CarService,private router:Router) { }
 
   ngOnInit(): void {
     this.service.getBrandList().then((data)=>{
       this.brandList = data;
-      console.log(this.selectedBrand);
-    });
-  
-    
+
+    }); 
+  }
+ 
+  getModel(val:any): void{
+    console.log("Selected Brand : "+this.selectedBrand);
     this.service.getModelFromBrand(this.selectedBrand).then((data)=>{
       this.modelList=data;
     });
-   
   }
-   
+  getVariant(val:any):void{
+    console.log("selected:"+this.selectedModel);
+    this.service.getCarVariantFromBrandModel(this.selectedBrand,this.selectedModel).then((data)=>{
+      this.variantList=data;
+    });
+  }
+  save(){
+    //this.selectedVariant = this.selectedVariant.replace(" ","%20");
+    this.toInsuranceData.model=this.selectedVariant;
 
+    this.toInsuranceData.year=this.year;
+    this.router.navigate(['insurance',this.toInsuranceData]);
+
+  }
 }
 
