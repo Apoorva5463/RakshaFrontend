@@ -17,37 +17,35 @@
           <form class="form-card">
      
            <div class="  row justify-content-between text-left ">
-              <div class="form-group col-sm-8 flex-column d-flex ">
+              <div class="form-group col-sm-12 flex-column d-flex ">
                 <label for="Inputselect"  class="form-control-label px-3 ">Brand</label>
-                <select class="form-control inputstl   form-group col-sm-6 flex-column d-flex  form-control-label px-3" [(ngModel)]="selectedBrand" name="brand" >
+                <select class="form-control inputstl   form-group col-sm-6 flex-column d-flex  form-control-label px-3" (change)="getModel($event)" [(ngModel)]="selectedBrand" name="brand" >
                   <option *ngFor="let brand of brandList" [value]= "this.brand" >{{ brand }}</option>
                  </select>
   
               </div>
            </div>  
            <div class=" row justify-content-between text-left ">
-              <div class="form-group col-sm-8 flex-column d-flex ">
+              <div class="form-group col-sm-12 flex-column d-flex ">
                 <label for="Inputselect" class="form-control-label px-3">Model</label>
-                <select class="form-control inputstl  form-group col-sm-6 flex-column d-flex  form-control-label px-3"  [(ngModel)]="selectedModel" name="model"  >
+                <select class="form-control inputstl  form-group col-sm-6 flex-column d-flex  form-control-label px-3" (change)="getVariant($event)"   [(ngModel)]="selectedModel" name="model"  >
                   <option *ngFor="let model of modelList" [value]= "this.model" >{{ model }}</option>
                  
                 </select>
               </div>
            </div>  
            <div class=" row justify-content-between text-left ">
-            <div class="form-group col-sm-8 flex-column d-flex ">
+            <div class="form-group col-sm-12 flex-column d-flex ">
               <label for="Inputselect" class="form-control-label">Variant</label>
-              <select class="form-control inputstl  form-group col-sm-6 flex-column d-flex  form-control-label px-3" >
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
+              <select class="form-control inputstl  form-group col-sm-6 flex-column d-flex  form-control-label px-3" [(ngModel)]="selectedVariant" name="variant">
+                <option *ngFor="let variant of variantList" [value]= "this.variant" >{{ variant }}</option>
               </select>
             </div>
          </div> 
            <div class=" row justify-content-between text-left ">
               <div class="form-group col-sm-8 flex-column d-flex ">
                 <label for="Name" class="form-control-label">Year</label>
-                <input type="number" class="form-control inputstl" id="Year" placeholder="Year">
+                <input [(ngModel)]="year" name="year" type="number" class="form-control inputstl" id="year" placeholder="Year">
               </div>
             </div>
             <div class="row justify-content-between text-left  ">
@@ -61,7 +59,7 @@
              </div>
             </div>  
     
-           <button type="submit" class="btn btn-info">Submit Information</button>
+           <button (click)="save()" type="submit" class="btn btn-info">Submit Information</button>
           </form>
         </div>
      </div>

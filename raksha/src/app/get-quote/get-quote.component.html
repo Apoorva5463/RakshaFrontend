@@ -17,14 +17,15 @@
    
                     <div class="tab-content ">
                          <div id="vnumber" class="tab-pane fade show active pt-3">
-                             <form role="form" >
-                                 <div class="form-group "> <label for="carnumber">
+                             <form role="form" #frm=ngForm >
+                                 <div class="form-group "> <label for="carnumber" >
                                          <h6 class="text-gray">Enter your vehicle number</h6>
-                                     </label> <input type="text" name="carnumber"  [(ngModel)]="vehicleNumber" placeholder="eg-MH00112" requird pattern="[A-Z0[0-9]{4,}" class="form-control " >
+                                     </label> <input   type="text" name="vnumber"  [(ngModel)]="vehicleNumber" placeholder="eg-MH00112" requird pattern="[A-Z][0-9]{2,}[A-Z][0-9]{4,}" class="form-control " >
+                                    
                                     </div>
                                </form>
                                <div class="form-group">
-                                <p> <button  (click)="save()" type="submit" class="btn btn-primary ">Submit</button> </p>
+                                <p> <button  (click)="save()"  type="submit" class="btn btn-primary ">Submit</button> </p>
                             </div>
                            </div>
                            <div id="vdetails" class="tab-pane fade pt-3">
