@@ -10,39 +10,47 @@
                  <div class="card-header">
                      <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
                          <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
-                             <li class="nav-item "><a data-toggle="pill" href="#car" class="nav-link active "> <i class="fa fa-car"></i> Car </a> </li>
-                             <li class="nav-item"><a data-toggle="pill" href="#bike" class="nav-link "> <i class="fa fa-motorcycle"></i> Bike </a> </li>
+                             <li class="nav-item "><a data-toggle="pill" href="#vnumber" class="nav-link active ">  Vehicle Number</a> </li>
+                             <li class="nav-item"><a data-toggle="pill" href="#vdetails" class="nav-link ">  Vehicle Details </a> </li>
                          </ul>
                      </div> 
    
                     <div class="tab-content ">
-                         <div id="car" class="tab-pane fade show active pt-3">
+                         <div id="vnumber" class="tab-pane fade show active pt-3">
                              <form role="form" >
                                  <div class="form-group "> <label for="carnumber">
                                          <h6 class="text-gray">Enter your vehicle number</h6>
                                      </label> <input type="text" name="carnumber"  [(ngModel)]="vehicleNumber" placeholder="eg-MH00112" requird pattern="[A-Z0[0-9]{4,}" class="form-control " >
                                     </div>
                                </form>
+                               <div class="form-group">
+                                <p> <button  (click)="save()" type="submit" class="btn btn-primary ">Submit</button> </p>
+                            </div>
                            </div>
-                           <div id="bike" class="tab-pane fade pt-3">
+                           <div id="vdetails" class="tab-pane fade pt-3">
                              <form role="form" >
-                                 <div class="form-group" > <label for="bikeNumber">
-                                     <h6>Enter your vehicle number</h6>
-                                     </label>
-                   
-                                    <input type="text" name="bikeNumber" [(ngModel)]="vehicleNumber" placeholder="eg-MH00112"  class="form-control "> 
+                                 <div class="form-group" > 
+                                     <h5>Select the Vehicle Type</h5>
+                                     <!--<a class=" dropdown-toggle" data-toggle="dropdown" href="#"  >Default</a>-->
+                                     <button type="button" class="btn btn-primary  dropdown-toggle" data-toggle="dropdown">
+                                        Default
+                                      </button>
+                                     <div class="dropdown-menu">
+                                        <a class="dropdown-item" [routerLink] = "['carinsurance']">Car  <i class="fa fa-car"></i></a>
+                                        <a class="dropdown-item" [routerLink] = "['Bikeinsurance']">Bike   <i class="fa fa-motorcycle"></i></a>
+        
+                                      </div>
                                   </div>
                                </form>
+                              
                            </div>
                       </div>
-                      <form role="form">
+                      <!--<form role="form">
                           <div class="form-group">
                            <div class="row mb-4 px-3"> <small class="font-weight-bold">Don't know the vehicle number? <a class="text-primary" href='#' >GetQuote</a></small> </div>
                           </div>
-                      </form>
-                      <div class="form-group">
-                           <p> <button  (click)="save()" type="submit" class="btn btn-primary ">Submit</button> </p>
-                       </div>
+                      </form>-->
+                     
                 </div>
             </div>
          </div>

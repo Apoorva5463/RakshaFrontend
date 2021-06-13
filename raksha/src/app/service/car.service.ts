@@ -6,15 +6,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CarService {
 
-  getbrandList() {
-    throw new Error('Method not implemented.');
-  }
+ 
   baseUrl : string = "http://localhost:8888" ;
  
    constructor(private http: HttpClient ) {} 
   
    public async getBrandList()  {
     return this.http.get<string[]>(this.baseUrl + "/getBrands").toPromise();
+    }
+    public  async getModelFromBrand(selectedBrand:string){
+      return this.http.get<string[]>(this.baseUrl+ "/getModelFromBrand/" +selectedBrand).toPromise();
     }
     
 }
