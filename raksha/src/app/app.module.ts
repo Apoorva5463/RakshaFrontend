@@ -13,7 +13,7 @@ import { PaymentGatewayComponent } from './payment-gateway/payment-gateway.compo
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-import { UserProfilesComponent } from './user-profiles/user-profiles.component';
+
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 @NgModule({
@@ -29,8 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     PaymentGatewayComponent,
     PersonalDetailsComponent,
     UserDashboardComponent,
-    AdminDashboardComponent,
-    UserProfilesComponent
+    AdminDashboardComponent
+
   ],
   imports: [
     BrowserModule,
