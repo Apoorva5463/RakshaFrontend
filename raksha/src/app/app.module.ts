@@ -29,16 +29,10 @@ import { HttpClientModule } from '@angular/common/http';
     PaymentGatewayComponent,
     PersonalDetailsComponent,
     UserDashboardComponent,
-<<<<<<< HEAD
     AdminDashboardComponent,
-    BikeInsuranceComponent
-=======
+    BikeInsuranceComponent,
     AdminDashboardComponent
-<<<<<<< HEAD
-=======
->>>>>>> 5b90d1076a6fc3a82fcbe41781b38b50cf028c1d
 
->>>>>>> e3ca00b497e71d5818c51d88f54e2a67bb4e9ef2
   ],
   imports: [
     BrowserModule,
