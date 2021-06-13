@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { AdminService } from '../service/admin.service';
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  constructor() { }
+  public usersList : string[]=[];
+  constructor(private router:Router,private service : AdminService) { }
 
-  ngOnInit(): void {
-  }
+  async ngOnInit() {
+    (await this.service.getUsersList()).subscribe(data => this.usersList= data)
+    }
+  
 
 }
