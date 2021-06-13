@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Admin } from 'src/admin.model';
 import { AdminService } from '../service/admin.service';
 @Component({
   selector: 'app-admin-dashboard',
@@ -8,12 +9,11 @@ import { AdminService } from '../service/admin.service';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  public usersList : string[]=[];
+  public usersList : Admin[]=[];
   constructor(private router:Router,private service : AdminService) { }
 
-  async ngOnInit() {
-    (await this.service.getUsersList()).subscribe(data => this.usersList= data)
-    }
-  
+   ngOnInit() {
+     this.service.getUsersList().then((data) => { this.usersList= data;});
+   }
 
 }

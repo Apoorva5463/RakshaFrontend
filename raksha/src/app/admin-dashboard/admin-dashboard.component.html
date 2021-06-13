@@ -1,27 +1,4 @@
 <div class="container">
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">id</th>
-                <th scope="col">full name</th>
-                <th scope="col">E-mail</th>
-                <th scope="col">Phone num</th>
-                <th scope="col">Photo ID type</th>
-                <th scope="col">photo id details</th>
-                <th scope="col" colspan="2">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let u of usersList">
-                <td>{{u.id}}</td>
-                <td>{{'u.fname'}} {{'u.mname'}} {{'u.lname'}}</td>
-                <td>{{'u.gmail'}}</td>
-                <td>{{'u.mobileNo'}}</td>
-                <td>{{'u.photoId'}}</td>
-                <td>{{'u.photoIdType'}}</td>
-            </tr>
-        </tbody>
-    </table>
     <div class="row">
         <!-- counter -->
         <div class="col-md-3 col-sm-6 text-center counter-section "> <img class="img-fluid" width="100" height="200" src="https://www.shareicon.net/data/512x512/2015/12/27/694182_secure_512x512.png" alt="insured">
@@ -48,4 +25,39 @@
         </div>
         <!-- end counter -->
     </div>
+    <div class="margin-bottom=20">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit">Submit</button>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">full name</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Phone num</th>
+                <th scope="col">Photo ID type</th>
+                <th scope="col">photo id details</th>
+                <th scope="col" colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let u of usersList, let i = index">
+                <td>{{u.id}}</td>
+                <td>{{u.fname}} {{u.mname}} {{u.lname}}</td>
+                <td>{{u.gmail}}</td>
+                <td>{{u.mobileNo}}</td>
+                <td>{{u.photoId}}</td>
+                <td>{{u.photoIdType}}</td>
+                <td>
+                    <button class="btn btn-primary">edit</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger">delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
 </div>

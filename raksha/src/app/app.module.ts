@@ -30,10 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     PersonalDetailsComponent,
     UserDashboardComponent,
     AdminDashboardComponent
-<<<<<<< HEAD
-=======
 
->>>>>>> e3ca00b497e71d5818c51d88f54e2a67bb4e9ef2
   ],
   imports: [
     BrowserModule,
