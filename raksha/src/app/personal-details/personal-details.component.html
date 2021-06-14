@@ -40,12 +40,12 @@
                       <div class="input-icons "><i class="fa fa-mobile fa-lg icon"></i>
                       <input class="form-control  inputstl " [(ngModel)]="user.mobileNo" type="number" id="mobilenumber" name="mobilenumber" placeholder="Enter your Mobile number" > </div></div>
                     <div class="form-group col-sm-6 flex-column d-flex"> <label for="start" class="form-control-label px-3">Insurance Start Date<span class="text-danger"> *</span></label>
-                        <select class="mdb-select md-form  inputstl dropdown-primary rounded form-group col-sm-12 flex-column d-flex  form-control-label px-3" name="startdate" type="Date">
-                        <option value="1">26-07-2021</option>
-                        <option value="2">05-08-2021</option>
-                        <option value="3">25-08-2021</option>
-                        <option value="4">05-09-2021</option>
-                        <option value="5">25-09-2021</option>
+                        <select class="mdb-select md-form  inputstl dropdown-primary rounded form-group col-sm-12 flex-column d-flex  form-control-label px-3" [(ngModel)]="selectedDate"  name="startdate" type="number">
+                        <option >26/07/2021</option>
+                        <option >05/08/2021</option>
+                        <option >25/08/2021</option>
+                        <option >05/09/2021</option>
+                        <option >25/09/2021</option>
                       </select>
                       </div>
                         </div>
