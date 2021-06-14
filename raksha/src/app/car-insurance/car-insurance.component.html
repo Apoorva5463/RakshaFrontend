@@ -14,7 +14,7 @@
        <h1 class=" bg-secondary text-wrap text-white">CAR INSURANCE</h1>
         <div class="card bg-white text-black border border-dark shadow-left rounded ">
               
-          <form class="form-card">
+          <form class="form-card" #frm=ngForm>
      
            <div class="  row justify-content-between text-left ">
               <div class="form-group col-sm-12 flex-column d-flex ">
@@ -45,7 +45,10 @@
            <div class=" row justify-content-between text-left ">
               <div class="form-group col-sm-8 flex-column d-flex ">
                 <label for="Name" class="form-control-label">Year</label>
-                <input [(ngModel)]="year" name="year" type="number" class="form-control inputstl" id="year" placeholder="Year">
+                <input [(ngModel)]="year" #yr=ngModel name="year" type="number" class="form-control inputstl" id="year" placeholder="Year" required pattern="[0-9]{4,4}">
+                <div *ngIf="yr.dirty && yr.invalid" class="alert alert-warning">
+                  invalid Year
+              </div>
               </div>
             </div>
             <div class="row justify-content-between text-left  ">

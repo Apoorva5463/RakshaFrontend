@@ -39,7 +39,10 @@
            <div class=" row justify-content-between text-left ">
               <div class="form-group col-sm-8 flex-column d-flex ">
                 <label for="Name" class="form-control-label">Year</label>
-                <input type="number" class="form-control inputstl"  [(ngModel)]="year" name="year" id="Year" placeholder="Year">
+                <input type="number" class="form-control inputstl"  [(ngModel)]="year" #yr=ngModel name="year" id="Year" placeholder="Year" required pattern="[0-9]{4,4}">
+                <div *ngIf="yr.dirty && yr.invalid" class="alert alert-warning">
+                  invalid Year
+              </div>
               </div>
             </div>
           
