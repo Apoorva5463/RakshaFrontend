@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Udash } from "src/udash.model";
-import { Admin } from 'src/admin.model';
+import { PersonalDetails } from 'src/PersonalDetails.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +13,7 @@ export class UdashService {
   };
 
   public async getUserDetail() {
-    return await this.http.get<Admin>(this.baseUrl + "/user/10").toPromise();
+    return await this.http.get<PersonalDetails>(this.baseUrl + "/user/10").toPromise();
   };
 
 }

@@ -1,6 +1,6 @@
 <div>
     <h4>Personal-details</h4>
-    <table class="table">
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th scope="col">user id</th>
@@ -9,7 +9,6 @@
                 <th scope="col">Phone num</th>
                 <th scope="col">Photo ID type</th>
                 <th scope="col">photo id details</th>
-                <th scope="col" colspan="2">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -20,12 +19,12 @@
                 <td>{{userDetail.mobileNo}}</td>
                 <td>{{userDetail.photoId}}</td>
                 <td>{{userDetail.photoIdType}}</td>
-                <td>
-                    <button class="btn btn-primary">edit</button>
-                </td>
             </tr>
         </tbody>
-        <h4>Insurance details</h4>
+    </table>
+    <h4>Insurance details</h4>
+    <table class="table table-hover">
+
         <thead>
             <tr>
                 <th scope="col">insurance number</th>
@@ -46,7 +45,7 @@
                 <td>{{u.vehicleType}}</td>
                 <td>{{u.vehicle_no}}</td>
                 <td>
-                    <button class="btn btn-primary">view</button>
+                    <a class="btn btn-primary" href="insurance" role="button">view</a>
                 </td>
                 <td>
                     <a class="btn btn-primary" href="download" role="button">download</a>
