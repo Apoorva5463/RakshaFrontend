@@ -1,0 +1,70 @@
+<div class="container-fluid px-1 py-1 mx-auto">
+    <nav class="navbar   navbar-expand-sm bg-dark navbar-dark">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="row d-flex justify-content-center">
+     <div class="col-xl-5 col-lg-6 col-md-7 col-10 text-center ">
+       <h1 class=" bg-secondary text-wrap text-white">CAR INSURANCE</h1>
+        <div class="card bg-white text-black border border-dark shadow-left rounded ">
+              
+          <form class="form-card" onsubmit="save()">
+     
+           <div class="  row justify-content-between text-left ">
+              <div class="form-group col-sm-8 flex-column d-flex ">
+                <label for="Inputselect"  class="form-control-label px-3 ">Brand</label>
+                <select class="form-control inputstl s  form-group col-sm-6 flex-column d-flex  form-control-label px-3"   >
+                  <option *ngFor="let brand of brandList" [ngvalue]=brand >{{ brand }}</option>
+                 </select>
+              </div>
+           </div>  
+           <div class=" row justify-content-between text-left ">
+              <div class="form-group col-sm-8 flex-column d-flex ">
+                <label for="Inputselect" class="form-control-label">Model</label>
+                <select class="form-control inputstl  form-group col-sm-6 flex-column d-flex  form-control-label px-3" >
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                </select>
+              </div>
+           </div>  
+           <div class=" row justify-content-between text-left ">
+            <div class="form-group col-sm-8 flex-column d-flex ">
+              <label for="Inputselect" class="form-control-label">Variant</label>
+              <select class="form-control inputstl  form-group col-sm-6 flex-column d-flex  form-control-label px-3" >
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+            </div>
+         </div> 
+           <div class=" row justify-content-between text-left ">
+              <div class="form-group col-sm-8 flex-column d-flex ">
+                <label for="Name" class="form-control-label">Year</label>
+                <input type="number" class="form-control inputstl" id="Year" placeholder="Year">
+              </div>
+            </div>
+            <div class="row justify-content-between text-left  ">
+              <div class="form-group col-sm-8 flex-column d-flex ">
+                <label for="Inputselect" class="form-control-label">Fuel Type</label>
+                <select class="form-control inputstl   form-group col-sm-6 flex-column d-flex  form-control-label px-3" >
+                 <option>Diesel</option>
+                 <option>Petrol</option>
+                 <option>CNG</option>
+                </select>
+             </div>
+            </div>  
+    
+           <button type="submit" class="btn btn-info">Submit Information</button>
+          </form>
+        </div>
+     </div>
+    </div>
+  </div>
+  

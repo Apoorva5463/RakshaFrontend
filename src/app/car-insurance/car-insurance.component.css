@@ -1,0 +1,20 @@
+.card 
+{
+    padding:30px 40px;
+    margin-top: auto;
+    margin-bottom: auto;
+    border: none !important;
+     box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
+}    
+.inputstl 
+{ 
+    padding: 9px; 
+    border: solid 1px #afcfe4; 
+    outline: 0; 
+    background: -webkit(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #CDDBE4), to(#FFFFFF)); 
+    background: -moz-linear-gradient(top, #FFFFFF, #CDDBE4 1px, #FFFFFF 25px); 
+    box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+    
+} 
