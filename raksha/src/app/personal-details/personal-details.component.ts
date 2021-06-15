@@ -9,7 +9,11 @@ import { UserService } from '../service/user.service';
   styleUrls: ['./personal-details.component.css']
 })
 export class PersonalDetailsComponent implements OnInit {
- 
+  selectedDate:number=25/11/2000;
+  toPaymentGateway:any={
+    startDate:11/22/2020
+
+  };
   user: User = new User();
   constructor(private router: Router,private service:UserService) { }
 
@@ -17,8 +21,8 @@ export class PersonalDetailsComponent implements OnInit {
   }
  save(){
   this.service.addUser(this.user)
-
- 
-  this.router.navigate(['payment']);
+  console.log(this.selectedDate);
+ this.toPaymentGateway.startDate=this.selectedDate;
+  this.router.navigate(['payment',this.toPaymentGateway]);
  }
 }
