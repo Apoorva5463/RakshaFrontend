@@ -1,4 +1,4 @@
-export class Admin{
+export class PersonalDetails{
     id:string='';
     fname:string='';
     mname:string='';

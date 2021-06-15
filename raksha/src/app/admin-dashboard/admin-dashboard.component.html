@@ -25,11 +25,10 @@
         </div>
         <!-- end counter -->
     </div>
-    <div class="margin-bottom=20">
-        <input type="text" placeholder="Search.." name="search">
-        <button type="submit">Submit</button>
-    </div>
-    <table class="table">
+    <form class="form-inline my-2 my-lg-0">
+        <input type="search" (ngModelChange)="searchUser(key.value)" #key="ngModel" ngModel name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search..." required>
+    </form>
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th scope="col">id</th>
@@ -53,7 +52,7 @@
                     <button class="btn btn-primary">edit</button>
                 </td>
                 <td>
-                    <button class="btn btn-danger">delete</button>
+                    <button (click)="onDeleteUser(u.id)" class="btn btn-danger">delete</button>
                 </td>
             </tr>
         </tbody>
