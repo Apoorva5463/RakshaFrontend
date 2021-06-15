@@ -1,0 +1,9 @@
+#body {
+    padding:10px;
+    padding-bottom:60px;   /* Height of the footer */
+ }
+ body {
+    margin-top:50px;
+    padding:0;
+    height:100%;
+ }
