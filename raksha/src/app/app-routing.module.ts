@@ -13,7 +13,7 @@ import {  InsuranceComponent } from './insurance/insurance.component';
 import {  NotifyComponent } from './notify/notify.component';
 
 const routes: Routes = [
-  {path:'',component : GetQuoteComponent},
+  {path:'getquote',component : GetQuoteComponent},
   {path:'admin',component: AdminDashboardComponent},
   {path:'carinsurance', component: CarInsuranceComponent},
   {path:'Bikeinsurance', component: BikeInsuranceComponent},

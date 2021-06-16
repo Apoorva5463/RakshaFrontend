@@ -6,6 +6,7 @@ import { Car } from 'src/Car.model';
 import { not, variable } from '@angular/compiler/src/output/output_ast';
 import { invalid } from '@angular/compiler/src/render3/view/util';
 import { ERROR_COMPONENT_TYPE } from '@angular/compiler';
+import { Bike } from 'src/Bike.model';
 
 
 
@@ -80,7 +81,12 @@ export class GetQuoteComponent implements OnInit {
     
     
   }
-
+ Bike(){
+   this.router.navigate(['Bikeinsurance'])
+ }
+ Car(){
+   this.router.navigate(['carinsurance'])
+ }
   
 
 }

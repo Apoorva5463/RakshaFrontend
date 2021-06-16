@@ -1,62 +1,17 @@
-<body id="body"><div class="container-fluid "  >
-    <div class="row">
-         <div class="col-lg-6 mx-auto text-center">
-             <h1 class=" text-wrap bg-secondary">GetQuote</h1>
-         </div>
-     </div> <!-- End -->
-     <div class="row ">
-         <div class="col-lg-6 mx-auto">
-             <div class="card ">
-                 <div class="card-header">
-                     <div class="bg-white shadow-lg pt-4 pl-2 pr-2 pb-2">
-                         <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
-                             <li class="nav-item "><a data-toggle="pill" href="#vnumber" class="nav-link active ">  Vehicle Number</a> </li>
-                             <li class="nav-item"><a data-toggle="pill" href="#vdetails" class="nav-link ">  Vehicle Details </a> </li>
-                         </ul>
-                     </div> 
-   
-                    <div class="tab-content ">
-                         <div id="vnumber" class="tab-pane fade show active pt-3">
-                             <form role="form" #frm=ngForm >
-                                 <div class="form-group "> <label for="carnumber" >
-                                         <h6 class="text-gray">Enter your vehicle number</h6>
-                                     </label> <input  #vnumber=ngModel  type="text" name="vnumber"  [(ngModel)]="vehicleNumber" placeholder="eg-MH00P1112" requird pattern="[A-Z][A-Z][0-9][0-9][A-Z][0-9]{4,}" class="form-control " >
-                                     <div *ngIf="vnumber.dirty && vnumber.invalid" class="alert alert-warning">
-                                        Invalid vehicle number
-                                    </div>
-                                    </div>
-                               </form>
-                               <div class="form-group">
-                                <p> <button  (click)="save()"  type="submit" class="btn btn-primary ">Submit</button> </p>
-                            </div>
-                           </div>
-                           <div id="vdetails" class="tab-pane fade pt-3">
-                             <form role="form" >
-                                 <div class="form-group" > 
-                                     <h5>Select the Vehicle Type</h5>
-                                     <!--<a class=" dropdown-toggle" data-toggle="dropdown" href="#"  >Default</a>-->
-                                     <button type="button" class="btn btn-primary  dropdown-toggle" data-toggle="dropdown">
-                                        Default
-                                      </button>
-                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" [routerLink] = "['carinsurance']">Car  <i class="fa fa-car"></i></a>
-                                        <a class="dropdown-item" [routerLink] = "['Bikeinsurance']">Bike   <i class="fa fa-motorcycle"></i></a>
-        
-                                      </div>
-                                  </div>
-                               </form>
-                              
-                           </div>
-                      </div>
-                      <!--<form role="form">
-                          <div class="form-group">
-                           <div class="row mb-4 px-3"> <small class="font-weight-bold">Don't know the vehicle number? <a class="text-primary" href='#' >GetQuote</a></small> </div>
-                          </div>
-                      </form>-->
-                     
-                </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   </body>
+<div class="container mt-5">
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-md-8">
+            <form id="regForm">
+                <h2 class="text-center text-wrap bg-secondary">Vehicle Type</h2>
+                
+              <a href="#" [routerLink]="['carinsurance']" type="button" (click)="Car()">
+                   <img class="img1" height="100" width="100" src="https://images.template.net/wp-content/uploads/2015/11/06155538/20-Vector-Car-Icons-Free-Download.jpg">
+               </a>
+               
+              <a href="#" [routerLink]="['Bikeinsurance']" type="button" (click)="Bike()">
+                  <img class="img" height="100" width="100"src="https://th.bing.com/th/id/OIP.WoU-OgKgr7B5bV-jBt3kmAHaHa?pid=ImgDet&rs=1">
+              </a>
+            </form>
+       </div>
+    </div>
+ </div>

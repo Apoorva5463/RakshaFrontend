@@ -51,3 +51,70 @@
     margin-left:30%;
     object-fit: cover;
 }
+body {
+    background-color: #181e2d
+}
+
+.bbb-wrapper {
+    margin-top: 200px
+}
+
+.fl-wrap {
+    float: left;
+    width: 100%;
+    position: relative
+}
+
+.bbb-wrapper .subcribe-form p {
+    color: #fff;
+    font-size: 14px
+}
+
+.bbb-wrapper .subcribe-form form {
+    max-width: 450px;
+    margin: 65px auto;
+    position: relative
+}
+
+.bbb-wrapper .subcribe-form #subscribe input {
+    width: 110%;
+    height: 88px;
+    background: #fff;
+    border: rounded;
+    outline: none;
+    border-radius: 1px;
+    padding: 0 30px;
+    box-shadow: 0px 0px 0px 7px rgba(255, 255, 255, 0.2)
+}
+
+.bbb-wrapper .subcribe-form #subscribe #subscribe-button {
+    height: 50px;
+    padding: 0px 30px;
+    border-radius: 3px;
+    border: none;
+    position: absolute;
+    right: 1px;
+    left:350px;
+    top: 20px;
+    font-size: 11px;
+    color: #fff;
+    cursor: pointer
+}
+
+.subscribe-message {
+    color: #fff;
+    float: left;
+    margin-top: 10px;
+    text-align: left;
+    font-weight: 500;
+    line-height: 19px
+}
+
+.color-bg {
+    background: #4DB7FE
+}
+
+#subscribe-button:hover {
+    background: #2C3B5A;
+    color: #fff
+}

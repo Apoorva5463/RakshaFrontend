@@ -1,9 +1,20 @@
-#body {
-    padding:10px;
-    padding-bottom:60px;   /* Height of the footer */
- }
- body {
-    margin-top:100px;
-    padding:0;
-    height:100%;
- }
+#regForm {
+   background-color: #e0fbfc;
+   margin: 0px auto;
+   font-family: Raleway;
+   padding: 40px;
+   border-radius: 10px;
+   margin-bottom:20px;
+}
+.img{
+   position:relative;
+   margin-left: 150px;
+   margin-bottom: 30px;
+  
+}
+.img1{
+   position:relative;
+   margin-left: 150px;
+   margin-bottom: 20px;
+
+}
