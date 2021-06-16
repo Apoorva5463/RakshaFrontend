@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top " >
   <div class="container">
     <a class="navbar-brand">
-      <div class="logo-image">
-        <img src="../assets/icon.jpg">
-  </div></a>
+      
+        <img class="img-thumbnail bg-dark logo"   src="../assets/icon.jpg">
+  </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -50,7 +50,7 @@
           <a class="nav-link" href="#footer">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
+          <a class="nav-link" [routerLink]="['login']">Login</a>
         </li>
       </ul>
     </div>
@@ -60,32 +60,49 @@
 <div class="container-fluid">
   <router-outlet></router-outlet>
   </div>
-<footer id="footer" class="page-footer font-small teal pt-4">
-  <div class="container-fluid text-center text-md-left">
-    <div class="row">
-      <div  class="col-md-5 mt-md-0 mt-3 ">
-        <h5 class="text-uppercase font-weight-bold">Contact Us</h5>
-        <ul>
-          <li><i class="fa fa-envelope"></i>   mail at:raksha.vehicle.insurance@gmail.com</li>
-          <li><i class="fa fa-mobile fa-lg"></i>   mobile no:+918104567483</li>
-        </ul>
-      </div>
-      <hr class="clearfix w-100 d-md-none pb-3">
-      <div class="col-md-5 mb-md-0 mb-2">
-    
-        <h5 class="text-uppercase font-weight-bold">Products</h5>
-       <ul>
-         <li>Car Insurance</li>
-         <li>Bike Insurance</li>
-       </ul>
-      </div>
+
+
+  <footer id="footer" class="page-footer font-small indigo">
+    <div class="container text-center text-md-left">
+      <div class="row">
+          <div class="col-md-3 mx-auto">
+            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Products</h5>
+            <ul>
+            <li>Car Insurance </li>
+            <li>Bike Insurance</li>
+            </ul>
+      
+            </div>
+            <hr class="clearfix w-100 d-md-none">
+            <div class="col-md-3 mx-auto">
+             <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Board of Directors</h5>
+              <ul >
+                <li> Bhogendra</li>
+                <li>Ayushi</li>
+                <li>  Kavana</li>
+                <li> Gagan </li>
+                <li> Apoorva</li>
+              </ul>
+           </div>
+           <hr class="clearfix w-100 d-md-none">
+           <div class="col-md-3 mx-auto">
+              <h5 class="font-weight-bold text-uppercase mt-3 mb-4">contact Us</h5>
+                <ul>
+                <li><i class="fa fa-envelope" ></i>  raksha.vehicle.service.com</li>
+                <li><i class="fa fa-phone fa-lg"></i> +918764978345</li>
+                </ul>
+      
+            </div>
+            <hr class="clearfix w-100 d-md-none">
+            <div class="col-md-3 mx-auto">
+             <img class="img-fluid float-right img1 bg-dark "  src="../assets/icon.jpg">       
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="footer-copyright text-center bg-dark py-3 text-white">© 2020 Copyright:
-    <a href="https://mdbootstrap.com/" > raksha.vehicle.insurance.com</a>
-  </div>
-</footer>
-
-
-
+      
+        <div class="footer-copyright text-center text-white bg-dark py-3">© 2020 Copyright:
+          <a href="#"> raksha.vehicle.service.com</a>
+        </div>
+    </footer>
+     
 
