@@ -60,7 +60,7 @@
   <div class="bbb-wrapper fl-wrap">
     <div class="subcribe-form fl-wrap">
         <h2 class="text-center text-white">Insurance Made Easy </h2>
-        <form id="subscribe" #frm=ngForm> <input #vnumber=ngModel [(ngModel)]="vehicleNumber" class="form-control rounded" name="vnumber" id="vnumber" placeholder="Enter vehicle Number eg-MH00P1112" spellcheck="false" type="text" required  pattern="[A-Z][A-Z][0-9][0-9][A-Z][0-9]{4,}"> <button (click)="save()" type="submit" id="subscribe-button" class="subscribe-button color-bg"><i class="fa fa-rss"></i> Insure Now</button>
+        <form id="subscribe" #frm=ngForm> <input #vnumber=ngModel [(ngModel)]="vehicleNumber" class="form-control rounded" name="vnumber" id="vnumber" placeholder="Enter vehicle Number eg-MH00P1112" spellcheck="false" type="text" required  pattern="[A-Z][A-Z][0-9][0-9][A-Z][0-9]{4,}"> <button (click)="save()" type="submit" id="subscribe-button" class="subscribe-button color-bg"><i class="fa fa-info-circle"></i> Insure Now</button>
          <label for="vehicle-number" class="vehicle-number">
           <div *ngIf="vnumber.dirty && vnumber.invalid" class="alert alert-warning">
             Invalid vehicle number
