@@ -1,17 +1,20 @@
-<div class="container mt-5">
-    <div class="row d-flex justify-content-center align-items-center">
-        <div class="col-md-8">
-            <form id="regForm">
-                <h2 class="text-center text-wrap bg-secondary">Vehicle Type</h2>
-                
-              <a href="#" [routerLink]="['carinsurance']" type="button" (click)="Car()">
-                   <img class="img1" height="100" width="100" src="https://images.template.net/wp-content/uploads/2015/11/06155538/20-Vector-Car-Icons-Free-Download.jpg">
-               </a>
-               
-              <a href="#" [routerLink]="['Bikeinsurance']" type="button" (click)="Bike()">
-                  <img class="img" height="100" width="100"src="https://th.bing.com/th/id/OIP.WoU-OgKgr7B5bV-jBt3kmAHaHa?pid=ImgDet&rs=1">
-              </a>
-            </form>
-       </div>
-    </div>
- </div>
+<div class="bbb-wrapper fl-wrap">
+    <div class="subcribe-form fl-wrap">
+        <h2 class="text-center text-white">Insurance Made Easy </h2>
+        <form id="subscribe" #frm=ngForm> <input #vnumber=ngModel [(ngModel)]="vehicleNumber" class="form-control rounded" name="vnumber" id="vnumber" placeholder="Enter vehicle Number eg-MH00P1112" spellcheck="false" type="text" required  pattern="[A-Z][A-Z][0-9][0-9][A-Z][0-9]{4,}"> <button (click)="save()" type="submit" id="subscribe-button" class="subscribe-button color-bg"><i class="fa fa-info-circle"></i> Insure Now</button>
+         <label for="vehicle-number" class="vehicle-number">
+          <div *ngIf="vnumber.dirty && vnumber.invalid" class="alert alert-warning">
+            Invalid vehicle number
+        </div>
+        </label> 
+        <h6 class="font-weight-bold text-white ">Don't know Vehicle Number? <a class="text-primary" [routerLink]="['getquote']">GetQuote</a></h6> 
+      </form>
+      </div>
+</div>>
+
+
+
+
+
+
+

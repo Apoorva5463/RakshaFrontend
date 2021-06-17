@@ -1,79 +1,28 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top " >
-  <div class="container">
-    <a class="navbar-brand">
-      
-        <img class="img-thumbnail bg-dark logo"   src="../assets/icon.jpg">
-  </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-    <div class="collapse navbar-collapse" id="navbarToggler">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
-        </li>
-       
-        <li class="nav-item"> <a class="nav-link" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About<span class="fa fa-angle-down"></span></a>
-          <div class="dropdown-menu" id="dropdown-menu1" aria-labelledby="navbarDropdown1">
-              <div class="container">
-                  <div class="row">
-                      <div class="col-md-6">
-                          <div class="row d-flex tab">
-
-                              <div class="d-flex flex-column"> <a class="dropdown-item">
-                                      <h6 class="mb-0">About Us</h6><p class="text-justify ">We are a general insurance company.
-                                         <br>Now, before those words conjure images of beige walls and bleak souls in your head, 
-                                         <br>let us tell you we are vibrant and vivacious, 
-                                        <br>and were founded to break that drab mould you were about to cast us in.
-
-                                      </p>
-                                  </a> </div>
-                          </div>
-                      </div>
-                      <div class="col-md-6 ">
-                          <div class="row d-flex tab">
-                              
-                              <div class="d-flex flex-column img"> <a class="dropdown-item" >
-                                     <img src="https://th.bing.com/th/id/OIP.MZVABVV_zgfWg7uV-4RMkgHaE8?w=232&h=180&c=7&o=5&dpr=1.5&pid=1.7">
-                                  </a> </div>
-                          </div>
-                      </div>
-                      </div>
-                      </div>
-                      </div>
-                    
-            </li>
-        
-        <li class="nav-item">
-          <a class="nav-link" href="#footer">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['login']">Login</a>
-        </li>
-      </ul>
+<nav class="navbar" style="background-color: #ffffff;">
+  <div>
+    <div class="d-inline px-4">
+      <img src="../assets/logo.png" height="45px" >
+    </div>
+    <div class="d-inline px-3 raksha-primary-color" >
+      <b>About</b>
+    </div>
+  </div>
+  <div >
+    <div class="d-inline px-3">
+      <button class="btn btn-outline-success  btn-sm mxy-0 my-sm-0" type="submit">Login</button>
+    </div>
+    <div class="d-inline px-3 raksha-primary-color" >
+      <b>Help</b>
     </div>
   </div>
 </nav>
- <body>
-  <div class="bbb-wrapper fl-wrap">
-    <div class="subcribe-form fl-wrap">
-        <h2 class="text-center text-white">Insurance Made Easy </h2>
-        <form id="subscribe" #frm=ngForm> <input #vnumber=ngModel [(ngModel)]="vehicleNumber" class="form-control rounded" name="vnumber" id="vnumber" placeholder="Enter vehicle Number eg-MH00P1112" spellcheck="false" type="text" required  pattern="[A-Z][A-Z][0-9][0-9][A-Z][0-9]{4,}"> <button (click)="save()" type="submit" id="subscribe-button" class="subscribe-button color-bg"><i class="fa fa-info-circle"></i> Insure Now</button>
-         <label for="vehicle-number" class="vehicle-number">
-          <div *ngIf="vnumber.dirty && vnumber.invalid" class="alert alert-warning">
-            Invalid vehicle number
-        </div>
-        </label> 
-        <h6 class="font-weight-bold text-white ">Don't know Vehicle Number? <a class="text-primary" [routerLink]="['getquote']">GetQuote</a></h6> 
-      </form>
-      </div>
-</div>>
-<div class="container-fluid">
-  <router-outlet></router-outlet>
+
+<body> 
+  <div class="container-fluid">
+    <router-outlet></router-outlet>
   </div>
-  </body>
+</body>
+
 
 
   <footer id="footer" class="page-footer font-small indigo">
@@ -107,15 +56,12 @@
                 </ul>
       
             </div>
-            <hr class="clearfix w-100 d-md-none">
-            <div class="col-md-3 mx-auto">
-             <img class="img-fluid float-right img1 bg-dark "  src="../assets/icon.jpg">       
-            </div>
+           
         </div>
     </div>
       
-        <div class="footer-copyright text-center text-white bg-dark py-3">© 2020 Copyright:
-          <a href="#"> raksha.vehicle.service.com</a>
+        <div class="footer-copyright text-center text-dark py-3">
+          © 2020 Copyright: <b class="raksha-primary-color">Raksha Vehicle Insurance Pvt. Ltd.</b>
         </div>
     </footer>
      

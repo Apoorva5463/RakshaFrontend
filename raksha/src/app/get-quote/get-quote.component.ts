@@ -81,13 +81,7 @@ export class GetQuoteComponent implements OnInit {
     
     
   }
- Bike(){
-   this.router.navigate(['Bikeinsurance'])
- }
- Car(){
-   this.router.navigate(['carinsurance'])
- }
-  
+
 
 }
 
