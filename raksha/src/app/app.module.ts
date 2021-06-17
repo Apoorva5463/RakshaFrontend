@@ -16,6 +16,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     UserDashboardComponent,
     AdminDashboardComponent,
     BikeInsuranceComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    AdminLoginComponent
 
   ],
   imports: [
