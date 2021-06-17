@@ -1,15 +1,15 @@
-<div class="bbb-wrapper fl-wrap">
-    <div class="subcribe-form fl-wrap">
-        <h2 class="text-center text-white">Insurance Made Easy </h2>
-        <form id="subscribe" #frm=ngForm> <input #vnumber=ngModel [(ngModel)]="vehicleNumber" class="form-control rounded" name="vnumber" id="vnumber" placeholder="Enter vehicle Number eg-MH00P1112" spellcheck="false" type="text" required  pattern="[A-Z][A-Z][0-9][0-9][A-Z][0-9]{4,}"> <button (click)="save()" type="submit" id="subscribe-button" class="subscribe-button color-bg"><i class="fa fa-info-circle"></i> Insure Now</button>
+<div class="bbb-wrapper fl-wrap raksha-bg-primary-color">
+    <div class="subcribe-form fl-wrap" id = "aligning">
+        <h2 class="text-center text-white"><b>Insurance Made Easy</b> </h2>
+        <form id="subscribe" #frm=ngForm> <input #vnumber=ngModel [(ngModel)]="vehicleNumber" class="form-control " name="vnumber" id="vnumber" placeholder="Enter vehicle Number eg-MH00P1112" spellcheck="false" type="text" required  pattern="[A-Z][A-Z][0-9][0-9][A-Z][0-9]{4,}"> <button (click)="save()" type="submit" id="subscribe-button" class="btn btn-success"><b>Insure Now</b>&nbsp;<i class="fa fa-arrow-right"></i></button>
          <label for="vehicle-number" class="vehicle-number">
           <div *ngIf="vnumber.dirty && vnumber.invalid" class="alert alert-warning">
             Invalid vehicle number
         </div>
         </label> 
-        <h6 class="font-weight-bold text-white ">Don't know Vehicle Number? <a class="text-primary" [routerLink]="['getquote']">GetQuote</a></h6> 
+            <div class=" text-white ">Don't know Vehicle Number? <a class="text-primary h5 " (click)="popUp()">GetQuote</a></div> 
       </form>
-      </div>
+    </div>
 </div>>
 
 

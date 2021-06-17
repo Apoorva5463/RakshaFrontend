@@ -81,7 +81,9 @@ export class GetQuoteComponent implements OnInit {
     
     
   }
-
+popUp(){
+  let ans = confirm("Bike or Car??");
+}
 
 }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { VehicleService } from './service/vehicle.service';
+import { VistorCountService } from './service/vistor-count.service';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +10,12 @@ import { VehicleService } from './service/vehicle.service';
 })
 export class AppComponent implements OnInit{
 
-  constructor(){}
+  constructor(private service: VistorCountService,private router:Router){}
  
   ngOnInit(): void {
-   
+    this.service.incrementVisitorCount();
   }
-  title = 'raksha';
-     
-    
-   
-    
-    
- 
+  login(){
+    this.router.navigate(['login']);
+  }
 }

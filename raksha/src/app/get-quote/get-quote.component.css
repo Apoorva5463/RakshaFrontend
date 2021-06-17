@@ -1,3 +1,6 @@
+.raksha-bg-primary-color{
+   background-color: #513992;
+}
 #regForm {
    background-color: #e0fbfc;
    margin: 0px auto;
@@ -20,7 +23,8 @@
 }
 
 .bbb-wrapper {
-   margin-top: 200px
+   height:550px;
+   width:100%;
 }
 
 .fl-wrap {
@@ -46,21 +50,20 @@
    background: #fff;
    border: rounded;
    outline: none;
-   border-radius: 1px;
-   padding: 0 30px;
-   box-shadow: 0px 0px 0px 7px rgba(255, 255, 255, 0.2)
+   border-radius: 7px;
+   padding: 0 30px
 }
 
 .bbb-wrapper .subcribe-form #subscribe #subscribe-button {
    height: 50px;
-   padding: 0px 30px;
+   padding: 0px 25px;
    border-radius: 3px;
    border: none;
    position: absolute;
    right: 1px;
-   left:350px;
+   left:325px;
    top: 20px;
-   font-size: 11px;
+   font-size: 15px;
    color: #fff;
    cursor: pointer
 }
@@ -73,12 +76,9 @@
    font-weight: 500;
    line-height: 19px
 }
-
-.color-bg {
-   background: #4DB7FE
+#aligning{
+   margin-top: 150px;
 }
 
-#subscribe-button:hover {
-   background: #2C3B5A;
-   color: #fff
-}
+
+
