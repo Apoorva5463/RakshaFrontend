@@ -79,6 +79,48 @@
 #aligning{
    margin-top: 150px;
 }
+#confirmBox{
+   top: 35%;
+   left: 25%;
+   padding: 20px;
+   padding-right: 0px;
+   padding-top: 1px;
+   background: #fff;
+   border-radius: 5px;
+   width:50%;
+   height:35%;
+   position: fixed;
+   float:inline-start;
+   transition: all .5s ease-in-out;
+   border:1px solid black;
+   opacity:0;
+}
 
+#confirmBox.visible{  
+   opacity:1;  
+}
+#confirmBox .message{
+   width:100%;
+   text-align:top;
+   margin-bottom:10px;
+   font-size:24px;
+}
 
+#confirmBox button{
+   width:80px;
+}
+#confirmBox button:first-child{
+   margin-left: 10%;
+  
+}
+#confirmBox button:last-child{
+   margin-right: 15%;
+   float:right;
+}
+.close{
+
+   margin-right: 0%;
+   margin-top:0%;
+   margin-left: 99%;
+}
 

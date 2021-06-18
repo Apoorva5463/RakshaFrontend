@@ -1,23 +1,4 @@
-.card 
-{
-    padding:30px 40px;
-    margin-top: auto;
-    margin-bottom: auto;
-    border: none !important;
-     box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
-}    
-.inputstl 
-{ 
-    padding: 9px; 
-    border: solid 1px #4B718B; 
-    outline: 0; 
-    background: -webkit(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #CDDBE4), to(#FFFFFF)); 
-    background: -moz-linear-gradient(top, #FFFFFF, #CDDBE4 1px, #FFFFFF 25px); 
-    box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
-    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
-    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
-    
-} 
+
 .logo-image{
     width: 46px;
     height: 46px;
@@ -33,4 +14,33 @@ body {
  #body {
     padding:10px;
     padding-bottom:60px;   /* Height of the footer */
+ }
+ .card 
+{
+    padding:40px 150px;
+
+    margin-top: auto;
+    margin-bottom: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none !important;
+    
+}    
+.inputstl 
+{ 
+    padding: 12px; 
+    border: solid 1px #afcfe4; 
+    outline: 0; 
+    background: -webkit(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #CDDBE4), to(#FFFFFF)); 
+    background: -moz-linear-gradient(top, #FFFFFF, #CDDBE4 1px, #FFFFFF 25px); 
+   
+    
+} 
+
+ #aligning{
+    margin-top: 0px;
+ }
+ .textColor{
+    color: #513992;
+   
  }

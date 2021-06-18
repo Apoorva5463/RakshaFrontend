@@ -10,14 +10,17 @@ import { Bike } from 'src/Bike.model';
 
 
 
+
+
 @Component({
   selector: 'app-get-quote',
   templateUrl: './get-quote.component.html',
   styleUrls: ['./get-quote.component.css']
 })
 export class GetQuoteComponent implements OnInit {
-
-
+  displayConfirmBox = false;
+  displayMain = true;
+  DisplayDialogBox=false;
   constructor(private router:Router,private service : VehicleService) { }
   public vehicleNumber : string='';
   private vehicle : any ;
@@ -31,6 +34,7 @@ export class GetQuoteComponent implements OnInit {
     vehicleNumber:''
   };
  
+  
 
   ngOnInit(): void {
   }
@@ -81,13 +85,26 @@ export class GetQuoteComponent implements OnInit {
     
     
   }
-popUp(){
-  let ans = confirm("Bike or Car??");
+  popUp(){
+    this.displayConfirmBox = true;
+    this.DisplayDialogBox=true;
+
+ }
+cancel(){
+  this.DisplayDialogBox=false;
+  this.displayConfirmBox = false;
+}
+ ClickCar(){
+    this.router.navigate(['carinsurance']);
+ }
+
+ ClickBike(){
+    this.router.navigate(['Bikeinsurance']);
+ }
+  
 }
 
-}
-
-function elseif(vehicleType: any) {
+function elseif(_vehicleType: any) {
   throw new Error('Function not implemented.');
 }
 
