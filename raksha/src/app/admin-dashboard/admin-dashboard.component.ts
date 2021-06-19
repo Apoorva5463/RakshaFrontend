@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PersonalDetails } from 'src/PersonalDetails.model';
+import { AdminPanelDetails } from "src/admin-dashboard.model";
 import { AdminService } from '../service/admin.service';
+import { Insurance } from "src/insurance.model";
+import { InsuranceService } from "../service/insurance.service";
+
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
@@ -10,10 +14,14 @@ import { AdminService } from '../service/admin.service';
 export class AdminDashboardComponent implements OnInit {
 
   public usersList : PersonalDetails[]=[];
+  public insuranceList : Insurance[]=[];
+  public panelDetails :AdminPanelDetails= new AdminPanelDetails();
   constructor(private router:Router,private service : AdminService) { }
 
    ngOnInit() {
      this.service.getUsersList().then((data) => { this.usersList= data;});
+     this.service.getAllInsuranceDetails().then((data) => { this.insuranceList= data;});
+     this.service.getAdminPanelDetails().then((data)=>{this.panelDetails = data});
    }
    public searchUser(key: string): void {
     console.log(key);

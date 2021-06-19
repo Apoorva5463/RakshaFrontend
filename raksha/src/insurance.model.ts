@@ -1,4 +1,4 @@
-export class Udash{
+export class Insurance{
     id:string='';
     type:string='';
     plan:string='';

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Udash } from 'src/udash.model';
-import { UdashService } from '../service/udash.service';
+import { Insurance } from 'src/insurance.model';
+import { InsuranceService } from '../service/insurance.service';
 import { PersonalDetails } from 'src/PersonalDetails.model';
 
 @Component({
@@ -11,8 +11,8 @@ import { PersonalDetails } from 'src/PersonalDetails.model';
 })
 export class UserDashboardComponent implements OnInit {
   public userDetail : PersonalDetails = new PersonalDetails();
-  public InsuranceList : Udash[]=[];
-  constructor(private router:Router,private service : UdashService) { }
+  public InsuranceList : Insurance[]=[];
+  constructor(private router:Router,private service : InsuranceService) { }
 
   ngOnInit(): void {
 

@@ -1,56 +1,65 @@
-<div>
-    <h4>Personal-details</h4>
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th scope="col">user id</th>
-                <th scope="col">full name</th>
-                <th scope="col">E-mail</th>
-                <th scope="col">Phone num</th>
-                <th scope="col">Photo ID type</th>
-                <th scope="col">photo id details</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{userDetail.id}}</td>
-                <td>{{userDetail.fname}} {{userDetail.mname}} {{userDetail.lname}}</td>
-                <td>{{userDetail.gmail}}</td>
-                <td>{{userDetail.mobileNo}}</td>
-                <td>{{userDetail.photoId}}</td>
-                <td>{{userDetail.photoIdType}}</td>
-            </tr>
-        </tbody>
-    </table>
-    <h4>Insurance details</h4>
-    <table class="table table-hover">
+<div class="p-3 userdash body">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3 class="raksha-color font-weight-bold pl-3 mb-4">PERSONAL DETAILS</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <i class="fa fa-user-circle icon-i raksha-color mb-3" aria-hidden="true"></i>
+                        <h3>{{userDetail.fname}} {{userDetail.mname}} {{userDetail.lname}}</h3>
+                        <div>
+                            <div class="card-body">
+                                <i class="fa fa-phone d-inline" aria-hidden="true"></i>
+                                <h5 class="d-inline ml-1 mb-4">{{userDetail.mobileNo}}</h5><br>
+                                <i class="fa fa-envelope-open d-inline" aria-hidden="true"></i>
+                                <h5 class="d-inline ml-1 mb-4">{{userDetail.gmail}}</h5><br>
+                            </div>
+                            <div class="card-body-left">
+                                <i class="fa fa-id-card d-inline" style="font-size: 20px;" aria-hidden="true"></i>
+                                <h5 class="d-inline"> {{userDetail.photoIdType}} number</h5>
+                                <h5 class="">{{userDetail.photoId}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <thead>
-            <tr>
-                <th scope="col">insurance number</th>
-                <th scope="col">type</th>
-                <th scope="col">plan</th>
-                <th scope="col">amount paid</th>
-                <th scope="col">vehicle type</th>
-                <th scope="col">vehicle number</th>
-                <th scope="col" colspan="2">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let u of InsuranceList">
-                <td>{{u.id}}</td>
-                <td>{{u.type}} </td>
-                <td>{{u.plan}}</td>
-                <td>{{u.fee}}</td>
-                <td>{{u.vehicleType}}</td>
-                <td>{{u.vehicle_no}}</td>
-                <td>
-                    <a class="btn btn-primary" href="insurance" role="button">view</a>
-                </td>
-                <td>
-                    <a class="btn btn-primary" href="download" role="button">download</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+            </div>
+
+            <div class="col ">
+                <h3 class="raksha-color font-weight-bold pl-3 mb-4">INSURANCE DETAILS</h3>
+                <div class="scroll">
+                    <div class=" card row justify-content-between text-left " *ngFor="let u of InsuranceList">
+                        <div class="col-sm-12 flex-column d-flex ">
+                            <div class="row" style="font-size:large ">
+                                <div class="col">Insurance ID:</div>
+                                <div class="col">{{u.id}}</div>
+                                <div class="w-100"></div>
+                                <div class="col">Vehicle type:</div>
+                                <div class="col">{{u.vehicleType}}</div>
+                                <div class="w-100"></div>
+                                <div class="col">Vehicle Number:</div>
+                                <div class="col">{{u.vehicle_no}}</div>
+                                <div class="w-100"></div>
+                                <div class="col">Insurance Type:</div>
+                                <div class="col">{{u.type}} </div>
+                                <div class="w-100"></div>
+                                <div class="col">Years Insured:</div>
+                                <div class="col">{{u.plan}} </div>
+                                <div class="w-100"></div>
+                                <div class="col">Amount Paid:</div>
+                                <div class="col">{{u.fee}}</div>
+                                <div class="w-100"></div>
+                                <div class="col" justify-content-between style="margin-top: 10px;">
+                                    <a class="btn btn-outline-primary" href="download" role="button" style="margin-right: 10px;">view</a>
+                                    <a class="btn btn-outline-primary" href="download" role="button">download</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
