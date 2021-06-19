@@ -82,13 +82,13 @@
 #confirmBox{
    top: 35%;
    left: 25%;
-   padding: 20px;
+   padding: 30px;
    padding-right: 0px;
    padding-top: 1px;
    background: #fff;
    border-radius: 5px;
    width:50%;
-   height:35%;
+   height:38%;
    position: fixed;
    float:inline-start;
    transition: all .5s ease-in-out;
@@ -110,11 +110,11 @@
    width:80px;
 }
 #confirmBox button:first-child{
-   margin-left: 10%;
+   margin-left: 12%;
   
 }
 #confirmBox button:last-child{
-   margin-right: 15%;
+   margin-right: 20%;
    float:right;
 }
 .close{
@@ -123,4 +123,6 @@
    margin-top:0%;
    margin-left: 99%;
 }
-
+.textColor{
+   color:#513992;
+}

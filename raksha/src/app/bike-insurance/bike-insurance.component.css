@@ -19,11 +19,12 @@ body {
 {
     padding:40px 150px;
 
-    margin-top: auto;
+    margin-top: 5%;
     margin-bottom: 80px;
-    margin-left: auto;
+    margin-left: 2%;
     margin-right: auto;
     border: none !important;
+    background-color: rgb(250, 250, 250);
     
 }    
 .inputstl 
@@ -38,7 +39,8 @@ body {
 } 
 
  #aligning{
-    margin-top: 0px;
+    margin-top: 0%;
+    background-color: rgb(250, 250, 250);
  }
  .textColor{
     color: #513992;
