@@ -15,7 +15,8 @@ export class CarInsuranceComponent implements OnInit {
   public selectedBrand: string = '';
   public selectedModel:string='';
   selectedVariant:string='';
-  public year:number=0;
+  fuelType:string='';
+  public year:string='';
   private toInsuranceData: any ={
    model:'',
    year : 0,
@@ -52,5 +53,12 @@ export class CarInsuranceComponent implements OnInit {
     this.router.navigate(['insurance',this.toInsuranceData]);
 
   }
-}
+  reset(){
+    this.router.navigate(['carinsurance'])
+  }
+  click : boolean = false;
 
+  onButtonClick(event : MouseEvent){
+    (event.target as HTMLButtonElement).disabled = true;
+}
+}

@@ -16,6 +16,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     AdminDashboardComponent,
     BikeInsuranceComponent,
     AdminDashboardComponent,
+    
 
   ],
   imports: [
@@ -41,6 +43,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
+
 })
 export class AppModule { }

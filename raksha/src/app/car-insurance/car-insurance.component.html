@@ -1,62 +1,75 @@
-<body id="body">
+<div class="row d-flex justify-content-center " id="aligning">
+    <div class="col-xl-10 col-lg-20 col-md-10 col-12 text-center ">
+        <div class="card  text-dark border border-dark shadow rounded ">
+          <h3 class="text-center font-weight mb-4 textColor" ><b>CAR INSURANCE</b></h3>
+            <form class="form-card" #frm=ngForm >
+                <div class="row justify-content-between text-left left">
+                    <div class="form-group col-sm-6 flex-column d-flex "> 
+                      <label for="Inputselect"  class="form-control-label px-3 ">Brand</label>
+                      <select class="form-control inputstl   form-group col-sm-10 flex-column d-flex  form-control-label px-3" (change)="getModel($event)" required [(ngModel)]="selectedBrand" name="brand" #brand=ngModel >
+                        <option *ngFor="let brand of brandList" [value]= "this.brand" >{{ brand }}</option>
+                       </select>
+                       <div *ngIf="brand.untouched" >
+                    </div>
+                     </div>
+                    <div class="form-group col-sm-6 flex-column d-flex right">
+                      <label for="Inputselect" class="form-control-label px-3">Model</label>
+                      <select class="form-control inputstl  form-group col-sm-10 flex-column d-flex  form-control-label px-3" (change)="getVariant($event)" required   [(ngModel)]="selectedModel" name="model" #model=ngModel >
+                        <option *ngFor="let model of modelList" [value]= "this.model" >{{ model }}</option>
+                       
+                      </select>
+                      <div *ngIf="model.untouched">
+                    </div>
+                   </div>
+                   </div>
+                <div class="row justify-content-between text-left left">
+                    <div class="form-group col-sm-6 flex-column d-flex">
+                      <label for="Inputselect" class="form-control-label">Variant</label>
+                     <select class="form-control inputstl  form-group col-sm-10 flex-column d-flex  form-control-label px-3" required [(ngModel)]="selectedVariant" name="variant" #variant=ngModel>
+                      <option *ngFor="let variant of variantList" [value]= "this.variant" >{{ variant }}</option>
+                      </select>
+                      <div *ngIf="variant.untouched ">
+                    </div>
+                    </div>
+                    <div class="form-group col-sm-6 flex-column d-flex right">  
 
-    <div class="row d-flex justify-content-center">
-     <div class="col-xl-5 col-lg-6 col-md-7 col-10 text-center ">
-       <h1 class=" bg-secondary text-wrap text-white">CAR INSURANCE</h1>
-        <div class="card bg-white text-black border border-dark shadow-left rounded ">
-              
-          <form class="form-card" #frm=ngForm>
-     
-           <div class="  row justify-content-between text-left ">
-              <div class="form-group col-sm-12 flex-column d-flex ">
-                <label for="Inputselect"  class="form-control-label px-3 ">Brand</label>
-                <select class="form-control inputstl   form-group col-sm-6 flex-column d-flex  form-control-label px-3" (change)="getModel($event)" [(ngModel)]="selectedBrand" name="brand" >
-                  <option *ngFor="let brand of brandList" [value]= "this.brand" >{{ brand }}</option>
-                 </select>
-  
-              </div>
-           </div>  
-           <div class=" row justify-content-between text-left ">
-              <div class="form-group col-sm-12 flex-column d-flex ">
-                <label for="Inputselect" class="form-control-label px-3">Model</label>
-                <select class="form-control inputstl  form-group col-sm-6 flex-column d-flex  form-control-label px-3" (change)="getVariant($event)"   [(ngModel)]="selectedModel" name="model"  >
-                  <option *ngFor="let model of modelList" [value]= "this.model" >{{ model }}</option>
-                 
-                </select>
-              </div>
-           </div>  
-           <div class=" row justify-content-between text-left ">
-            <div class="form-group col-sm-12 flex-column d-flex ">
-              <label for="Inputselect" class="form-control-label">Variant</label>
-              <select class="form-control inputstl  form-group col-sm-6 flex-column d-flex  form-control-label px-3" [(ngModel)]="selectedVariant" name="variant">
-                <option *ngFor="let variant of variantList" [value]= "this.variant" >{{ variant }}</option>
-              </select>
-            </div>
-         </div> 
-           <div class=" row justify-content-between text-left ">
-              <div class="form-group col-sm-8 flex-column d-flex ">
-                <label for="Name" class="form-control-label">Year</label>
-                <input [(ngModel)]="year" #yr=ngModel name="year" type="number" class="form-control inputstl" id="year" placeholder="Year" required pattern="[0-9]{4,4}">
-                <div *ngIf="yr.dirty && yr.invalid" class="alert alert-warning">
-                  invalid Year
-              </div>
-              </div>
-            </div>
-            <div class="row justify-content-between text-left  ">
-              <div class="form-group col-sm-8 flex-column d-flex ">
-                <label for="Inputselect" class="form-control-label">Fuel Type</label>
-                <select class="form-control inputstl   form-group col-sm-6 flex-column d-flex  form-control-label px-3" >
-                 <option>Diesel</option>
-                 <option>Petrol</option>
-                 <option>CNG</option>
-                </select>
-             </div>
-            </div>  
-    
-           <button (click)="save()" type="submit" class="btn btn-info">Submit Information</button>
-          </form>
+                      <label for="Inputselect" class="form-control-label">Fuel Type</label>
+                      <select class="form-control inputstl   form-group col-sm-10 flex-column d-flex  form-control-label px-3" #fuel=ngModel required [(ngModel)]="fuelType">
+                       <option>Diesel</option>
+                       <option>Petrol</option>
+                       <option>CNG</option>
+                      </select>
+                      <div *ngIf="fuel.untouched" >
+                     
+                    </div>
+                    
+                      </div>
+                </div>
+                <div class="row justify-content-between text-left left ">
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label for="Inputselect" class="form-control-label">Year</label>
+                    <select class="form-control inputstl   form-group col-sm-10 flex-column d-flex  form-control-label px-3" required [(ngModel)]="year" #yr=ngModel name="year" >
+                     <option>2006</option> <option>2007</option>
+                     <option>2008</option>  <option>2009</option>
+                     <option>2010</option> <option>2011</option>
+                     <option>2012</option> <option>2013</option>
+                     <option>2014</option> <option>2015</option>
+                     <option>2016</option> <option>2017</option>
+                     <option>2018</option> <option>2019</option>
+                     <option>2020</option> <option>2021</option>
+                    </select>
+                    <div *ngIf="yr.untouched " >
+                     
+                  </div>
+                   </div>
+                  
+                  </div>  
+                <div class="row justify-content-center">
+                    
+                    
+                    <div class="form-group col-sm-10"><button  [disabled]= "!frm.valid" (click)="save()" type="submit" class="btn btn-outline-primary btn-lg">Submit </button></div>
+                </div>
+            </form>
         </div>
-     </div>
     </div>
-  
- </body>
+</div>

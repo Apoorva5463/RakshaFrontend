@@ -14,6 +14,7 @@ import { InsuranceService } from "../service/insurance.service";
 export class AdminDashboardComponent implements OnInit {
 
   public usersList : PersonalDetails[]=[];
+  public editUser: PersonalDetails=new PersonalDetails;
   public insuranceList : Insurance[]=[];
   public panelDetails :AdminPanelDetails= new AdminPanelDetails();
   constructor(private router:Router,private service : AdminService) { }
@@ -41,7 +42,7 @@ export class AdminDashboardComponent implements OnInit {
       this.service.getUsersList().then((data) => { this.usersList= data;});
     }
   }
-  /**public onUpdateUser(updateUser: PersonalDetails ): void {
+  public onUpdateUser(updateUser: PersonalDetails ): void {
     this.service.updateUser(updateUser).subscribe(
       (response: PersonalDetails) => {
         console.log(response);
@@ -49,7 +50,7 @@ export class AdminDashboardComponent implements OnInit {
       }
     );
   }
-**/
+
   public onDeleteUser(idToDelete: string): void {
     this.service.deleteUser(idToDelete).subscribe(
       (response: void) => {
@@ -58,4 +59,22 @@ export class AdminDashboardComponent implements OnInit {
       }
     );
   }
+  public onOpenModal(user: PersonalDetails, mode: string): void {
+    const container = document.getElementById('main-container');
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.style.display = 'none';
+    button.setAttribute('data-toggle', 'modal');
+    
+    if (mode === 'edit') {
+      this.editUser = user;
+      button.setAttribute('data-target', '#updatUserModal');
+    }
+   
+   // container.appendChild(button);
+    button.click();
+  }
+
+
+
 }

@@ -1,29 +1,32 @@
 .card 
 {
-    padding:30px 40px;
-    margin-top: auto;
+    padding:40px 150px;
+    margin-top: 3%;
     margin-bottom: auto;
+    margin-left: 3%;
+    margin-right: auto;
     border: none !important;
-     box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
+    background-color: rgb(250, 250, 250);
+    
 }    
 .inputstl 
 { 
-    padding: 9px; 
+    padding: 12px; 
     border: solid 1px #afcfe4; 
     outline: 0; 
     background: -webkit(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #CDDBE4), to(#FFFFFF)); 
     background: -moz-linear-gradient(top, #FFFFFF, #CDDBE4 1px, #FFFFFF 25px); 
-    box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
-    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
-    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+   
     
 } 
-body {
-    margin-top:100px;
-    padding:0;
-    height:100%;
+
+
+ #aligning{
+    margin-top: 0%;
+  
+    background-color: rgb(250, 250, 250);
  }
- #body {
-    padding:10px;
-    padding-bottom:60px;   /* Height of the footer */
+ .textColor{
+    color: #513992;
+   
  }

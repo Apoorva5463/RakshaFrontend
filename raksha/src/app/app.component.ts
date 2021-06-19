@@ -18,4 +18,7 @@ export class AppComponent implements OnInit{
   login(){
     this.router.navigate(['login']);
   }
+  home(){
+    this.router.navigate(['getquote']);
+  }
 }

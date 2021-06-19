@@ -81,6 +81,7 @@ thead {
 }
 
 .raksha-container {
+    min-height: 460px;
     max-height: 460px;
     border: solid #513992 1px;
 }
