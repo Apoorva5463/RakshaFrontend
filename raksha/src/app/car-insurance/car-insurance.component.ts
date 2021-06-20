@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { CarService } from '../service/car.service';
 
@@ -24,14 +25,19 @@ export class CarInsuranceComponent implements OnInit {
  };
 
 
-  constructor(private service:CarService,private router:Router) { }
+  constructor(private service:CarService,private router:Router,private actRoute: ActivatedRoute) { 
+   
+   
+  }
 
   ngOnInit(): void {
     this.service.getBrandList().then((data)=>{
       this.brandList = data;
+      
 
     }); 
   }
+ 
  
   getModel(val:any): void{
     console.log("Selected Brand : "+this.selectedBrand);

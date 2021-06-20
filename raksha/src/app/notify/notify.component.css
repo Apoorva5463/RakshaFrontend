@@ -1,23 +1,22 @@
-.alert {
-    padding: 20px;
-    background-color: #f44336; /* Red */
-    color: white;
-    margin-bottom: 15px;
+
+  .textColor{
+    color:#513992;
+   
   }
-  
-  /* The close button */
-  .closebtn {
-    margin-left: 15px;
-    color: white;
-    font-weight: bold;
-    float: right;
-    font-size: 22px;
-    line-height: 20px;
-    cursor: pointer;
-    transition: 0.3s;
+  .align{
+    margin-top: 60px;
+    font-size: medium;
+    color:#513992
   }
-  
-  /* When moving the mouse over the close button */
-  .closebtn:hover {
-    color: black;
+  .bgColor{
+    background-color: rgb(250, 250, 250);
+    height: 660px;
+    width:100%;
+    margin-top: 0%;
   }
+  .aligning{
+   margin-left:35%;
+   margin-top:6%;
+  }
+ 
+ 

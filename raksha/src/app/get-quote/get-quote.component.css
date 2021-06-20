@@ -23,14 +23,14 @@
 }
 
 .bbb-wrapper {
-   height:550px;
+   height:600px;
    width:100%;
 }
 
 .fl-wrap {
    float: left;
    width: 100%;
-   position: relative
+   position: relative;
 }
 
 .bbb-wrapper .subcribe-form p {
@@ -78,21 +78,24 @@
 }
 #aligning{
    margin-top: 150px;
+   margin-left: -2%;
 }
 #confirmBox{
-   top: 35%;
-   left: 25%;
-   padding: 30px;
+   top: 70%;
+   left: 35%;
    padding-right: 0px;
-   padding-top: 1px;
+   padding-top: 0px;
+   padding-bottom: 30px;
+   padding-left:30px;
    background: #fff;
    border-radius: 5px;
-   width:50%;
-   height:38%;
-   position: fixed;
+   width:110%;
+   height:24%;
+   margin-top: 15px;
+  
    float:inline-start;
    transition: all .5s ease-in-out;
-   border:1px solid black;
+  
    opacity:0;
 }
 
@@ -108,6 +111,7 @@
 
 #confirmBox button{
    width:80px;
+   background-color: #fff;
 }
 #confirmBox button:first-child{
    margin-left: 12%;
@@ -118,11 +122,16 @@
    float:right;
 }
 .close{
-
+   align-self: right;
    margin-right: 0%;
    margin-top:0%;
-   margin-left: 99%;
+   margin-left: 100%;
 }
 .textColor{
    color:#513992;
 }
+.textaligning{
+   margin-left: 18%;
+}
+
+
