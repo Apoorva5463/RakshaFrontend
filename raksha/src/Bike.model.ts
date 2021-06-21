@@ -1,7 +1,7 @@
 export class Bike{
     brand:string='';
     model:string='';
-    year:string='';
+    year:number=0;
    
    
 }

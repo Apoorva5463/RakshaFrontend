@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Bike } from 'src/Bike.model';
+import { SharedItem } from 'src/shared-item.model';
 import { BikeService } from '../service/bike.service';
+import { SharedService } from '../service/shared.service';
 
 @Component({
   selector: 'app-bike-insurance',
@@ -14,14 +16,17 @@ export class BikeInsuranceComponent implements OnInit {
   public modelList:string[]=[];
   public selectedBrand: string = '';
   public selectedModel:string='';
- public year:string='';
+ public year:number=0;
+ public modelId:number=0;
  private toInsuranceData: any ={
-  model:'',
-  year : 0,
-  price: 60000,
+  vehicleType:'Bike',
+  modelId:0,
+  vehicleNumber:''
 };
+private sharedItem: SharedItem = new SharedItem();
+  constructor(private service:BikeService,private router:Router,private sharedService : SharedService) { }
+  
 
-  constructor(private service:BikeService,private router:Router) { }
 
   ngOnInit(): void {
     this.service.getBrandList().then((data)=>{
@@ -30,7 +35,7 @@ export class BikeInsuranceComponent implements OnInit {
     }); 
   }
   getModel(val:any): void{
-    this.bike.brand=this.selectedBrand;
+  
     this.service.getModelFromBrand(this.selectedBrand).then((data)=>{
       this.modelList=data;
     });
@@ -38,14 +43,21 @@ export class BikeInsuranceComponent implements OnInit {
   }
 
   save(){
+
+    this.bike.brand=this.selectedBrand;
     this.bike.model=this.selectedModel;
-    this.bike.year="2018";
-    this.toInsuranceData.model=this.selectedModel;
-    this.toInsuranceData.year=this.year;
-    this.service.getBikeId(this.bike);
+    this.bike.year=2018;
 
-    this.router.navigate(['insurance',this.toInsuranceData]);
+    this.service.getBikeId(this.bike).subscribe((data)=>{
+      this.modelId=data;
+      this.toInsuranceData.modelId = this.modelId;
+      this.sharedItem.src = "Bikeinsurance";
+    this.sharedItem.data = this.toInsuranceData;
+    this.sharedService.setSharedData("Insurance", this.sharedItem);
+    this.router.navigate(['insurance']);
 
+    });
+    
   }
  
   

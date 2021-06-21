@@ -6,7 +6,7 @@ import { Car } from 'src/Car.model';
   providedIn: 'root'
 })
 export class CarService {
- 
+  modelId:number=0;
   baseUrl : string = "http://localhost:8888" ;
  
    constructor(private http: HttpClient ) {} 
@@ -23,8 +23,9 @@ export class CarService {
       selectedModel=selectedModel.replace(" ","_");
        return this.http.get<string[]>(this.baseUrl+"/getCarVariantFromBrandModel/" +selectedBrand+"/"+selectedModel).toPromise();
      }
-     public getCarId( car : Car){
-      this.http.post(this.baseUrl+"/getCarId",Car).subscribe((data:any) => data=Car );
+     public getCarId(car : Car){
+      return this.http.post<number>(this.baseUrl+"/getCarId",car);
+      
     }
    
     

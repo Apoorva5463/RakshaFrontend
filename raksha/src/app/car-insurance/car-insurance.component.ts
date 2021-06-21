@@ -18,7 +18,7 @@ export class CarInsuranceComponent implements OnInit {
   public selectedModel:string='';
   selectedVariant:string='';
   fuelType:string='';
-  public year:string='';
+  public year:number=0;
   car: Car = new Car();
   private toInsuranceData: any ={
    model:'',
@@ -43,13 +43,13 @@ export class CarInsuranceComponent implements OnInit {
  
  
   getModel(val:any): void{
-    this.car.Brand=this.selectedBrand;
+   
     this.service.getModelFromBrand(this.selectedBrand).then((data)=>{
       this.modelList=data;
     });
   }
   getVariant(val:any):void{
-    this.car.Model=this.selectedModel;
+  
     this.service.getCarVariantFromBrandModel(this.selectedBrand,this.selectedModel).then((data)=>{
       this.variantList=data;
     });
@@ -57,17 +57,20 @@ export class CarInsuranceComponent implements OnInit {
  
   save(){
     //this.selectedVariant = this.selectedVariant.replace(" ","%20");
+    this.car.Model=this.selectedModel;
+    console.log(this.car.Model);
+    this.car.Brand=this.selectedBrand;
     this.car.variant=this.selectedVariant;
      this.car.fuelType=this.fuelType;
-     this.car.Year="2018";
-    this.toInsuranceData.year=this.year;
-    this.service.getCarId(this.car);
-    this.router.navigate(['insurance',this.toInsuranceData]);
+     this.car.Year=2018;
+   
+    this.service.getCarId(this.car).subscribe((data)=>{
+      this.modelId=data;
+    });
+    this.router.navigate(['insurance']);
 
   }
-  reset(){
-    this.router.navigate(['carinsurance'])
-  }
+
 
   click : boolean = false;
 
