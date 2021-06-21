@@ -7,7 +7,7 @@
             Invalid vehicle number
         </div>
         </label> 
-            <div class=" text-white " *ngIf="displayMain" id="main">Don't know Vehicle Number? <a class="text-primary h5 " (click)="popUp()">GetQuote</a></div> 
+            <div class=" text-white "  >Don't know Vehicle Number? <a class="text-primary h5 " (click)="popUp()">GetQuote</a></div> 
             <div  id="confirmBox" [class.visible]="DisplayDialogBox">
                 <div class="close d-inline">
                     <button [disabled]="!displayConfirmBox" class=" btn btn-sm" type="button" (click)="cancel()">

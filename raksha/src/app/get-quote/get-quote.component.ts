@@ -84,7 +84,7 @@ export class GetQuoteComponent implements OnInit {
     
     
   }
-  pop(){
+  popUp(){
     this.displayConfirmBox = true;
     this.DisplayDialogBox=true;
  }
