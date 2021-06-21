@@ -11,7 +11,7 @@ import { PaymentGatewayComponent } from './payment-gateway/payment-gateway.compo
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 import {  InsuranceComponent } from './insurance/insurance.component';
 import {  NotifyComponent } from './notify/notify.component';
-
+import { UpdateComponent } from "./update/update.component";
 
 const routes: Routes = [
   {path:'getquote',component : GetQuoteComponent},
@@ -25,6 +25,7 @@ const routes: Routes = [
   {path:'insurance', component: InsuranceComponent},
   {path:'notify', component: NotifyComponent},  
   {path:'user', component: UserDashboardComponent},
+  {path:'update', component: UpdateComponent},
 
   {path:'**',redirectTo: '/list',pathMatch: 'full'}
 ];

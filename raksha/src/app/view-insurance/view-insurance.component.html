@@ -13,7 +13,7 @@
         
         th,
         td {
-            border: 1px solid black;
+            border: 1px solid #513992;
             border-collapse: collapse;
         }
     </style>
@@ -21,7 +21,7 @@
 <div class="background-color">
 
     <body>
-        <div class="text-center">
+        <div class="text-center" style="color: #513992;">
             <h3>RAKSHA</h3><small class="text-muted">© 2020 Copyright: Raksha Vehicle Insurance Pvt. Ltd.</small>
         </div>
         <div style="border-top: solid black;">
@@ -31,8 +31,8 @@
                     <th>Policy Number</th>
                 </tr>
                 <tr>
-                    <td>{{userDetail.fname}} {{userDetail.mname}} {{userDetail.lname}}</td>
-                    <td>{{InsuranceDetail.id}}</td>
+                    <td>{{viewInsuranceDetail.userFname}} {{viewInsuranceDetail.userMname}} {{viewInsuranceDetail.userLname}}</td>
+                    <td>{{viewInsuranceDetail.policyNumber}}</td>
                 </tr><br>
 
                 <tr>
@@ -40,17 +40,17 @@
                     <th>Phone Number</th>
                 </tr>
                 <tr>
-                    <td>{{userDetail.gmail}}</td>
-                    <td>{{userDetail.mobileNo}}</td>
+                    <td>{{viewInsuranceDetail.userEmail}}</td>
+                    <td>{{viewInsuranceDetail.userPhone}}</td>
                 </tr><br>
 
                 <tr>
                     <th>Photo ID</th>
-                    <th>{{userDetail.photoIdType}} Number</th>
+                    <th>{{viewInsuranceDetail.userPhotoIdType}} Number</th>
                 </tr>
                 <tr>
-                    <td>{{userDetail.photoIdType}}</td>
-                    <td>{{userDetail.photoId}}</td>
+                    <td>{{viewInsuranceDetail.userPhotoIdType}}</td>
+                    <td>{{viewInsuranceDetail.userPhotoIdNumber}}</td>
                 </tr><br>
 
                 <tr>
@@ -58,24 +58,24 @@
                     <th>Vehicle Registraion Number</th>
                 </tr>
                 <tr>
-                    <td>bike</td>
-                    <td>MH-90-A-1234</td>
+                    <td>{{viewInsuranceDetail.vehicleType}}</td>
+                    <td>{{viewInsuranceDetail.vehicleRegistrationNumber}}</td>
                 </tr><br>
                 <tr>
                     <th>Vehicle Brand</th>
                     <th>Vehicle Model</th>
                 </tr>
                 <tr>
-                    <td>honda</td>
-                    <td>activa 5g</td>
+                    <td>{{viewInsuranceDetail.vehicleBrand}}</td>
+                    <td>{{viewInsuranceDetail.vehicleModel}}</td>
                 </tr><br>
                 <tr>
                     <th>Insurance Type</th>
                     <th>Duration Insured</th>
                 </tr>
                 <tr>
-                    <td>{{InsuranceDetail.type}}</td>
-                    <td>{{InsuranceDetail.plan}}</td>
+                    <td>{{viewInsuranceDetail.insuranceType}}</td>
+                    <td>{{viewInsuranceDetail.insuranceDuration}}</td>
                 </tr><br>
                 <tr>
                     <th>Insurance Start Date</th>
@@ -83,8 +83,8 @@
 
                 </tr>
                 <tr>
-                    <td>20-07-2020</td>
-                    <td>20-07-2022</td>
+                    <td>{{viewInsuranceDetail.insuranceStartDate}}</td>
+                    <td>{{viewInsuranceDetail.insuranceEndDate}}</td>
                 </tr><br>
 
                 <tr>
@@ -92,8 +92,8 @@
                     <th>Maximum Amount insured</th>
                 </tr>
                 <tr>
-                    <td>{{InsuranceDetail.fee}}</td>
-                    <td>{{InsuranceDetail.fee}}</td>
+                    <td>{{viewInsuranceDetail.insurancePremiumPaid}}</td>
+                    <td>{{viewInsuranceDetail.maxAmountInsured}}</td>
                 </tr>
             </table><br><br>
             <table style="width: 100%; border: none;text-align:justify; ">

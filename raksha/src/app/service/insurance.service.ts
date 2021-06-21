@@ -19,7 +19,7 @@ export class InsuranceService {
   public async getUserDetail() {
     return await this.http.get<PersonalDetails>(this.baseUrl + "/user/10").toPromise();
   };
-  public async getDownloadUrl(id: number) {
+  public async getDownloadUrl(id: string) {
      return await this.http.get<GetUrl>(this.baseUrl + "/getDownloadUrl/"+id).toPromise();
   };
   public  getInsurancePlans(vehicleType: string,modelid:number) {

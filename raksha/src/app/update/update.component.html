@@ -1,0 +1,69 @@
+<div class="row d-flex justify-content-center " id="aligning">
+    <h3 class="text-center font-weight mb-1  textColor">UPDATE DETAILS</h3>
+    <div class="col-xl-12 col-lg-21 col-md-10 col-12 text-center ">
+        <small class="text-muted">user id=0</small>
+        <div class="card  text-dark ">
+            <form class="form-card" #frm=ngForm>
+                <div class="row justify-content-between text-left ">
+                    <div class="form-group col-sm-6 flex-column d-flex "> <label class="form-control-label  px-3">First name<span class="text-danger"> *</span></label>
+                        <div>
+                            <input class="form-control form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.fname" required pattern="[A-Z][a-z]{3,}" type="text" id="fname" name="fname" placeholder="{{user.fname}}">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Last name<span class="text-danger"> *</span></label>
+                        <div>
+                            <input class="form-control  form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.lname" type="text" id="lName" name="lname" placeholder="{{user.lname}}">
+                        </div>
+
+                    </div>
+                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Middle name<span class="text-danger"> *</span></label>
+                        <div>
+                            <input class="form-control  form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.mname" type="text" id="mName" name="mname" placeholder="{{user.mname}}">
+                        </div>
+
+                    </div>
+
+                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Email<span class="text-danger"> *</span></label>
+                        <div>
+                            <input class="form-control  form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.gmail" #gmail=ngModel required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="text" id="email" name="email" placeholder="{{user.gmail}}">
+                        </div>
+
+                    </div>
+                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Vehicle number<span class="text-danger"> *</span></label>
+                        <div>
+                            <input class="form-control  form-group col-sm-10 flex-column d-flex  " type="text" id="vehiclenumber" name="vehiclenumber" placeholder=""> </div>
+                    </div>
+
+                    <div class="form-group col-sm-6 flex-column d-flex">
+
+                        <label for="start" class="form-control-label px-3">PhotoID Type<span class="text-danger"> *</span></label>
+
+                        <select style="width:83%" class="mdb-select md-form   dropdown-primary rounded form-group   form-control-label px-3" [(ngModel)]="user.photoIdType" name="photoid">
+                        <option value="Aadhar">Aadhar Card</option>
+                        <option value="Pan">PAN Card</option>
+                        <option value="DL">Driving License</option>
+                       
+                      </select>
+                    </div>
+                    <div class="form-group col-sm-6 flex-column d-flex">
+                        <label class="form-control-label px-3">PhotoId Number<span class="text-danger"> *</span></label>
+                        <input class="form-control  form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.photoId" type="text" id="photoid" name="photoid" placeholder="{{user.photoId}}">
+                    </div>
+
+                    <div class="form-group col-sm-6 flex-column d-flex">
+                        <label class="form-control-label px-3">Mobile Number<span class="text-danger"> *</span></label>
+                        <div>
+                            <input class="form-control form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.mobileNo" #mobNo=ngModel type="number" id="mobilenumber" name="{{user.mobileNo}}" placeholder="Enter your Mobile number" required pattern="[0-9]{10,10}">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="form-group ">
+                        <button (click)="save()" type="submit" style="margin-left:-69%;" class="btn  btn-outline-primary btn-lg">Update</button> </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

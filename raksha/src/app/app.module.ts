@@ -15,6 +15,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewInsuranceComponent } from './view-insurance/view-insurance.component';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ViewInsuranceComponent } from './view-insurance/view-insurance.componen
     BikeInsuranceComponent,
     AdminDashboardComponent,
     ViewInsuranceComponent,
+    UpdateComponent,
     
 
   ],
