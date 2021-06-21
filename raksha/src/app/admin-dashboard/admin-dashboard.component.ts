@@ -39,6 +39,7 @@ export class AdminDashboardComponent implements OnInit {
     this.usersList = results;
     if (results.length === 0 || !key) {
       this.service.getUsersList().then((data) => { this.usersList= data;});
+      console.log("invalid")
     }
   }
 

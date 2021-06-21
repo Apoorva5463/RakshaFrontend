@@ -18,12 +18,11 @@ export class UserDashboardComponent implements OnInit {
   constructor(private router:Router,private service : InsuranceService) { }
 
   ngOnInit(): void {
-
     this.service.getInsuranceDetail().then((data) => { this.InsuranceList= data;});
     this.service.getUserDetail().then((data)=>{this.userDetail = data});
   }
    
-  public downloadlinkurl(id:number):void{
+  public downloadlinkurl(id: string):void{
     this.service.getDownloadUrl(id).then((data)=>{ 
       this.downloadurl = data;
       console.log("URL : "+this.downloadurl.url);
@@ -31,5 +30,8 @@ export class UserDashboardComponent implements OnInit {
       
     });
   }
-
+   viewUserInsurance(){
+    this.router.navigate(['viewinsurance']);
+    
+ }
 }

@@ -11,4 +11,7 @@ export class UserService {
   addUser(u: User){
     this.http.post(this.baseUrl+"/add",u).subscribe((data:any) => data = u);
   }
+  updateUser(u: User){
+    this.http.post(this.baseUrl+"/add",u).subscribe((data:any) => data = u);
+  }
 }
