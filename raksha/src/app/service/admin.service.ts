@@ -19,11 +19,9 @@ export class AdminService {
   public async getAllInsuranceDetails() {
     return await this.http.get<Insurance[]>(this.baseUrl + "/insurances").toPromise();
   };
-  public updateUser(updateUser: PersonalDetails): Observable<PersonalDetails> {
-    return this.http.put<PersonalDetails>(`${this.baseUrl}/`, updateUser);
-  }
+ 
   public deleteUser(userId: string): Observable<void> {
-    return this.http.delete<void>(`${this.baseUrl}/del/${userId}`);
+    return this.http.delete<void>(this.baseUrl+"/del/"+userId);
   }
 }
 

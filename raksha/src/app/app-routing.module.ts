@@ -6,7 +6,7 @@ import { UserDashboardComponent }from './user-dashboard/user-dashboard.component
 import {  CarInsuranceComponent } from './car-insurance/car-insurance.component';
 import {  BikeInsuranceComponent } from './bike-insurance/bike-insurance.component';
 import {  LoginComponent } from './login/login.component';
-import { DownloadInsuranceComponent } from './download-insurance/download-insurance.component';
+import { ViewInsuranceComponent } from "./view-insurance/view-insurance.component";
 import { PaymentGatewayComponent } from './payment-gateway/payment-gateway.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 import {  InsuranceComponent } from './insurance/insurance.component';
@@ -19,7 +19,7 @@ const routes: Routes = [
   {path:'carinsurance', component: CarInsuranceComponent},
   {path:'Bikeinsurance', component: BikeInsuranceComponent},
   {path:'login', component: LoginComponent},
-  {path:'download', component: DownloadInsuranceComponent},
+  {path:'viewinsurance', component: ViewInsuranceComponent},
   {path:'payment', component: PaymentGatewayComponent},
   {path:'personaldetails', component: PersonalDetailsComponent},
   {path:'insurance', component: InsuranceComponent},

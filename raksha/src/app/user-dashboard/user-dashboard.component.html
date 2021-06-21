@@ -1,4 +1,4 @@
-<div class="p-3 userdash body">
+<div class="p-3 userdash ">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -22,38 +22,38 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
-            <div class="col ">
+            <div class="col">
                 <h3 class="raksha-color font-weight-bold pl-3 mb-4">INSURANCE DETAILS</h3>
-                <div class="scroll">
-                    <div class=" card row justify-content-between text-left " *ngFor="let u of InsuranceList">
-                        <div class="col-sm-12 flex-column d-flex ">
-                            <div class="row" style="font-size:large ">
-                                <div class="col">Insurance ID:</div>
-                                <div class="col">{{u.id}}</div>
-                                <div class="w-100"></div>
-                                <div class="col">Vehicle type:</div>
-                                <div class="col">{{u.vehicleType}}</div>
-                                <div class="w-100"></div>
-                                <div class="col">Vehicle Number:</div>
-                                <div class="col">{{u.vehicle_no}}</div>
-                                <div class="w-100"></div>
-                                <div class="col">Insurance Type:</div>
-                                <div class="col">{{u.type}} </div>
-                                <div class="w-100"></div>
-                                <div class="col">Years Insured:</div>
-                                <div class="col">{{u.plan}} </div>
-                                <div class="w-100"></div>
-                                <div class="col">Amount Paid:</div>
-                                <div class="col">{{u.fee}}</div>
-                                <div class="w-100"></div>
-                                <div class="col" justify-content-between style="margin-top: 10px;">
-                                    <a class="btn btn-outline-primary" href="download" role="button" style="margin-right: 10px;">view</a>
-                                    <a class="btn btn-outline-primary" href="download" role="button">download</a>
-                                </div>
+                <div class="card">
+                    <div class="scroll">
+                        <div class="row justify-content-between text-left" *ngFor="let u of InsuranceList">
+                            <div class="col-sm-12 mt-2 ml-4 flex-column d-flex">
+                                <div class="row" style="font-size:medium">
+                                    <div class="col">Insurance ID:</div>
+                                    <div class="col">{{u.id}}</div>
+                                    <div class="w-100"></div>
+                                    <div class="col">Vehicle type:</div>
+                                    <div class="col">{{u.vehicleType}}</div>
+                                    <div class="w-100"></div>
+                                    <div class="col">Vehicle Number:</div>
+                                    <div class="col">{{u.vehicle_no}}</div>
+                                    <div class="w-100"></div>
+                                    <div class="col">Insurance Type:</div>
+                                    <div class="col">{{u.type}} </div>
+                                    <div class="w-100"></div>
+                                    <div class="col">Years Insured:</div>
+                                    <div class="col">{{u.plan}} </div>
+                                    <div class="w-100"></div>
+                                    <div class="col">Amount Paid:</div>
+                                    <div class="col">{{u.fee}}</div>
+                                    <div class="w-100"></div>
+                                    <div class="col" justify-content-center style="margin-top:1%; margin-bottom: 1%;">
+                                        <button class="btn btn-outline-primary" role="button" style="margin-right: 10px;">view</button>
+                                        <button class="btn btn-outline-primary" (click)="downloadlinkurl(100)" role="button">download</button>
 
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -61,5 +61,4 @@
             </div>
         </div>
     </div>
-
 </div>

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DownloadInsuranceComponent } from './download-insurance.component';
+import { ViewInsuranceComponent } from './view-insurance.component';
 
-describe('DownloadInsuranceComponent', () => {
-  let component: DownloadInsuranceComponent;
-  let fixture: ComponentFixture<DownloadInsuranceComponent>;
+describe('ViewInsuranceComponent', () => {
+  let component: ViewInsuranceComponent;
+  let fixture: ComponentFixture<ViewInsuranceComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DownloadInsuranceComponent ]
+      declarations: [ ViewInsuranceComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DownloadInsuranceComponent);
+    fixture = TestBed.createComponent(ViewInsuranceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
