@@ -6,6 +6,7 @@ import { Bike } from 'src/Bike.model';
   providedIn: 'root'
 })
 export class BikeService {
+  modelId:number=0;
   baseUrl : string = "http://localhost:8888" ;
   constructor(private http: HttpClient) { }
   
@@ -17,6 +18,7 @@ export class BikeService {
        return this.http.get<string[]>(this.baseUrl+"/getBikeModelFromBrand/" +selectedBrand).toPromise();
      }
      public getBikeId(bike : Bike){
-      this.http.post(this.baseUrl+"/getBikeId",bike).subscribe((data:any) => data=bike );
+      return this.http.post<number>(this.baseUrl+"/getBikeId",bike);
+      
     }
 }
