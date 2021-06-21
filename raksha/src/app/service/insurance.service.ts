@@ -25,5 +25,8 @@ export class InsuranceService {
   public  getInsurancePlans(vehicleType: string,modelid:number) {
     return  this.http.get<InsurancePlans>(this.baseUrl + "/getPlanes"+"/"+vehicleType+"/"+modelid).toPromise();
  };
+ addInsurance(I: Insurance){
+  return this.http.post<number>(this.baseUrl+"/add",I);
+ }
 
 }

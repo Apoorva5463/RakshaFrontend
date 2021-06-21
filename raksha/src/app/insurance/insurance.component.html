@@ -24,7 +24,7 @@
                     <div class="row">
                         <div class="col-md-8">
                             <br>
-                            <input type="radio" name="three_year" id="three_year"/>
+                            <input type="radio" name="three_year" id="three_year" value="third 3 year" checked [(ngModel)]="plan"/>
                             <label>3 year plan</label>
                         </div>
                         <div class="col-md-4">
@@ -34,7 +34,7 @@
                     </div>
                     <div class="row ">
                         <div class="col-md-8">
-                            <input type="radio" name="three_year" id="two_year"/>
+                            <input type="radio" name="three_year" id="two_year"  value="third 2 year" [(ngModel)]="plan"/>
                             <label>2 year plan</label>
                         </div>
                         <div class="col-md-4">
@@ -43,7 +43,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-8">
-                            <input type="radio" name="three_year" id="one_year"/>
+                            <input type="radio" name="three_year" id="one_year" value="third 1 year" [(ngModel)]="plan"/>
                             <label>1 year plan</label>
                         </div>
                         <div class="col-md-4">
@@ -52,7 +52,7 @@
                     </div>
                  
                     <br>
-                    <button type="button" class="btn btn-outline-success">Buy Now</button>
+                    <button (click)="buy()" type="button" class="btn btn-outline-success">Buy Now</button>
                 </div>
                 </div>
             </div>
@@ -69,7 +69,7 @@
                     <div class="row">
                         <div class="col-md-8">
                             <br>
-                            <input type="radio" name="three_year" id="three_year"/>
+                            <input type="radio" name="three_year" id="three_year" value="compre 3 year" [(ngModel)]="plan"/>
                             <label>3 year plan</label>
                         </div>
                         <div class="col-md-4">
@@ -79,7 +79,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-8">
-                            <input type="radio" name="three_year" id="two_year"/>
+                            <input type="radio" name="three_year" id="two_year" value="compre 2 year" [(ngModel)]="plan"/>
                             <label>2 year plan</label>
                         </div>
                         <div class="col-md-4">
@@ -88,7 +88,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-8">
-                            <input type="radio" name="three_year" id="one_year"/>
+                            <input type="radio" name="three_year" id="one_year" value="compre 1 year" [(ngModel)]="plan"/>
                             <label>1 year plan</label>
                         </div>
                         <div class="col-md-4">
@@ -98,7 +98,7 @@
                   
                     <div>
                         <br>
-                    <button type="button" class="btn btn-outline-success">Buy Now</button>
+                    <button (click)="buy()" type="button" class="btn btn-outline-success">Buy Now</button>
                     </div>
                 </div>
                 </div>

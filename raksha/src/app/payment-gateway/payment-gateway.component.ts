@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-payment-gateway',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentGatewayComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit(): void {
   }
-
+ save(){
+   this.route.navigate(['notify'])
+ }
 }
