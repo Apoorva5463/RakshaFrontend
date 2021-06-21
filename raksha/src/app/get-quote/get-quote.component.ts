@@ -19,8 +19,7 @@ import { Bike } from 'src/Bike.model';
 })
 export class GetQuoteComponent implements OnInit {
   displayConfirmBox = false;
-  displayMain = true;
-  DisplayDialogBox=false;
+   DisplayDialogBox=false;
   constructor(private router:Router,private service : VehicleService) { }
   public vehicleNumber : string='';
   private vehicle : any ;
@@ -88,7 +87,6 @@ export class GetQuoteComponent implements OnInit {
   popUp(){
     this.displayConfirmBox = true;
     this.DisplayDialogBox=true;
-
  }
 cancel(){
   this.DisplayDialogBox=false;

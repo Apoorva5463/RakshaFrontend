@@ -1,10 +1,13 @@
 .padding {
     padding: 5rem !important;
-    margin-left: 31%
+   height:650px;
+    background-color: rgb(250, 250, 250);
 }
 
 .card {
-    margin-bottom: 1.5rem
+    margin-bottom: 1.5rem;
+    margin-left: 70%;
+    width:70%;
 }
 
 .card {
@@ -28,7 +31,7 @@
 .card-header {
     padding: .75rem 1.25rem;
     margin-bottom: 0;
-    background-color: #f0f3f5;
+    background-color: #9560BD;
     border-bottom: 1px solid #c8ced3
 }
 
@@ -43,4 +46,11 @@
     border-color: #c8ced3 !important;
     outline: 0;
     box-shadow: 0 0 0 #F44336
+}
+.aligning{
+    margin-top:-3%;
+   
+}
+.align{
+    margin-left: 30px;
 }
