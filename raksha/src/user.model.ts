@@ -1,6 +1,6 @@
 export class User{
-    firstName:string='';
-    lastName:string='';
+    fname:string='';
+    lname:string='';
     gmail:string='';
     mobileNo:string='';
     photoIdType:string='';

@@ -7,13 +7,13 @@
                   <div class="row justify-content-between text-left ">
                       <div class="form-group col-sm-6 flex-column d-flex "> <label class="form-control-label  px-3">First name<span class="text-danger"> *</span></label>
                         <div class="input-icons"><i class="fa fa-user icon"></i>
-                        <input class="form-control inputstl  form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.firstName" #fname=ngModel required pattern="[A-Z][a-z]{3,}" type="text" id="fname" name="fname" placeholder="Enter your first name" >
+                        <input class="form-control inputstl  form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.fname" #fname=ngModel required pattern="[A-Z][a-z]{3,}" type="text" id="fname" name="fname" placeholder="Enter your first name" >
                          </div><div *ngIf="fname.dirty && fname.invalid" class="alert alert-warning ">
                           invalid First Name
                       </div></div>
                       <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Last name<span class="text-danger"> *</span></label> 
                         <div class="input-icons "><i class="fa fa-user fa-lg icon"></i>
-                        <input class="form-control  inputstl  form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.lastName" #lname=ngModel type="text" id="lName" name="lname" placeholder="Enter last name" >
+                        <input class="form-control  inputstl  form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.lname" #lname=ngModel type="text" id="lName" name="lname" placeholder="Enter last name" >
                          </div><div *ngIf="lname.dirty && lname.invalid" class="alert alert-warning">
                           invalid Last Name
                         </div></div>
@@ -42,9 +42,9 @@
                       <label for="start" class="form-control-label px-3">PhotoID Type<span class="text-danger"> *</span></label>
                        
                       <select style="width:83%"class="mdb-select md-form  inputstl dropdown-primary rounded form-group   form-control-label px-3" [(ngModel)]="user.photoIdType" name="photoid">
-                        <option value="1">Aadhar Card</option>
-                        <option value="2">PAN Card</option>
-                        <option value="3">Driving License</option>
+                        <option value="1">aadhar</option>
+                        <option value="2">pan</option>
+                        <option value="3">DL</option>
                        
                       </select>
                       </div>

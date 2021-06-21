@@ -18,6 +18,7 @@ export class PersonalDetailsComponent implements OnInit {
   constructor(private router: Router,private service:UserService) { }
 
   ngOnInit(): void {
+  
   }
  save(){
   this.service.addUser(this.user)

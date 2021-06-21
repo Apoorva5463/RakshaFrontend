@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Bike } from 'src/Bike.model';
 import { BikeService } from '../service/bike.service';
 
 @Component({
@@ -8,11 +9,12 @@ import { BikeService } from '../service/bike.service';
   styleUrls: ['./bike-insurance.component.css']
 })
 export class BikeInsuranceComponent implements OnInit {
+  bike:Bike=new Bike();
   public brandList:string[]=[];
   public modelList:string[]=[];
   public selectedBrand: string = '';
   public selectedModel:string='';
- public year:number=0;
+ public year:string='';
  private toInsuranceData: any ={
   model:'',
   year : 0,
@@ -28,17 +30,23 @@ export class BikeInsuranceComponent implements OnInit {
     }); 
   }
   getModel(val:any): void{
-    console.log("Selected Brand : "+this.selectedBrand);
+    this.bike.brand=this.selectedBrand;
     this.service.getModelFromBrand(this.selectedBrand).then((data)=>{
       this.modelList=data;
     });
   
   }
-  
+
   save(){
+    this.bike.model=this.selectedModel;
+    this.bike.year="2018";
     this.toInsuranceData.model=this.selectedModel;
     this.toInsuranceData.year=this.year;
+    this.service.getBikeId(this.bike);
+
     this.router.navigate(['insurance',this.toInsuranceData]);
 
   }
+ 
+  
 }
