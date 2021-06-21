@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { GetQuoteComponent } from './get-quote/get-quote.component';
 import { BikeInsuranceComponent } from './bike-insurance/bike-insurance.component';
 import { CarInsuranceComponent } from './car-insurance/car-insurance.component';
-import { DownloadInsuranceComponent } from './download-insurance/download-insurance.component';
 import { InsuranceComponent } from './insurance/insurance.component';
 import { LoginComponent } from './login/login.component';
 import { NotifyComponent } from './notify/notify.component';
@@ -13,17 +12,15 @@ import { PaymentGatewayComponent } from './payment-gateway/payment-gateway.compo
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ViewInsuranceComponent } from './view-insurance/view-insurance.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GetQuoteComponent,
-  
-    CarInsuranceComponent,
-    DownloadInsuranceComponent,
+    CarInsuranceComponent, 
     InsuranceComponent,
     LoginComponent,
     NotifyComponent,
@@ -33,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     AdminDashboardComponent,
     BikeInsuranceComponent,
     AdminDashboardComponent,
+    ViewInsuranceComponent,
     
 
   ],

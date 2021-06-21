@@ -4,7 +4,6 @@ import { PersonalDetails } from 'src/PersonalDetails.model';
 import { AdminPanelDetails } from "src/admin-dashboard.model";
 import { AdminService } from '../service/admin.service';
 import { Insurance } from "src/insurance.model";
-import { InsuranceService } from "../service/insurance.service";
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -42,14 +41,6 @@ export class AdminDashboardComponent implements OnInit {
       this.service.getUsersList().then((data) => { this.usersList= data;});
     }
   }
-  public onUpdateUser(updateUser: PersonalDetails ): void {
-    this.service.updateUser(updateUser).subscribe(
-      (response: PersonalDetails) => {
-        console.log(response);
-        this.service.getUsersList().then((data) => { this.usersList= data;});
-      }
-    );
-  }
 
   public onDeleteUser(idToDelete: string): void {
     this.service.deleteUser(idToDelete).subscribe(
@@ -59,22 +50,4 @@ export class AdminDashboardComponent implements OnInit {
       }
     );
   }
-  public onOpenModal(user: PersonalDetails, mode: string): void {
-    const container = document.getElementById('main-container');
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.style.display = 'none';
-    button.setAttribute('data-toggle', 'modal');
-    
-    if (mode === 'edit') {
-      this.editUser = user;
-      button.setAttribute('data-target', '#updatUserModal');
-    }
-   
-   // container.appendChild(button);
-    button.click();
-  }
-
-
-
 }

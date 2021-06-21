@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            height: 842px;
+            width: 595px;
+            border: solid black;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<div class="background-color">
+
+    <body>
+        <div class="text-center">
+            <h3>RAKSHA</h3><small class="text-muted">© 2020 Copyright: Raksha Vehicle Insurance Pvt. Ltd.</small>
+        </div>
+        <div style="border-top: solid black;">
+            <table style="width: 100%; font-size: 20px; border-collapse: collapse; ">
+                <tr>
+                    <th>Name </th>
+                    <th>Policy Number</th>
+                </tr>
+                <tr>
+                    <td>{{userDetail.fname}} {{userDetail.mname}} {{userDetail.lname}}</td>
+                    <td>{{InsuranceDetail.id}}</td>
+                </tr><br>
+
+                <tr>
+                    <th>E-mail</th>
+                    <th>Phone Number</th>
+                </tr>
+                <tr>
+                    <td>{{userDetail.gmail}}</td>
+                    <td>{{userDetail.mobileNo}}</td>
+                </tr><br>
+
+                <tr>
+                    <th>Photo ID</th>
+                    <th>{{userDetail.photoIdType}} Number</th>
+                </tr>
+                <tr>
+                    <td>{{userDetail.photoIdType}}</td>
+                    <td>{{userDetail.photoId}}</td>
+                </tr><br>
+
+                <tr>
+                    <th>Vehicle Type</th>
+                    <th>Vehicle Registraion Number</th>
+                </tr>
+                <tr>
+                    <td>bike</td>
+                    <td>MH-90-A-1234</td>
+                </tr><br>
+                <tr>
+                    <th>Vehicle Brand</th>
+                    <th>Vehicle Model</th>
+                </tr>
+                <tr>
+                    <td>honda</td>
+                    <td>activa 5g</td>
+                </tr><br>
+                <tr>
+                    <th>Insurance Type</th>
+                    <th>Duration Insured</th>
+                </tr>
+                <tr>
+                    <td>{{InsuranceDetail.type}}</td>
+                    <td>{{InsuranceDetail.plan}}</td>
+                </tr><br>
+                <tr>
+                    <th>Insurance Start Date</th>
+                    <th>Insurance End Date</th>
+
+                </tr>
+                <tr>
+                    <td>20-07-2020</td>
+                    <td>20-07-2022</td>
+                </tr><br>
+
+                <tr>
+                    <th>Premium paid</th>
+                    <th>Maximum Amount insured</th>
+                </tr>
+                <tr>
+                    <td>{{InsuranceDetail.fee}}</td>
+                    <td>{{InsuranceDetail.fee}}</td>
+                </tr>
+            </table><br><br>
+            <table style="width: 100%; border: none;text-align:justify; ">
+                <tr>
+                    <td style="border: none;"><u>Authority Signature</u>
+                    </td>
+                    <td style="border: none;"><u>Customer Signature</u></td>
+                </tr>
+                <small class="text-muted">Online copy is electonically signed</small>
+            </table>
+        </div>
+    </body>
+</div>
+
+</html>
