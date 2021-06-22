@@ -12,9 +12,11 @@ import { PersonalDetailsComponent } from './personal-details/personal-details.co
 import {  InsuranceComponent } from './insurance/insurance.component';
 import {  NotifyComponent } from './notify/notify.component';
 import { UpdateComponent } from "./update/update.component";
+import { OtpComponent } from './otp/otp.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
 
 const routes: Routes = [
-  {path:'getquote',component : GetQuoteComponent},
+  {path:'',component : GetQuoteComponent},
   {path:'admin',component: AdminDashboardComponent},
   {path:'carinsurance', component: CarInsuranceComponent},
   {path:'Bikeinsurance', component: BikeInsuranceComponent},
@@ -26,8 +28,9 @@ const routes: Routes = [
   {path:'notify', component: NotifyComponent},  
   {path:'user', component: UserDashboardComponent},
   {path:'update', component: UpdateComponent},
-
-  {path:'**',redirectTo: '/list',pathMatch: 'full'}
+  {path:'otp', component: OtpComponent},
+  {path:'adminlogin', component: AdminloginComponent},
+  {path:'**',redirectTo: '',pathMatch: 'full'}
 ];
 
 @NgModule({

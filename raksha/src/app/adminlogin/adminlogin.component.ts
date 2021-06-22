@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Otp } from 'src/otp.model';
@@ -8,13 +7,12 @@ import { SharedService } from '../service/shared.service';
 import { UserloginService } from '../userlogin.service';
 
 
-
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-adminlogin',
+  templateUrl: './adminlogin.component.html',
+  styleUrls: ['./adminlogin.component.css']
 })
-export class LoginComponent implements OnInit {
+export class AdminloginComponent implements OnInit {
   userLogin: UserLogin = new UserLogin();
   
   public otpdata: any;
@@ -25,13 +23,19 @@ export class LoginComponent implements OnInit {
 
   public sharedItem : SharedItem = new SharedItem();
   
+  // public otpstatus: any ={
+    
+  //   status:'',
+  //   otp: ''
+  // };
+
   public getotp : boolean = false; 
+
 
   constructor(private userLoginService: UserloginService, private router: Router, private sharedService: SharedService) { }
 
   ngOnInit(): void {
   }
-
   clickOnGetOTP(){
     console.log(this.userLogin.emailId);
     this.userLoginService.getOtp(this.userLogin).then((data) =>{
@@ -40,7 +44,7 @@ export class LoginComponent implements OnInit {
 
       this.otpdata = data;
 
-      this.sharedItem.src = "UserLogin";
+      this.sharedItem.src = "AdminLogin";
       this.sharedItem.data = this.otpdata;
 
       this.sharedService.setSharedData("OTP",this.sharedItem);
@@ -50,27 +54,22 @@ export class LoginComponent implements OnInit {
       this.Votp.status=this.otpdata.status;
       console.log("Success");
       console.log(this.Votp.actualotp);
-      
-      if(this.Votp.status === "OTP IS NOT SENT")
-          {
-            alert('Email id is incorrect');
-          }
-      if(this.Votp.status === "OTP IS SENT")
-      {
+      console.log(this.Votp.status);
+      // if(this.Votp.status === "OTP IS NOT SENT")
+      //     {
+      //       alert('Email id is incorrect');
+      //     }
+      // if(this.Votp.status === "OTP IS SENT")
+      // {
         this.getotp = true;
         this.router.navigate(['/otp']);
-      }
+      // }
     }
       );
     }
   
-
-
   
-
-  onButtonClick(event : MouseEvent){
-    (event.target as HTMLButtonElement).disabled = true;
+ 
 }
 
-}
 

@@ -31,6 +31,7 @@ img {
     background: transparent;
     margin: 0;
     padding: 0;
+    align-content: center;
 }
 
 body {
@@ -42,7 +43,6 @@ body {
     margin-left: 40%;
     margin-top: 5%;
     margin-bottom: 40%;
-    align-content: center;
 }
 
 img {
@@ -54,25 +54,38 @@ img {
     text-decoration-style: solid;
     font-style: bold;
     font-size: 20px;
+    margin-left: 14%;
     margin-top: 5%;
     margin-bottom: 1%;
     align-content: center;
 }
 
-.input {
+input {
+    resize: none;
+    margin: 0;
+    -webkit-line-clamp: 1;
+    align-content: center;
+    padding: 0;
     width: 50%;
     margin-top: 5%;
-    align-content: center;
+    margin-left: 4%;
     padding: 12px;
-    border-radius: 2px;
-    border: solid 1px #afcfe4;
+    border: solid 2px #afcfe4;
     outline: 0;
     background: -webkit(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #CDDBE4), to(#FFFFFF));
     background: -moz-linear-gradient(top, #FFFFFF, #CDDBE4 1px, #FFFFFF 25px);
 }
 
+.Resend {
+    margin-top: 10%;
+    margin-left: 25%;
+    align-content: center;
+    color: #513992;
+}
+
 button {
     margin-top: 10%;
+    margin-left: 10%;
     margin-right: 12%;
     padding: 12px;
     padding-right: 2 5px;

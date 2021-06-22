@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewInsuranceComponent } from './view-insurance/view-insurance.component';
 import { UpdateComponent } from './update/update.component';
+import { OtpComponent } from './otp/otp.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { UpdateComponent } from './update/update.component';
     AdminDashboardComponent,
     ViewInsuranceComponent,
     UpdateComponent,
+    OtpComponent,
+    AdminloginComponent,
     
 
   ],
