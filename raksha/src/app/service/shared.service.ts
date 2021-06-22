@@ -8,17 +8,19 @@ import { SharedItem } from 'src/shared-item.model';
 export class SharedService {
 
   sharedData: {[dst: string] : SharedItem}= {};
-loginDetails:LoginDetails=new LoginDetails();
+  loginDetails:LoginDetails=new LoginDetails();
   constructor() { 
 
   }
   getLoginDetails(){
-    return this.loginDetails;
+  var LoginDetailsStringObj : any= localStorage.getItem('RakshaLoginDetails');
+    return JSON.parse(LoginDetailsStringObj);
   }
   setLoginDetails(data:LoginDetails){
-    this.loginDetails = data;
+    localStorage.setItem('RakshaLoginDetails',JSON.stringify(data));
   }
   getSharedData(dst:string): SharedItem{
+    
     return this.sharedData[dst];
   }
 

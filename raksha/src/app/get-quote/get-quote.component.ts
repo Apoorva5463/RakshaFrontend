@@ -10,6 +10,7 @@ import { Bike } from 'src/Bike.model';
 import { ActivatedRoute } from '@angular/router';
 import { SharedService } from '../service/shared.service';
 import { SharedItem } from 'src/shared-item.model';
+import { LoginDetails } from 'src/Login-details.model';
 
 
 
@@ -23,34 +24,65 @@ import { SharedItem } from 'src/shared-item.model';
 export class GetQuoteComponent implements OnInit {
 
   displayConfirmBox = false;
-   DisplayDialogBox=false;
-   public vehicleNumber : string='';
-  private vehicle : any ;
-  private toInsuranceData: any ={
-    vehicleType:'',
-    modelId:0,
-    vehicleNumber:''
+  DisplayDialogBox = false;
+  public vehicleNumber: string = '';
+  private vehicle: any;
+  private toInsuranceData: any = {
+    vehicleType: '',
+    modelId: 0,
+    vehicleNumber: ''
   };
   private sharedItem: SharedItem = new SharedItem();
 
+  public loginoutBtn: string = "Login";
+  public logindetails: LoginDetails = new LoginDetails;
 
-  constructor(private router:Router,
-    private service : VehicleService,
-    private sharedService : SharedService) { 
+  constructor(private router: Router,
+    private service: VehicleService,
+    private sharedService: SharedService) {
 
-    }
+  }
 
   ngOnInit(): void {
+    this.logindetails = this.sharedService.getLoginDetails();
+    if (this.logindetails.isLogged) {
+      this.loginoutBtn = "Logout";
+    }
+    else {
+      this.loginoutBtn = "Login";
+    }
   }
-  login(){
-    this.router.navigate(['login']);
+  loginout() {
+    if (this.logindetails.isLogged) {
+      var answer: boolean = confirm("Are you sure you want to logout?");
+      if (answer) {
+        this.logindetails.isLogged = false;
+        this.logindetails.userType = "";
+        this.logindetails.userID = 0;
+        this.sharedService.setLoginDetails(this.logindetails);
+        this.loginoutBtn = "Login";
+      }
+  
+    }
+    else {
+      this.loginoutBtn = "Logout";
+      this.router.navigate(['login']);
+    }
+
   }
-  home(){
+  dashboard() {
+    if (this.logindetails.userType == 'User') {
+      this.router.navigate(['user']);
+    } else {
+      this.router.navigate(['admin']);
+    }
+  }
+  home() {
     this.router.navigate(['']);
   }
   save() {
-    this.service.getVehicleDetails(this.vehicleNumber).then((data)=>{
-      this.vehicle=data;
+    this.service.getVehicleDetails(this.vehicleNumber).then((data) => {
+      this.vehicle = data;
       console.log(this.vehicle.vehicleType);
       console.log(this.vehicle.modelTypeId);
 
@@ -65,27 +97,27 @@ export class GetQuoteComponent implements OnInit {
 
       this.router.navigate(['insurance']);
     });
-    
-    //this.vehicleModel=this.service.vehicleDetails(this.vehicleNumber)
-    
-    
-  }
-  popUp(){
-    this.displayConfirmBox = true;
-    this.DisplayDialogBox=true;
- }
-cancel(){
-  this.DisplayDialogBox=false;
-  this.displayConfirmBox = false;
-}
- ClickCar(){
-    this.router.navigate(['carinsurance']);
- }
 
- ClickBike(){
+    //this.vehicleModel=this.service.vehicleDetails(this.vehicleNumber)
+
+
+  }
+  popUp() {
+    this.displayConfirmBox = true;
+    this.DisplayDialogBox = true;
+  }
+  cancel() {
+    this.DisplayDialogBox = false;
+    this.displayConfirmBox = false;
+  }
+  ClickCar() {
+    this.router.navigate(['carinsurance']);
+  }
+
+  ClickBike() {
     this.router.navigate(['Bikeinsurance']);
- }
-  
+  }
+
 }
 
 function elseif(_vehicleType: any) {

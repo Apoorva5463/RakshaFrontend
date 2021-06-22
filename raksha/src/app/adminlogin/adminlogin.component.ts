@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginDetails } from 'src/Login-details.model';
 import { Otp } from 'src/otp.model';
 import { SharedItem } from 'src/shared-item.model';
 import { UserLogin } from 'src/UserLogin.model';
@@ -35,10 +36,16 @@ export class AdminloginComponent implements OnInit {
   constructor(private userLoginService: UserloginService, private router: Router, private sharedService: SharedService) { }
 
   ngOnInit(): void {
+    let loginDetail: LoginDetails = this.sharedService.getLoginDetails();
+    if(loginDetail.isLogged){
+      if(loginDetail.userType=="Admin"){
+        this.router.navigate(['admin']);
+      }else{
+        this.router.navigate(['user']);
+      }
+    }
   }
-  login(){
-    this.router.navigate(['login']);
-  }
+ 
   home(){
     this.router.navigate(['']);
   }

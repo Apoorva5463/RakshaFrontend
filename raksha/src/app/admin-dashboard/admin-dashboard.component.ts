@@ -4,6 +4,8 @@ import { PersonalDetails } from 'src/PersonalDetails.model';
 import { AdminPanelDetails } from "src/admin-dashboard.model";
 import { AdminService } from '../service/admin.service';
 import { Insurance } from "src/insurance.model";
+import { LoginDetails } from 'src/Login-details.model';
+import { SharedService } from '../service/shared.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -16,15 +18,33 @@ export class AdminDashboardComponent implements OnInit {
   public editUser: PersonalDetails=new PersonalDetails;
   public insuranceList : Insurance[]=[];
   public panelDetails :AdminPanelDetails= new AdminPanelDetails();
-  constructor(private router:Router,private service : AdminService) { }
+  loginDetails: LoginDetails=new LoginDetails();
+  constructor(private router:Router,private service : AdminService,private sharedService:SharedService) { }
 
    ngOnInit() {
+    let loginDetail: LoginDetails = this.sharedService.getLoginDetails();
+    if(loginDetail.isLogged){
+      if(loginDetail.userType=="User"){
+        this.router.navigate(['user']);
+      }
+    }
+    else{
+      this.router.navigate(['adminlogin']);
+    }
      this.service.getUsersList().then((data) => { this.usersList= data;});
      this.service.getAllInsuranceDetails().then((data) => { this.insuranceList= data;});
      this.service.getAdminPanelDetails().then((data)=>{this.panelDetails = data});
    }
-   login(){
-    this.router.navigate(['login']);
+   logout(){
+    var answer: boolean=confirm("Are you sure you want to logout?");
+    if(answer){
+      this.loginDetails.isLogged=false;
+      this.loginDetails.userType="";
+      this.loginDetails.userID=0;
+      this.sharedService.setLoginDetails(this.loginDetails);
+      this.router.navigate(['']);
+    }
+    
   }
   home(){
     this.router.navigate(['']);
