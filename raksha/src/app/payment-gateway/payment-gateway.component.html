@@ -1,3 +1,25 @@
+<nav class="navbar fixed-top" style="background-color: #ffffff; ">
+    <div>
+        <div class="d-inline px-4">
+            <img src="../assets/logo.png" height="45px">
+        </div>
+
+        <div class="d-inline px-3 home raksha-primary-color">
+            <b>About</b>
+        </div>
+        <div class="d-inline px-3 raksha-primary-color home" (click)="home()">
+            <b>Home</b>
+        </div>
+    </div>
+    <div>
+        <div class="d-inline px-3">
+            <button class="btn btn-outline-success  btn-sm mxy-0 my-sm-0" (click)="login()">Login</button>
+        </div>
+        <div class="d-inline px-3 raksha-primary-color">
+            <b>Help</b>
+        </div>
+    </div>
+</nav>
 <div class="padding was-validated aligning">
     <div class="row">
         <div class="col-sm-6">
@@ -12,7 +34,7 @@
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input class="form-control" id="name" type="text" placeholder="Enter your name" required pattern="[A-Za-z ]{3,}">
-                                
+
                             </div>
                         </div>
                     </div>
@@ -22,14 +44,14 @@
                                 <label for="ccnumber">Credit Card Number</label>
                                 <div class="input-group">
                                     <input class="form-control" type="text" placeholder="0000 0000 0000 0000" autocomplete="email" required pattern="[0-9]{16,16}">
-                                    
+
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group align col-sm-3">
-                            <label for="ccmonth">Month</label>
-                            <select class="form-control" id="ccmonth">
+                        <div class="row">
+                            <div class="form-group align col-sm-3">
+                                <label for="ccmonth">Month</label>
+                                <select class="form-control" id="ccmonth">
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -43,10 +65,10 @@
                                 <option>11</option>
                                 <option>12</option>
                             </select>
-                        </div>
-                        <div class="form-group col-sm-4">
-                            <label for="ccyear">Year</label>
-                            <select class="form-control" id="ccyear">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="ccyear">Year</label>
+                                <select class="form-control" id="ccyear">
                                 <option>2014</option>
                                 <option>2015</option>
                                 <option>2016</option>
@@ -60,22 +82,22 @@
                                 <option>2024</option>
                                 <option>2025</option>
                             </select>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="form-group">
-                                <label for="cvv">CVV/CVC</label>
-                                <input class="form-control" id="cvv" type="text" placeholder="123">
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="cvv">CVV/CVC</label>
+                                    <input class="form-control" id="cvv" type="text" placeholder="123">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="card-footer">
-                    <button (click)="save()"class="btn  btn-outline-success float-right" type="submit">
+                    <div class="card-footer">
+                        <button (click)="save()" class="btn  btn-outline-success float-right" type="submit">
                        Continue</button>
-                    <button class="btn  btn-outline-danger" type="reset">
+                        <button class="btn  btn-outline-danger" type="reset">
                         Reset</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>

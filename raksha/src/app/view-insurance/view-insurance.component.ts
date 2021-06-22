@@ -28,5 +28,12 @@ export class ViewInsuranceComponent implements OnInit {
     
      
   }
+  login(){
+    this.router.navigate(['login']);
+  }
+  home(){
+    this.router.navigate(['']);
+  }
+
 
 }

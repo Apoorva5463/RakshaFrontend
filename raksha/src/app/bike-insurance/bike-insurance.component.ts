@@ -34,6 +34,12 @@ private sharedItem: SharedItem = new SharedItem();
 
     }); 
   }
+  login(){
+    this.router.navigate(['login']);
+  }
+  home(){
+    this.router.navigate(['']);
+  }
   getModel(val:any): void{
   
     this.service.getModelFromBrand(this.selectedBrand).then((data)=>{

@@ -40,7 +40,12 @@ export class CarInsuranceComponent implements OnInit {
 
     }); 
   }
- 
+  login(){
+    this.router.navigate(['login']);
+  }
+  home(){
+    this.router.navigate(['']);
+  }
  
   getModel(val:any): void{
    

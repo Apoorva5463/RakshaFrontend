@@ -16,6 +16,13 @@ export class UpdateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  login(){
+    this.router.navigate(['login']);
+  }
+  home(){
+    this.router.navigate(['']);
+  }
+
   save(){
     this.service.addUser(this.user)
     this.router.navigate(['admin']);

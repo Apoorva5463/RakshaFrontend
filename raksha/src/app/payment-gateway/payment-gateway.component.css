@@ -1,13 +1,49 @@
+.raksha-primary-color {
+    color: #513992;
+}
+
+.img {
+    left: 100px;
+    margin-left: 30%;
+}
+
+#footer {
+    background: rgb(250, 249, 249);
+    width: 100%;
+    height: 200px;
+    bottom: 0;
+    left: 0;
+}
+
+.logo {
+    height: 50px;
+    width: 70px;
+    object-fit: cover;
+}
+
+.img1 {
+    width: 600px;
+    height: 200px;
+    left: 100px;
+    margin-left: 30%;
+    object-fit: cover;
+}
+
+.home:hover {
+    display: block;
+    text-shadow: 1px 1px #9560BD;
+}
+
 .padding {
     padding: 5rem !important;
-   height:650px;
+    height: 650px;
     background-color: rgb(250, 250, 250);
 }
 
 .card {
     margin-bottom: 1.5rem;
     margin-left: 70%;
-    width:70%;
+    width: 70%;
 }
 
 .card {
@@ -47,10 +83,11 @@
     outline: 0;
     box-shadow: 0 0 0 #F44336
 }
-.aligning{
-    margin-top:-3%;
-   
+
+.aligning {
+    margin-top: -3%;
 }
-.align{
+
+.align {
     margin-left: 30px;
 }

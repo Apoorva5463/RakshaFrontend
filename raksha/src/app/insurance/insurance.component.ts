@@ -44,6 +44,12 @@ export class InsuranceComponent implements OnInit {
     }); 
    
   }
+  login(){
+    this.route.navigate(['login']);
+  }
+  home(){
+    this.route.navigate(['']);
+  }
   buy(){
     console.log(this.plan);
     if(this.plan=="third 3 year"){

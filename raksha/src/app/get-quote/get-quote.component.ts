@@ -42,7 +42,12 @@ export class GetQuoteComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  login(){
+    this.router.navigate(['login']);
+  }
+  home(){
+    this.router.navigate(['']);
+  }
   save() {
     this.service.getVehicleDetails(this.vehicleNumber).then((data)=>{
       this.vehicle=data;

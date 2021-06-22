@@ -36,6 +36,12 @@ export class AdminloginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  login(){
+    this.router.navigate(['login']);
+  }
+  home(){
+    this.router.navigate(['']);
+  }
   clickOnGetOTP(){
     console.log(this.userLogin.emailId);
     this.userLoginService.getOtp(this.userLogin).then((data) =>{

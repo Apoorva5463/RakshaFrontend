@@ -24,16 +24,23 @@ export class UserDashboardComponent implements OnInit {
     this.service.getInsuranceDetail().then((data) => { this.InsuranceList= data;});
     this.service.getUserDetail().then((data)=>{this.userDetail = data});
   }
+  login(){
+    this.router.navigate(['login']);
+  }
+  home(){
+    this.router.navigate(['']);
+  }
+
    
-  public downloadlinkurl(id: string):void{
-    this.service.getDownloadUrl(id).then((data)=>{ 
+  public downloadlinkurl(id:number):void{
+    this.service.getDownloadUrl(''+id).then((data)=>{ 
       this.downloadurl = data;
       console.log("URL : "+this.downloadurl.url);
       window.open(this.downloadurl.url, '_blank');
       
     });
   }
-   viewUserInsurance(id:string){
+   viewUserInsurance(id:number){
     this.service.getInsuranceDetail().then((data) => { 
       this.sharedItem.src = "UserDashboard"; 
       this.sharedItem.data = +id;

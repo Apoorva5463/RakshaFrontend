@@ -23,6 +23,12 @@ export class AdminDashboardComponent implements OnInit {
      this.service.getAllInsuranceDetails().then((data) => { this.insuranceList= data;});
      this.service.getAdminPanelDetails().then((data)=>{this.panelDetails = data});
    }
+   login(){
+    this.router.navigate(['login']);
+  }
+  home(){
+    this.router.navigate(['']);
+  }
    public searchUser(key: string): void {
     console.log(key);
     const results: PersonalDetails[] = [];

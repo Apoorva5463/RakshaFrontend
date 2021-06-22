@@ -1,106 +1,128 @@
+<nav class="navbar fixed-top" style="background-color: #ffffff; ">
+    <div>
+        <div class="d-inline px-4">
+            <img src="../assets/logo.png" height="45px">
+        </div>
+
+        <div class="d-inline px-3 home raksha-primary-color">
+            <b>About</b>
+        </div>
+        <div class="d-inline px-3 raksha-primary-color home" (click)="home()">
+            <b>Home</b>
+        </div>
+    </div>
+    <div>
+        <div class="d-inline px-3">
+            <button class="btn btn-outline-success  btn-sm mxy-0 my-sm-0" (click)="login()">Login</button>
+        </div>
+        <div class="d-inline px-3 raksha-primary-color">
+            <b>Help</b>
+        </div>
+    </div>
+</nav>
 <div class="banner bgColor">
     <br>
-    <h3 class="font-weight text-center textColor">Plans for your Hero Motocorp Passion Pro 100CC</h3>
+    <h3 class="font-weight text-center textColor">Plans for your vehicle</h3>
     <div class="container ">
-            <div >
-                <h6 class="text-center">Hero Motocorp Passion Pro 100CC. Bike Bought in 2011</h6>
+        <!-- <div >
+             <h6 class="text-center">Hero Motocorp Passion Pro 100CC. Bike Bought in 2011</h6>
              
             </div>
-         
-        
+          -->
+
         <div class="row aligning">
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="card text-left effect">
-                <div class="card-body">
-                    <div class="row ">
-                        <div class="col-md-8 col-sm-8">
-                            <h4 class="card-title font-weight textColor">Third Party Plan</h4>
-                            <p class="card-text">Only covers tihrd party losses, damage to your bike is not covered <a href="#" class="text-decoration-none">See details</a></p>
+                    <div class="card-body">
+                        <div class="row ">
+                            <div class="col-md-8 col-sm-8">
+                                <h4 class="card-title font-weight textColor">Third Party Plan</h4>
+                                <p class="card-text">Only covers tihrd party losses, damage to your bike is not covered <a href="#" class="text-decoration-none">See details</a></p>
+                            </div>
+                            <div class="col-md-4 col-sm-8">
+                                <img src="../assets/car-run-over-man.png" height="50" width="50" alt="icon">
+                            </div>
                         </div>
-                        <div class="col-md-4 col-sm-8">
-                            <img src="../assets/car-run-over-man.png" height="50" width="50" alt="icon">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <br>
+                                <input type="radio" name="three_year" id="three_year" value="third 3 year" checked [(ngModel)]="plan" />
+                                <label>3 year plan</label>
+                            </div>
+                            <div class="col-md-4">
+                                <br>
+                                <p><b>{{ insurancePlans.thirdYear3 }} </b></p>
+                            </div>
                         </div>
+                        <div class="row ">
+                            <div class="col-md-8">
+                                <input type="radio" name="three_year" id="two_year" value="third 2 year" [(ngModel)]="plan" />
+                                <label>2 year plan</label>
+                            </div>
+                            <div class="col-md-4">
+                                <p><b>{{ insurancePlans.thirdYear2 }}</b></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <input type="radio" name="three_year" id="one_year" value="third 1 year" [(ngModel)]="plan" />
+                                <label>1 year plan</label>
+                            </div>
+                            <div class="col-md-4">
+                                <p><b>{{ insurancePlans.thirdYear1 }}</b></p>
+                            </div>
+                        </div>
+
+                        <br>
+                        <button (click)="buy()" type="button" class="btn btn-outline-success">Buy Now</button>
                     </div>
-                    <div class="row">
-                        <div class="col-md-8">
-                            <br>
-                            <input type="radio" name="three_year" id="three_year" value="third 3 year" checked [(ngModel)]="plan"/>
-                            <label>3 year plan</label>
-                        </div>
-                        <div class="col-md-4">
-                            <br>
-                            <p><b>{{ insurancePlans.thirdYear3 }} </b></p>
-                        </div>
-                    </div>
-                    <div class="row ">
-                        <div class="col-md-8">
-                            <input type="radio" name="three_year" id="two_year"  value="third 2 year" [(ngModel)]="plan"/>
-                            <label>2 year plan</label>
-                        </div>
-                        <div class="col-md-4">
-                            <p><b>{{ insurancePlans.thirdYear2 }}</b></p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8">
-                            <input type="radio" name="three_year" id="one_year" value="third 1 year" [(ngModel)]="plan"/>
-                            <label>1 year plan</label>
-                        </div>
-                        <div class="col-md-4">
-                            <p><b>{{ insurancePlans.thirdYear1 }}</b></p>
-                        </div>
-                    </div>
-                 
-                    <br>
-                    <button (click)="buy()" type="button" class="btn btn-outline-success">Buy Now</button>
-                </div>
                 </div>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="card text-left effect">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-8 col-sm-8">
-                            <h4 class="card-title textColor font-weight">Comprehensive Plan</h4>
-                            <p class="card-text">Only covers tihrd party losses, damage to your bike is not covered <a href="#" class="text-decoration-none">See details</a></p>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8 col-sm-8">
+                                <h4 class="card-title textColor font-weight">Comprehensive Plan</h4>
+                                <p class="card-text">Only covers tihrd party losses, damage to your bike is not covered <a href="#" class="text-decoration-none">See details</a></p>
+                            </div>
+
                         </div>
-                       
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <br>
+                                <input type="radio" name="three_year" id="three_year" value="compre 3 year" [(ngModel)]="plan" />
+                                <label>3 year plan</label>
+                            </div>
+                            <div class="col-md-4">
+                                <br>
+                                <p><b>{{ insurancePlans.compreYear3 }}</b></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <input type="radio" name="three_year" id="two_year" value="compre 2 year" [(ngModel)]="plan" />
+                                <label>2 year plan</label>
+                            </div>
+                            <div class="col-md-4">
+                                <p><b>{{insurancePlans.compreYear2 }}</b></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <input type="radio" name="three_year" id="one_year" value="compre 1 year" [(ngModel)]="plan" />
+                                <label>1 year plan</label>
+                            </div>
+                            <div class="col-md-4">
+                                <p><b> {{ insurancePlans.compreYear1 }} </b></p>
+                            </div>
+                        </div>
+
+                        <div>
                             <br>
-                            <input type="radio" name="three_year" id="three_year" value="compre 3 year" [(ngModel)]="plan"/>
-                            <label>3 year plan</label>
-                        </div>
-                        <div class="col-md-4">
-                            <br>
-                            <p><b>{{ insurancePlans.compreYear3 }}</b></p>
+                            <button (click)="buy()" type="button" class="btn btn-outline-success">Buy Now</button>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-8">
-                            <input type="radio" name="three_year" id="two_year" value="compre 2 year" [(ngModel)]="plan"/>
-                            <label>2 year plan</label>
-                        </div>
-                        <div class="col-md-4">
-                            <p><b>{{insurancePlans.compreYear2 }}</b></p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8">
-                            <input type="radio" name="three_year" id="one_year" value="compre 1 year" [(ngModel)]="plan"/>
-                            <label>1 year plan</label>
-                        </div>
-                        <div class="col-md-4">
-                            <p><b> {{ insurancePlans.compreYear1 }} </b></p>
-                        </div>
-                    </div>
-                  
-                    <div>
-                        <br>
-                    <button (click)="buy()" type="button" class="btn btn-outline-success">Buy Now</button>
-                    </div>
-                </div>
                 </div>
             </div>
         </div>

@@ -1,82 +1,111 @@
+<nav class="navbar fixed-top" style="background-color: #ffffff; ">
+    <div>
+        <div class="d-inline px-4">
+            <img src="../assets/logo.png" height="45px">
+        </div>
 
-    <div class="row d-flex justify-content-center " id="aligning">
-      <h3 class="text-center font-weight mb-1  textColor" style="margin-top: 1%;">PERSONAL DETAILS</h3>
-      <div class="col-xl-12 col-lg-21 col-md-10 col-12 text-center ">
-          <div class="card  text-dark ">
-              <form class="form-card" #frm=ngForm >
-                  <div class="row justify-content-between text-left ">
-                      <div class="form-group col-sm-6 flex-column d-flex "> <label class="form-control-label  px-3">First name<span class="text-danger"> *</span></label>
+        <div class="d-inline px-3 home raksha-primary-color">
+            <b>About</b>
+        </div>
+        <div class="d-inline px-3 raksha-primary-color home" (click)="home()">
+            <b>Home</b>
+        </div>
+    </div>
+    <div>
+        <div class="d-inline px-3">
+            <button class="btn btn-outline-success  btn-sm mxy-0 my-sm-0" (click)="login()">Login</button>
+        </div>
+        <div class="d-inline px-3 raksha-primary-color">
+            <b>Help</b>
+        </div>
+    </div>
+</nav>
+<div class="row d-flex justify-content-center " id="aligning">
+    <h3 class="text-center font-weight mb-1  textColor" style="margin-top: 1%;">PERSONAL DETAILS</h3>
+    <div class="col-xl-12 col-lg-21 col-md-10 col-12 text-center ">
+        <div class="card  text-dark ">
+            <form class="form-card" #frm=ngForm>
+                <div class="row justify-content-between text-left ">
+                    <div class="form-group col-sm-6 flex-column d-flex "> <label class="form-control-label  px-3">First name<span class="text-danger"> *</span></label>
                         <div class="input-icons"><i class="fa fa-user icon"></i>
-                        <input class="form-control inputstl  form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.fname" #fname=ngModel required pattern="[A-Z][a-z]{3,}" type="text" id="fname" name="fname" placeholder="Enter your first name" >
-                         </div><div *ngIf="fname.dirty && fname.invalid" class="alert alert-warning ">
-                          invalid First Name
-                      </div></div>
-                      <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Last name<span class="text-danger"> *</span></label> 
+                            <input class="form-control inputstl  form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.fname" #fname=ngModel required pattern="[A-Z][a-z]{3,}" type="text" id="fname" name="fname" placeholder="Enter your first name">
+                        </div>
+                        <div *ngIf="fname.dirty && fname.invalid" class="alert alert-warning ">
+                            invalid First Name
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Last name<span class="text-danger"> *</span></label>
                         <div class="input-icons "><i class="fa fa-user fa-lg icon"></i>
-                        <input class="form-control  inputstl  form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.lname" #lname=ngModel type="text" id="lName" name="lname" placeholder="Enter last name" >
-                         </div><div *ngIf="lname.dirty && lname.invalid" class="alert alert-warning">
-                          invalid Last Name
-                        </div></div>
-                  </div>
-                  <div class="row justify-content-between text-left ">
-                      <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Email<span class="text-danger"> *</span></label> 
+                            <input class="form-control  inputstl  form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.lname" #lname=ngModel type="text" id="lName" name="lname" placeholder="Enter last name">
+                        </div>
+                        <div *ngIf="lname.dirty && lname.invalid" class="alert alert-warning">
+                            invalid Last Name
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-between text-left ">
+                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Email<span class="text-danger"> *</span></label>
                         <div class="input-icons "><i class="fa fa-envelope fa-lg icon"></i>
-                        <input class="form-control  inputstl  form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.gmail" #gmail=ngModel required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="text" id="email" name="email" placeholder="" >
-                        </div><div *ngIf="gmail.dirty && gmail.invalid" class="alert alert-warning">
-                          invalid Gmail
-                        </div></div>
-                      <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Vehicle number<span class="text-danger"> *</span></label> 
+                            <input class="form-control  inputstl  form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.gmail" #gmail=ngModel required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="text" id="email" name="email" placeholder="">
+                        </div>
+                        <div *ngIf="gmail.dirty && gmail.invalid" class="alert alert-warning">
+                            invalid Gmail
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Vehicle number<span class="text-danger"> *</span></label>
                         <div class="input-icons "><i class="fa fa-car fa-lg icon"></i>
-                        <input class="form-control inputstl  form-group col-sm-10 flex-column d-flex  " type="text" id="vehiclenumber" name="vehiclenumber" value="this.Insurance.data.VehicleNumber" > </div></div>
-                  </div>
-                  <div class="row justify-content-between text-left  ">
-                    <div class="form-group col-sm-6 flex-column d-flex">   
-                      <div>
-                        <label for="inputstl-date form-control-label px-3">Insurance Start Date <span class="text-danger"> *</span></label>
-                        <input class="form-control inputstl  form-group col-sm-10  " id="input-date" type="date"  min="2021-06-25" [(ngModel)]="selectedDate" name="startDate">
-                        <span class="result"></span>
+                            <input class="form-control inputstl  form-group col-sm-10 flex-column d-flex  " type="text" id="vehiclenumber" name="vehiclenumber" value="{{this.Insurance.data.VehicleNumber}}"> </div>
                     </div>
+                </div>
+                <div class="row justify-content-between text-left  ">
+                    <div class="form-group col-sm-6 flex-column d-flex">
+                        <div>
+                            <label for="inputstl-date form-control-label px-3">Insurance Start Date <span class="text-danger"> *</span></label>
+                            <input class="form-control inputstl  form-group col-sm-10  " id="input-date" type="date" min="2021-06-25" [(ngModel)]="selectedDate" name="startDate">
+                            <span class="result"></span>
+                        </div>
                     </div>
-                    <div class="form-group col-sm-6 flex-column d-flex"> 
+                    <div class="form-group col-sm-6 flex-column d-flex">
 
-                      <label for="start" class="form-control-label px-3">PhotoID Type<span class="text-danger"> *</span></label>
-                       
-                      <select style="width:83%"class="mdb-select md-form  inputstl dropdown-primary rounded form-group   form-control-label px-3" [(ngModel)]="user.photoIdType" name="photoid">
+                        <label for="start" class="form-control-label px-3">PhotoID Type<span class="text-danger"> *</span></label>
+
+                        <select style="width:83%" class="mdb-select md-form  inputstl dropdown-primary rounded form-group   form-control-label px-3" [(ngModel)]="user.photoIdType" name="photoid">
                         <option value="1">aadhar</option>
                         <option value="2">pan</option>
                         <option value="3">DL</option>
                        
                       </select>
-                      </div>
-                      
-                      
-                      
-                      
-                      
-                    
+                    </div>
+
+
+
+
+
+
+                </div>
+
+                <div class="row justify-content-between text-left">
+                    <div class="form-group col-sm-6 flex-column d-flex">
+
+                        <label class="form-control-label px-3">PhotoId<span class="text-danger"> *</span></label>
+                        <div class="input-icons "><i class="fa fa-id-card fa-lg icon"></i> <input class="form-control inputstl form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.photoId" type="text" id="photoid" name="photoid" placeholder="PhotoId"> </div>
+                    </div>
+
+                    <div class="form-group col-sm-6 flex-column d-flex">
+                        <label class="form-control-label px-3">Mobile Number<span class="text-danger"> *</span></label>
+                        <div class="input-icons "><i class="fa fa-mobile fa-lg icon"></i>
+                            <input class="form-control  inputstl  form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.mobileNo" #mobNo=ngModel type="number" id="mobilenumber" name="mobilenumber" placeholder="Enter your Mobile number" required pattern="[0-9]{10,10}">
                         </div>
-    
-                  <div class="row justify-content-between text-left">
-                      <div class="form-group col-sm-6 flex-column d-flex">
-                           
-                      <label class="form-control-label px-3">PhotoId<span class="text-danger"> *</span></label>
-                      <div class="input-icons "><i class="fa fa-id-card fa-lg icon"></i> <input class="form-control inputstl form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.photoId" type="text" id="photoid" name="photoid" placeholder="PhotoId" > </div>
-                      </div>  
-                    
-                      <div class="form-group col-sm-6 flex-column d-flex">
-                        <label class="form-control-label px-3">Mobile Number<span class="text-danger"> *</span></label> 
-                       <div class="input-icons "><i class="fa fa-mobile fa-lg icon"></i>
-                        <input class="form-control  inputstl  form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.mobileNo" #mobNo=ngModel type="number" id="mobilenumber" name="mobilenumber" placeholder="Enter your Mobile number" required pattern="[0-9]{10,10}" >
-                         </div><div *ngIf="mobNo.dirty && mobNo.invalid" class="alert alert-warning ">
-                          invalid Mobile number
-                      </div>
-                      </div>
-                   </div>
-                  <div class="row justify-content-center">
-                      <div class="form-group ">
-                     <button (click)="save()" type="submit" style="margin-left:-69%;" class="btn  btn-outline-primary btn-lg">BuyNow</button> </div>
-                  </div>
-              </form>
-          </div>
-      </div>
+                        <div *ngIf="mobNo.dirty && mobNo.invalid" class="alert alert-warning ">
+                            invalid Mobile number
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="form-group ">
+                        <button (click)="save()" type="submit" style="margin-left:-69%;" class="btn  btn-outline-primary btn-lg">BuyNow</button> </div>
+                </div>
+            </form>
+        </div>
     </div>
+</div>

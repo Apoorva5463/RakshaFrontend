@@ -12,6 +12,13 @@ export class PaymentGatewayComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  login(){
+    this.route.navigate(['login']);
+  }
+  home(){
+    this.route.navigate(['']);
+  }
+
  save(){
    this.route.navigate(['notify'])
  }

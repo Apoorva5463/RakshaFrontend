@@ -2,6 +2,7 @@
 import { NgStyle } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginDetails } from 'src/Login-details.model';
 
 import { Otp } from 'src/otp.model';
 import { UserLogin } from 'src/UserLogin.model';
@@ -32,14 +33,28 @@ export class OtpComponent implements OnInit {
 
   // public getotp : boolean = false; 
   // otpdata: any;
+loginDetails:LoginDetails=new LoginDetails();
+
   constructor(private userLoginService: UserloginService, private router: Router, private sharedService: SharedService) { 
     this.vOTP = this.sharedService.getSharedData("OTP").data.otp;
     this.vsource = this.sharedService.getSharedData("OTP").src;
   }
   //private userLoginService: UserloginService, private router: Router
   ngOnInit(): void {
-    
+    let loginDetail: LoginDetails = this.sharedService.getLoginDetails();
+    if(loginDetail.isLogged){
+      if(loginDetail.userType=="Admin"){
+        this.router.navigate(['admin']);
+      }else{
+        this.router.navigate(['user']);
+      }
+    }
   }
+  
+  home(){
+    this.router.navigate(['']);
+  }
+
 
   // clickOnGetOTP(){
   //   console.log(this.userLogin.emailId);
@@ -69,8 +84,16 @@ export class OtpComponent implements OnInit {
       if(this.enteredOtp == this.vOTP){
         console.log("Success");
         if(this.vsource=="AdminLogin"){
+          this.loginDetails.isLogged=true;
+          this.loginDetails.userType="Admin";
+          this.loginDetails.userID=1000;
+          this.sharedService.setLoginDetails(this.loginDetails);
           this.router.navigate(['admin']);
         }else{
+          this.loginDetails.isLogged=true;
+          this.loginDetails.userType="User";
+          this.loginDetails.userID=100;
+          this.sharedService.setLoginDetails(this.loginDetails);
         this.router.navigate(['user']);}
         
         alert('Login Successful');

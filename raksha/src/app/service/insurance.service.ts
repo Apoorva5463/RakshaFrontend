@@ -14,7 +14,7 @@ export class InsuranceService {
   public async getInsuranceDetail() {
     return await this.http.get<Insurance[]>(this.baseUrl + "/insurancesByUser/10").toPromise();
   };
-
+  
 
   public async getUserDetail() {
     return await this.http.get<PersonalDetails>(this.baseUrl + "/user/10").toPromise();

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Insurance } from 'src/insurance.model';
 import { User } from 'src/user.model';
 import { InsuranceService } from '../service/insurance.service';
@@ -16,7 +17,7 @@ export class NotifyComponent implements OnInit {
    policyid:number=0;
    user:User=new User();
    insurance:Insurance=new Insurance();
-  constructor(private sharedService: SharedService,private service:UserService,private services:InsuranceService) {
+  constructor(private sharedService: SharedService, private router: Router,private service:UserService,private services:InsuranceService) {
     this.details = sharedService.getSharedData("Notify");
     this.user.fname=this.details.data.fname;
     this.user.mname=this.details.data.mname;
@@ -47,6 +48,12 @@ export class NotifyComponent implements OnInit {
       });
     });
     
+  }
+  login(){
+    this.router.navigate(['login']);
+  }
+  home(){
+    this.router.navigate(['']);
   }
 
 }

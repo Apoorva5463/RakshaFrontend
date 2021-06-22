@@ -48,6 +48,13 @@ export class PersonalDetailsComponent implements OnInit {
   ngOnInit(): void {
   
   }
+  login(){
+    this.router.navigate(['login']);
+  }
+  home(){
+    this.router.navigate(['']);
+  }
+
  save(){
  
   this.toNotify.fname=this.user.fname;
