@@ -82,9 +82,9 @@ export class PersonalDetailsComponent implements OnInit {
   this.sharedItem.src = "personalDetails";
   this.sharedItem.data = this.toNotify;
     console.log(this.sharedItem.data);
-  this.sharedService.setSharedData("Notify", this.sharedItem);
+  this.sharedService.setSharedData("verify", this.sharedItem);
    console.log(this.sharedItem.data);
  
-  this.router.navigate(['payment']);
+  this.router.navigate(['verify']);
  }
 }
