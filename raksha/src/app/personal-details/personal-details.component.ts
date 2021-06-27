@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginDetails } from 'src/Login-details.model';
 import { SharedItem } from 'src/shared-item.model';
 import { User } from 'src/user.model';
 import { SharedService } from '../service/shared.service';
 import { UserService } from '../service/user.service';
+import { InsuranceService } from '../service/insurance.service';
 
 @Component({
   selector: 'app-personal-details',
@@ -11,12 +13,14 @@ import { UserService } from '../service/user.service';
   styleUrls: ['./personal-details.component.css']
 })
 export class PersonalDetailsComponent implements OnInit {
+  
   selectedDate:string='';
   
   date:number=0;
   bore:number=0;
   private sharedItem: SharedItem = new SharedItem();
   user: User = new User();
+  user2: User = new User();
   Insurance:any;
   toNotify:any={
     InsuranceType:'',
@@ -36,7 +40,7 @@ export class PersonalDetailsComponent implements OnInit {
   }
 
 
-  constructor(private router: Router,private service:UserService,private sharedService: SharedService) { 
+  constructor(private router: Router,private service:UserService,private sharedService: SharedService,private insuranceService: InsuranceService) { 
     this.Insurance = sharedService.getSharedData("PersonalDetails");
     this.toNotify.modelId=this.Insurance.data.modelId;
     this.toNotify.vehicleType=this.Insurance.data.vehicleType;
@@ -46,13 +50,49 @@ export class PersonalDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.logindetails = this.sharedService.getLoginDetails();
+    if (this.logindetails.isLogged) {
+      this.loginoutBtn = "Logout";
+      this.fetchUserDetails(this.logindetails.userID);
+    }
+    else {
+      this.loginoutBtn = "Login";
+    }
   
   }
-  login(){
-    this.router.navigate(['login']);
+  public loginoutBtn: string = "Login";
+  public logindetails: LoginDetails = new LoginDetails;
+  loginout() {
+    if (this.logindetails.isLogged) {
+      var answer: boolean = confirm("Are you sure you want to logout?");
+      if (answer) {
+        this.logindetails.isLogged = false;
+        this.logindetails.userType = "";
+        this.logindetails.userID = 0;
+        this.sharedService.setLoginDetails(this.logindetails);
+        this.loginoutBtn = "Login";
+      }
+    }
+    else {
+      this.loginoutBtn = "Logout";
+      this.router.navigate(['login']);
+    }
+  }
+  dashboard() {
+    if (this.logindetails.userType == 'User') {
+      this.router.navigate(['user']);
+    } else {
+      this.router.navigate(['admin']);
+    }
   }
   home(){
     this.router.navigate(['']);
+  }
+  help(){
+    this.router.navigate(['helpsupport']);
+  }
+  footerscroll(){
+    window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
   }
 
  save(){
@@ -84,7 +124,12 @@ export class PersonalDetailsComponent implements OnInit {
     console.log(this.sharedItem.data);
   this.sharedService.setSharedData("Notify", this.sharedItem);
    console.log(this.sharedItem.data);
- 
+   
   this.router.navigate(['payment']);
  }
+ fetchUserDetails(uid: any) {
+  this.insuranceService.getUserDetail().then((data)=>{this.user2 = data});
 }
+}
+
+

@@ -15,7 +15,7 @@ import { UpdateComponent } from "./update/update.component";
 import { OtpComponent } from './otp/otp.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { BufferComponent } from './buffer/buffer.component';
-
+import { HelpsupportComponent } from "./helpsupport/helpsupport.component";
 const routes: Routes = [
   {path:'',component : GetQuoteComponent},
   {path:'admin',component: AdminDashboardComponent},
@@ -32,6 +32,7 @@ const routes: Routes = [
   {path:'otp', component: OtpComponent},
   {path:'adminlogin', component: AdminloginComponent},
   {path:'buffer',component: BufferComponent},
+  {path:'helpsupport', component: HelpsupportComponent},
   {path:'**',redirectTo: '',pathMatch: 'full'}
 ];
 

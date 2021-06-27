@@ -19,6 +19,7 @@ import { UpdateComponent } from './update/update.component';
 import { OtpComponent } from './otp/otp.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { BufferComponent } from './buffer/buffer.component';
+import { HelpsupportComponent } from './helpsupport/helpsupport.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { BufferComponent } from './buffer/buffer.component';
     OtpComponent,
     AdminloginComponent,
     BufferComponent,
+    HelpsupportComponent,
     
 
   ],

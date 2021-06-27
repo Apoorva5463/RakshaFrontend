@@ -4,7 +4,7 @@
             <img src="../assets/logo.png" height="45px">
         </div>
 
-        <div class="d-inline px-3 home raksha-primary-color">
+        <div class="d-inline px-3 home raksha-primary-color " (click)="footerscroll()">
             <b>About</b>
         </div>
         <div class="d-inline px-3 raksha-primary-color home" (click)="home()">
@@ -12,17 +12,27 @@
         </div>
     </div>
     <div>
-        <div class="d-inline px-3">
-            <button class="btn btn-outline-success  btn-sm mxy-0 my-sm-0" (click)="login()">Login</button>
+        <div *ngIf="logindetails.isLogged" class="d-inline px-3 raksha-primary-color home" hidden (click)="dashboard()">
+            <b>Dashboard</b>
         </div>
-        <div class="d-inline px-3 raksha-primary-color">
+
+        <div *ngIf="logindetails.isLogged" class="d-inline px-3">
+            <button class="btn btn-outline-success  btn-sm mxy-0 my-sm-0" (click)="loginout()" hidden>{{this.loginoutBtn}}</button>
+            <button class="btn btn-outline-danger  btn-sm mxy-0 my-sm-0" (click)="loginout()">{{this.loginoutBtn}}</button>
+        </div>
+        <div *ngIf="!(logindetails.isLogged)" class="d-inline px-3">
+            <button class="btn btn-outline-success  btn-sm mxy-0 my-sm-0" (click)="loginout()">{{this.loginoutBtn}}</button>
+        </div>
+
+        <div class="d-inline px-3 raksha-primary-color home" (click)="home()">
             <b>Help</b>
         </div>
+
     </div>
 </nav>
 <div class="row d-flex justify-content-center " id="aligning">
     <div class="col-xl-10 col-lg-20 col-md-10 col-12 text-center ">
-        <div class="card  text-dark border border-dark shadow rounded ">
+        <div class="card  text-darks">
             <h3 class="text-center font-weight mb-4 textColor"><b>CAR INSURANCE</b></h3>
             <form class="form-card" #frm=ngForm>
                 <div class="row justify-content-between text-left left">
@@ -90,7 +100,10 @@
 
 
                     <div class="form-group col-sm-10"><button [disabled]="!frm.valid" (click)="save()" type="submit" class="btn btn-outline-primary btn-lg">Submit </button></div>
+
                 </div>
+                <div class="backalign" onclick="history.back()"><i class="fa fa-chevron-left raksha-primary-color" aria-hidden="true"></i></div>
+
             </form>
         </div>
     </div>

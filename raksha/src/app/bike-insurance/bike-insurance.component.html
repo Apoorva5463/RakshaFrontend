@@ -4,7 +4,7 @@
             <img src="../assets/logo.png" height="45px">
         </div>
 
-        <div class="d-inline px-3 home raksha-primary-color">
+        <div class="d-inline px-3 home raksha-primary-color " (click)="footerscroll()">
             <b>About</b>
         </div>
         <div class="d-inline px-3 raksha-primary-color home" (click)="home()">
@@ -12,10 +12,19 @@
         </div>
     </div>
     <div>
-        <div class="d-inline px-3">
-            <button class="btn btn-outline-success  btn-sm mxy-0 my-sm-0" (click)="login()">Login</button>
+        <div *ngIf="logindetails.isLogged" class="d-inline px-3 raksha-primary-color home" hidden (click)="dashboard()">
+            <b>Dashboard</b>
         </div>
-        <div class="d-inline px-3 raksha-primary-color">
+
+        <div *ngIf="logindetails.isLogged" class="d-inline px-3">
+            <button class="btn btn-outline-success  btn-sm mxy-0 my-sm-0" (click)="loginout()" hidden>{{this.loginoutBtn}}</button>
+            <button class="btn btn-outline-danger  btn-sm mxy-0 my-sm-0" (click)="loginout()">{{this.loginoutBtn}}</button>
+        </div>
+        <div *ngIf="!(logindetails.isLogged)" class="d-inline px-3">
+            <button class="btn btn-outline-success  btn-sm mxy-0 my-sm-0" (click)="loginout()">{{this.loginoutBtn}}</button>
+        </div>
+
+        <div class="d-inline px-3 raksha-primary-color home" (click)="home()">
             <b>Help</b>
         </div>
     </div>
