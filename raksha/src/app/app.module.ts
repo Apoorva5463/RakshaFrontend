@@ -19,7 +19,11 @@ import { UpdateComponent } from './update/update.component';
 import { OtpComponent } from './otp/otp.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { BufferComponent } from './buffer/buffer.component';
+<<<<<<< HEAD
 import { HelpsupportComponent } from './helpsupport/helpsupport.component';
+=======
+import { VerifyComponent } from './verify/verify.component';
+>>>>>>> 60482054a7cf3e70894296b441c5246ce473a75c
 
 @NgModule({
   declarations: [
@@ -40,7 +44,11 @@ import { HelpsupportComponent } from './helpsupport/helpsupport.component';
     OtpComponent,
     AdminloginComponent,
     BufferComponent,
+<<<<<<< HEAD
     HelpsupportComponent,
+=======
+    VerifyComponent,
+>>>>>>> 60482054a7cf3e70894296b441c5246ce473a75c
     
 
   ],

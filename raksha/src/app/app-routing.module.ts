@@ -15,6 +15,7 @@ import { UpdateComponent } from "./update/update.component";
 import { OtpComponent } from './otp/otp.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { BufferComponent } from './buffer/buffer.component';
+import { VerifyComponent } from './verify/verify.component';
 import { HelpsupportComponent } from "./helpsupport/helpsupport.component";
 const routes: Routes = [
   {path:'',component : GetQuoteComponent},
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path:'adminlogin', component: AdminloginComponent},
   {path:'buffer',component: BufferComponent},
   {path:'helpsupport', component: HelpsupportComponent},
+  {path:'verify',component:VerifyComponent},
   {path:'**',redirectTo: '',pathMatch: 'full'}
 ];
 
