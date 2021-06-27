@@ -20,6 +20,6 @@ export class PaymentGatewayComponent implements OnInit {
   }
 
  save(){
-   this.route.navigate(['notify'])
+   this.route.navigate(['buffer'])
  }
 }

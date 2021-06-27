@@ -3,17 +3,27 @@
 <head>
     <style>
         body {
-            height: 842px;
-            width: 595px;
-            border: solid black;
+            height: 900px;
+            width: 650px; 
             margin-left: auto;
             margin-right: auto;
+            margin-bottom: 0px;
         }
+    
+       
+        th,td {  
+ 				border-collapse: collapse; 
+ 				border: 1px solid white;  
+                 text-align: center; 
+            
+ 			}  
         
-        th,
-        td {
-            border: 1px solid #513992;
-            border-collapse: collapse;
+        th
+        {
+            background-color: #ddccff;
+            text-align: center; 
+            
+            
         }
     </style>
 </head>
@@ -31,24 +41,24 @@
         </div>
     </div>
     <div>
-        <div class="d-inline px-3">
-            <button class="btn btn-outline-success  btn-sm mxy-0 my-sm-0" (click)="login()">Login</button>
-        </div>
-        <div class="d-inline px-3 raksha-primary-color">
+      
+
+        <div class="d-inline px-3 raksha-primary-color home">
             <b>Help</b>
         </div>
+      
     </div>
 </nav>
 
 <div class="background-color">
 
     <body>
-        <div class="text-center" style="color: #513992;">
+        <div class="text-center aligning" style="color: #513992;  ">
             <h3>RAKSHA</h3><small class="text-muted">© 2020 Copyright: Raksha Vehicle Insurance Pvt. Ltd.</small>
         </div>
-        <div style="border-top: solid black;">
-            <table style="width: 100%; font-size: 20px; border-collapse: collapse; ">
-                <tr>
+        <div   class="background">
+            <table class="table table-sm table-condensed" style="width: 100%;  border-collapse: separate; ">
+                <tr class="bg-info">
                     <th>Name </th>
                     <th>Policy Number</th>
                 </tr>
@@ -57,7 +67,7 @@
                     <td>{{viewInsuranceDetail.policyNumber}}</td>
                 </tr><br>
 
-                <tr>
+                <tr  class="bg-info">
                     <th>E-mail</th>
                     <th>Phone Number</th>
                 </tr>
@@ -66,7 +76,7 @@
                     <td>{{viewInsuranceDetail.userPhone}}</td>
                 </tr><br>
 
-                <tr>
+                <tr  class="bg-info">
                     <th>Photo ID</th>
                     <th>{{viewInsuranceDetail.userPhotoIdType}} Number</th>
                 </tr>
@@ -75,7 +85,7 @@
                     <td>{{viewInsuranceDetail.userPhotoIdNumber}}</td>
                 </tr><br>
 
-                <tr>
+                <tr  class="bg-info">
                     <th>Vehicle Type</th>
                     <th>Vehicle Registraion Number</th>
                 </tr>
@@ -83,7 +93,7 @@
                     <td>{{viewInsuranceDetail.vehicleType}}</td>
                     <td>{{viewInsuranceDetail.vehicleRegistrationNumber}}</td>
                 </tr><br>
-                <tr>
+                <tr  class="bg-info">
                     <th>Vehicle Brand</th>
                     <th>Vehicle Model</th>
                 </tr>
@@ -91,7 +101,7 @@
                     <td>{{viewInsuranceDetail.vehicleBrand}}</td>
                     <td>{{viewInsuranceDetail.vehicleModel}}</td>
                 </tr><br>
-                <tr>
+                <tr  class="bg-info">
                     <th>Insurance Type</th>
                     <th>Duration Insured</th>
                 </tr>
@@ -99,7 +109,7 @@
                     <td>{{viewInsuranceDetail.insuranceType}}</td>
                     <td>{{viewInsuranceDetail.insuranceDuration}}</td>
                 </tr><br>
-                <tr>
+                <tr  class="bg-info">
                     <th>Insurance Start Date</th>
                     <th>Insurance End Date</th>
 
@@ -109,7 +119,7 @@
                     <td>{{viewInsuranceDetail.insuranceEndDate}}</td>
                 </tr><br>
 
-                <tr>
+                <tr  class="bg-info">
                     <th>Premium paid</th>
                     <th>Maximum Amount insured</th>
                 </tr>
@@ -127,7 +137,12 @@
                 <small class="text-muted">Online copy is electonically signed</small>
             </table>
         </div>
-    </body>
+        </body>
+        <div justify-content-center style="margin-top:1%; margin-bottom: 1%; margin-left:40%;" >
+            <button class="btn btn-outline-primary" (click)="user()" role="button" style="margin-right: 150px;">Back</button>
+            <button class="btn btn-outline-primary" (click)="downloadlinkurl(viewInsuranceDetail.policyNumber)" role="button">download PDF</button>
+        </div>
+  
 </div>
 
 </html>

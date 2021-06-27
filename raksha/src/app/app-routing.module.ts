@@ -14,6 +14,7 @@ import {  NotifyComponent } from './notify/notify.component';
 import { UpdateComponent } from "./update/update.component";
 import { OtpComponent } from './otp/otp.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { BufferComponent } from './buffer/buffer.component';
 
 const routes: Routes = [
   {path:'',component : GetQuoteComponent},
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path:'update', component: UpdateComponent},
   {path:'otp', component: OtpComponent},
   {path:'adminlogin', component: AdminloginComponent},
+  {path:'buffer',component: BufferComponent},
   {path:'**',redirectTo: '',pathMatch: 'full'}
 ];
 

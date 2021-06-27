@@ -4,6 +4,8 @@ import { ViewInsurance } from "src/view-insurance.model";
 import { ViewInsuranceService } from "../service/view-insurance.service";
 import { SharedItem } from 'src/shared-item.model';
 import { SharedService } from '../service/shared.service';
+import { InsuranceService } from '../service/insurance.service';
+import { GetUrl } from 'src/getUrl.model';
 @Component({
   selector: 'app-view-insurance',
   templateUrl: './view-insurance.component.html',
@@ -13,8 +15,8 @@ export class ViewInsuranceComponent implements OnInit {
   Details:SharedItem;
   id:number=100;
   public viewInsuranceDetail : ViewInsurance= new ViewInsurance();
-  
-  constructor(private router:Router,private service : ViewInsuranceService,private sharedService : SharedService) { 
+  public downloadurl : GetUrl = new GetUrl();
+  constructor(private router:Router,private service : ViewInsuranceService,private sharedService : SharedService,private services : InsuranceService) { 
     this.Details = sharedService.getSharedData("UserDetail");
     console.log(this.Details.src);
     console.log(this.Details.data);
@@ -34,6 +36,15 @@ export class ViewInsuranceComponent implements OnInit {
   home(){
     this.router.navigate(['']);
   }
-
-
+  public downloadlinkurl(id:number):void{
+    this.services.getDownloadUrl(''+id).then((data)=>{ 
+      this.downloadurl = data;
+      console.log("URL : "+this.downloadurl.url);
+      window.open(this.downloadurl.url, '_blank');
+      
+    });
+  }
+ user(){
+   this.router.navigate(['user']);
+ }
 }

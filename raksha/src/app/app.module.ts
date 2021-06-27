@@ -18,6 +18,7 @@ import { ViewInsuranceComponent } from './view-insurance/view-insurance.componen
 import { UpdateComponent } from './update/update.component';
 import { OtpComponent } from './otp/otp.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { BufferComponent } from './buffer/buffer.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
     UpdateComponent,
     OtpComponent,
     AdminloginComponent,
+    BufferComponent,
     
 
   ],
