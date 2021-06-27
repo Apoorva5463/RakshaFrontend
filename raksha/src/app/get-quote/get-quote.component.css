@@ -30,8 +30,11 @@
 }
 
 .home:hover {
+    padding: 6px;
+    border-radius: 4px;
     display: block;
-    text-shadow: 1px 1px #9560BD;
+    background-color: #513992;
+    color: white;
 }
 
 .raksha-bg-primary-color {
