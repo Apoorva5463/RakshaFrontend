@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginDetails } from 'src/Login-details.model';
+import { InsuranceService } from '../service/insurance.service';
+import { SharedService } from '../service/shared.service';
 
 @Component({
   selector: 'app-payment-gateway',
@@ -8,18 +11,51 @@ import { Router } from '@angular/router';
 })
 export class PaymentGatewayComponent implements OnInit {
 
-  constructor(private route:Router) { }
-
+  constructor(private router:Router,private service:InsuranceService,private sharedService: SharedService) { }
+  public loginoutBtn: string = "Login";
+  public logindetails: LoginDetails = new LoginDetails;
   ngOnInit(): void {
+  this.logindetails = this.sharedService.getLoginDetails();
+  if (this.logindetails.isLogged) {
+    this.loginoutBtn = "Logout";
   }
-  login(){
-    this.route.navigate(['login']);
+  else {
+    this.loginoutBtn = "Login";
+  }}
+  loginout() {
+    if (this.logindetails.isLogged) {
+      var answer: boolean = confirm("Are you sure you want to logout?");
+      if (answer) {
+        this.logindetails.isLogged = false;
+        this.logindetails.userType = "";
+        this.logindetails.userID = 0;
+        this.sharedService.setLoginDetails(this.logindetails);
+        this.loginoutBtn = "Login";
+      }
+    }
+    else {
+      this.loginoutBtn = "Logout";
+      this.router.navigate(['login']);
+    }
+  }
+  dashboard() {
+    if (this.logindetails.userType == 'User') {
+      this.router.navigate(['user']);
+    } else {
+      this.router.navigate(['admin']);
+    }
   }
   home(){
-    this.route.navigate(['']);
+    this.router.navigate(['']);
+  }
+  help(){
+    this.router.navigate(['helpsupport']);
+  }
+  footerscroll(){
+    window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
   }
 
  save(){
-   this.route.navigate(['buffer'])
+   this.router.navigate(['buffer'])
  }
 }

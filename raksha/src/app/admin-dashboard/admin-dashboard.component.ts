@@ -46,8 +46,14 @@ export class AdminDashboardComponent implements OnInit {
     }
     
   }
+  footerscroll(){
+    window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
+  }
   home(){
     this.router.navigate(['']);
+  }
+  help(){
+    this.router.navigate(['helpsupport']);
   }
    public searchUser(key: string): void {
     console.log(key);

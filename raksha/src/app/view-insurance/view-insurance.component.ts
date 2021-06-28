@@ -36,6 +36,12 @@ export class ViewInsuranceComponent implements OnInit {
   home(){
     this.router.navigate(['']);
   }
+  help(){
+    this.router.navigate(['helpsupport']);
+  }
+  footerscroll(){
+    window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
+  }
   public downloadlinkurl(id:number):void{
     this.services.getDownloadUrl(''+id).then((data)=>{ 
       this.downloadurl = data;

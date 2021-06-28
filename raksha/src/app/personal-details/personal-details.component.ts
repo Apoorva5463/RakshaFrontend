@@ -13,40 +13,43 @@ import { InsuranceService } from '../service/insurance.service';
   styleUrls: ['./personal-details.component.css']
 })
 export class PersonalDetailsComponent implements OnInit {
-  
-  selectedDate:string='';
-  
-  date:number=0;
-  bore:number=0;
+
+  selectedDate: string = '';
+
+  date: number = 0;
+  bore: number = 0;
   private sharedItem: SharedItem = new SharedItem();
   user: User = new User();
   user2: User = new User();
-  Insurance:any;
-  toNotify:any={
-    InsuranceType:'',
-    Plan:'',
-    VehicleNumber:0,
-    vehicleType:'',
-    modelId:0,
-    fname:'',
-    lname:'',
-    mname:'',
-    mobileNo:'',
-    gmail:'',
-    startDate:'',
-    photoId:'',
-    photoIdType:'',
-    endDate:''
+  Insurance: any;
+  toNotify: any = {
+    InsuranceType: '',
+    Plan: '',
+    VehicleNumber: 0,
+    vehicleType: '',
+    modelId: 0,
+    fname: '',
+    lname: '',
+    mname: '',
+    mobileNo: '',
+    gmail: '',
+    startDate: '',
+    photoId: '',
+    photoIdType: '',
+    endDate: ''
   }
+  vehicleNumber: string;
 
 
-  constructor(private router: Router,private service:UserService,private sharedService: SharedService,private insuranceService: InsuranceService) { 
+  constructor(private router: Router, private service: UserService, private sharedService: SharedService, private insuranceService: InsuranceService) {
     this.Insurance = sharedService.getSharedData("PersonalDetails");
-    this.toNotify.modelId=this.Insurance.data.modelId;
-    this.toNotify.vehicleType=this.Insurance.data.vehicleType;
-    this.toNotify.VehicleNumber=this.Insurance.data.VehicleNumber;
-    this.toNotify.Plan=this.Insurance.data.plan;
-    this.toNotify.InsuranceType=this.Insurance.data.insuranceType;
+    this.toNotify.modelId = this.Insurance.data.modelId;
+    this.toNotify.vehicleType = this.Insurance.data.vehicleType;
+    this.toNotify.VehicleNumber = this.Insurance.data.VehicleNumber;
+    this.toNotify.Plan = this.Insurance.data.plan;
+    this.toNotify.InsuranceType = this.Insurance.data.insuranceType;
+    this.vehicleNumber=this.Insurance.data.VehicleNumber;
+    console.log(this.Insurance.data);
   }
 
   ngOnInit(): void {
@@ -58,7 +61,7 @@ export class PersonalDetailsComponent implements OnInit {
     else {
       this.loginoutBtn = "Login";
     }
-  
+
   }
   public loginoutBtn: string = "Login";
   public logindetails: LoginDetails = new LoginDetails;
@@ -85,56 +88,53 @@ export class PersonalDetailsComponent implements OnInit {
       this.router.navigate(['admin']);
     }
   }
-  home(){
+  home() {
     this.router.navigate(['']);
   }
-  help(){
+  help() {
     this.router.navigate(['helpsupport']);
   }
-  footerscroll(){
+  footerscroll() {
     window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
   }
 
- save(){
- 
-  this.toNotify.fname=this.user.fname;
-  this.toNotify.lname=this.user.lname
-  this.toNotify.mobileNo=this.user.mobileNo;
-  this.toNotify.gmail=this.user.gmail;
-  this.toNotify.photoId=this.user.photoId;
-  this.toNotify.photoIdType=this.user.photoIdType;
-  this.toNotify.startDate=this.selectedDate;
-  let datesPartList = this.selectedDate.split("-");
-  var year = +datesPartList[0];
-  if(this.Insurance.data.plan=="3 Year"){
-    year=3+year;
+  save() {
 
-  }
-  if(this.Insurance.data.plan=="2 Year"){
-    year=2+year;
+    this.toNotify.fname = this.user.fname;
+    this.toNotify.lname = this.user.lname
+    this.toNotify.mobileNo = this.user.mobileNo;
+    this.toNotify.gmail = this.user.gmail;
+    this.toNotify.photoId = this.user.photoId;
+    this.toNotify.photoIdType = this.user.photoIdType;
+    this.toNotify.VehicleNumber=this.vehicleNumber;
+    this.toNotify.startDate = this.selectedDate;
+    let datesPartList = this.selectedDate.split("-");
+    var year = +datesPartList[0];
+    if (this.Insurance.data.plan == "3 Year") {
+      year = 3 + year;
 
-  }
-  if(this.Insurance.data.plan=="1 Year"){
-    year=1+year;
+    }
+    if (this.Insurance.data.plan == "2 Year") {
+      year = 2 + year;
 
-  }
-  this.toNotify.endDate=year+'-'+datesPartList[1]+'-'+datesPartList[2];
-  this.sharedItem.src = "personalDetails";
-  this.sharedItem.data = this.toNotify;
+    }
+    if (this.Insurance.data.plan == "1 Year") {
+      year = 1 + year;
+
+    }
+    this.toNotify.endDate = year + '-' + datesPartList[1] + '-' + datesPartList[2];
+    this.sharedItem.src = "personalDetails";
+    this.sharedItem.data = this.toNotify;
     console.log(this.sharedItem.data);
-  this.sharedService.setSharedData("verify", this.sharedItem);
-   console.log(this.sharedItem.data);
-<<<<<<< HEAD
-   
-  this.router.navigate(['payment']);
-=======
- 
-  this.router.navigate(['verify']);
->>>>>>> 60482054a7cf3e70894296b441c5246ce473a75c
- }
- fetchUserDetails(uid: any) {
-  this.insuranceService.getUserDetail().then((data)=>{this.user2 = data});
-}
+    this.sharedService.setSharedData("verify", this.sharedItem);
+    console.log(this.sharedItem.data);
+    this.sharedService.setSharedData("notify", this.sharedItem);
+
+    this.router.navigate(['verify']);
+  }
+  fetchUserDetails(uid: any) {
+    this.insuranceService.getUserDetail().then((data) => { this.user2 = data });
+  }
 }
 
 

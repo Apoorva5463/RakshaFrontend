@@ -49,7 +49,12 @@ export class UserDashboardComponent implements OnInit {
   home(){
     this.router.navigate(['']);
   }
-
+  help(){
+    this.router.navigate(['helpsupport']);
+  }
+  footerscroll(){
+    window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
+  }
    
   public downloadlinkurl(id:number):void{
     this.service.getDownloadUrl(''+id).then((data)=>{ 

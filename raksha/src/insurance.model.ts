@@ -5,7 +5,7 @@ export class Insurance{
     id:number=0;
     type:string='';
     plan:string='';
-    fee:string='';
+    fee:number=0;
     vehicleType:string='';
     vehicle_no:string='';
     

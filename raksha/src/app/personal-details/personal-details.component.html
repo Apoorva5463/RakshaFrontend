@@ -4,7 +4,7 @@
             <img src="../assets/logo.png" height="45px">
         </div>
 
-        <div class="d-inline px-3 home raksha-primary-color">
+        <div class="d-inline px-3 home raksha-primary-color " (click)="footerscroll()">
             <b>About</b>
         </div>
         <div class="d-inline px-3 raksha-primary-color home" (click)="home()">
@@ -12,12 +12,22 @@
         </div>
     </div>
     <div>
-        <div class="d-inline px-3">
-            <button class="btn btn-outline-success  btn-sm mxy-0 my-sm-0" (click)="login()">Login</button>
+        <div *ngIf="logindetails.isLogged" class="d-inline px-3 raksha-primary-color home" hidden (click)="dashboard()">
+            <b>Dashboard</b>
         </div>
-        <div class="d-inline px-3 raksha-primary-color">
+
+        <div *ngIf="logindetails.isLogged" class="d-inline px-3">
+            <button class="btn btn-outline-success  btn-sm mxy-0 my-sm-0" (click)="loginout()" hidden>{{this.loginoutBtn}}</button>
+            <button class="btn btn-outline-danger  btn-sm mxy-0 my-sm-0" (click)="loginout()">{{this.loginoutBtn}}</button>
+        </div>
+        <div *ngIf="!(logindetails.isLogged)" class="d-inline px-3">
+            <button class="btn btn-outline-success  btn-sm mxy-0 my-sm-0" (click)="loginout()">{{this.loginoutBtn}}</button>
+        </div>
+
+        <div class="d-inline px-3 raksha-primary-color home">
             <b>Help</b>
         </div>
+
     </div>
 </nav>
 <div class="row d-flex justify-content-center " id="aligning">
@@ -28,7 +38,7 @@
                 <div class="row justify-content-between text-left ">
                     <div class="form-group col-sm-6 flex-column d-flex "> <label class="form-control-label  px-3">First name<span class="text-danger"> *</span></label>
                         <div class="input-icons"><i class="fa fa-user icon"></i>
-                            <input class="form-control inputstl  form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.fname" #fname=ngModel required pattern="[A-Z][a-z]{3,}" type="text" id="fname" name="fname" placeholder="Enter your first name">
+                            <input class="form-control inputstl  form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.fname" #fname=ngModel required pattern="[A-Z][a-z]{3,}" type="text" id="fname" name="fname" placeholder="Enter your first name" value="{{user2.fname}}">
                         </div>
                         <div *ngIf="fname.dirty && fname.invalid" class="alert alert-warning ">
                             invalid First Name
@@ -36,7 +46,7 @@
                     </div>
                     <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Last name<span class="text-danger"> *</span></label>
                         <div class="input-icons "><i class="fa fa-user fa-lg icon"></i>
-                            <input class="form-control  inputstl  form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.lname" #lname=ngModel type="text" id="lName" name="lname" placeholder="Enter last name">
+                            <input class="form-control  inputstl  form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.lname" #lname=ngModel type="text" id="lName" name="lname" placeholder="Enter last name" value="{{user2.lname}}">
                         </div>
                         <div *ngIf="lname.dirty && lname.invalid" class="alert alert-warning">
                             invalid Last Name
@@ -46,15 +56,20 @@
                 <div class="row justify-content-between text-left ">
                     <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Email<span class="text-danger"> *</span></label>
                         <div class="input-icons "><i class="fa fa-envelope fa-lg icon"></i>
-                            <input class="form-control  inputstl  form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.gmail" #gmail=ngModel required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="text" id="email" name="email" placeholder="">
+                            <input class="form-control  inputstl  form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.gmail" #gmail=ngModel required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="text" id="email" name="email" placeholder="Enter your email" value={{this.user2.gmail}}>
                         </div>
                         <div *ngIf="gmail.dirty && gmail.invalid" class="alert alert-warning">
                             invalid Gmail
                         </div>
                     </div>
-                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Vehicle number<span class="text-danger"> *</span></label>
-                        <div class="input-icons "><i class="fa fa-car fa-lg icon"></i>
-                            <input class="form-control inputstl  form-group col-sm-10 flex-column d-flex  " type="text" id="vehiclenumber" name="vehiclenumber" value="{{this.Insurance.data.VehicleNumber}}"> </div>
+                    <div class="form-group col-sm-6 flex-column d-flex">
+                        <label class="form-control-label px-3">Mobile Number<span class="text-danger"> *</span></label>
+                        <div class="input-icons "><i class="fa fa-mobile fa-lg icon"></i>
+                            <input class="form-control  inputstl  form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.mobileNo" #mobNo=ngModel type="number" id="mobilenumber" name="mobilenumber" placeholder="Enter your Mobile number" required pattern="[0-9]{10,10}" value={{user2.mobileNo}}>
+                        </div>
+                        <div *ngIf="mobNo.dirty && mobNo.invalid" class="alert alert-warning ">
+                            invalid Mobile number
+                        </div>
                     </div>
                 </div>
                 <div class="row justify-content-between text-left  ">
@@ -65,21 +80,10 @@
                             <span class="result"></span>
                         </div>
                     </div>
-                    <div class="form-group col-sm-6 flex-column d-flex">
-
-                        <label for="start" class="form-control-label px-3">PhotoID Type<span class="text-danger"> *</span></label>
-
-                        <select style="width:83%" class="mdb-select md-form  inputstl dropdown-primary rounded form-group   form-control-label px-3" [(ngModel)]="user.photoIdType" name="photoid">
-                        <option value="1">aadhar</option>
-                        <option value="2">pan</option>
-                        <option value="3">DL</option>
-                       
-                      </select>
+                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Vehicle number<span class="text-danger"> *</span></label>
+                        <div class="input-icons "><i class="fa fa-car fa-lg icon"></i>
+                            <input class="form-control inputstl  form-group col-sm-10 flex-column d-flex  " [(ngModel)]="vehicleNumber" type="text" id="vehiclenumber" name="vehiclenumber" value="{{this.Insurance.data.VehicleNumber}}"> </div>
                     </div>
-
-
-
-
 
 
                 </div>
@@ -87,19 +91,22 @@
                 <div class="row justify-content-between text-left">
                     <div class="form-group col-sm-6 flex-column d-flex">
 
-                        <label class="form-control-label px-3">PhotoId<span class="text-danger"> *</span></label>
-                        <div class="input-icons "><i class="fa fa-id-card fa-lg icon"></i> <input class="form-control inputstl form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.photoId" type="text" id="photoid" name="photoid" placeholder="PhotoId"> </div>
+                        <label for="start" class="form-control-label px-3">Photo ID Type<span class="text-danger"> *</span></label>
+
+                        <select style="width:83%" class="mdb-select md-form  inputstl dropdown-primary rounded form-group   form-control-label px-3" [(ngModel)]="user.photoIdType" name="photoid" value="{{user2.photoIdType}}" aria-placeholder="Select Photo ID Type">
+                        <option value="Aadhar">Aadhar Card</option>
+                        <option value="Pan">Pan Card</option>
+                        <option value="DL">DL</option>
+                       
+                      </select>
+                    </div>
+                    <div class="form-group col-sm-6 flex-column d-flex">
+
+                        <label class="form-control-label px-3">Photo Id Number<span class="text-danger"> *</span></label>
+                        <div class="input-icons "><i class="fa fa-id-card fa-lg icon"></i> <input class="form-control inputstl form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.photoId" type="text" id="photoid" name="photoid" placeholder="Enter PhotoId Number" value="{{user2.photoId}}">                            </div>
                     </div>
 
-                    <div class="form-group col-sm-6 flex-column d-flex">
-                        <label class="form-control-label px-3">Mobile Number<span class="text-danger"> *</span></label>
-                        <div class="input-icons "><i class="fa fa-mobile fa-lg icon"></i>
-                            <input class="form-control  inputstl  form-group col-sm-10 flex-column d-flex " [(ngModel)]="user.mobileNo" #mobNo=ngModel type="number" id="mobilenumber" name="mobilenumber" placeholder="Enter your Mobile number" required pattern="[0-9]{10,10}">
-                        </div>
-                        <div *ngIf="mobNo.dirty && mobNo.invalid" class="alert alert-warning ">
-                            invalid Mobile number
-                        </div>
-                    </div>
+
                 </div>
                 <div class="row justify-content-center">
                     <div class="form-group ">

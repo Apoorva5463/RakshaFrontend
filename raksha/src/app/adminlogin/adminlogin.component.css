@@ -37,68 +37,38 @@
     color: white;
 }
 
-* {
-    padding: 0;
-    margin: 0;
-    font-display: swap;
-}
-
 body {
-    font-family: 'Inter';
-    min-height: 100vh;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    margin-top: 0%;
+    align-content: center;
     background-color: rgb(250, 250, 250);
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
 }
 
-body,
-div,
-span,
-iframe,
-h2,
-a,
-img {
-    border: 0;
-    outline: 0;
-    font-size: 100%;
-    vertical-align: middle;
-    background: transparent;
-    margin: 0;
-    padding: 0;
+.itop {
+    margin-top: 55%;
 }
 
-body {
-    align-content: center;
-    width: 50%;
-    height: 50%;
-    float: center;
-    position: fixed;
-    margin-left: 40%;
-    margin-bottom: 40%;
-    align-content: center;
+.aligning {
+    margin-left: 45%;
+    margin-right: 42%;
 }
 
-img {
-    margin-left: 13%;
-    align-content: center;
+.aligning2 {
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
 }
 
-.login {
-    text-decoration-style: solid;
-    font-style: bold;
-    font-size: 20px;
-    margin-top: 5%;
-    margin-bottom: 1%;
-    align-content: center;
+.aligning3 {
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
 }
 
 .input {
-    width: 50%;
+    width: 60%;
     margin-top: 5%;
     align-content: center;
     padding: 12px;
@@ -109,15 +79,17 @@ img {
     background: -moz-linear-gradient(top, #FFFFFF, #CDDBE4 1px, #FFFFFF 25px);
 }
 
+.admin {
+    margin-left: -40%;
+}
+
+.backalign {
+    margin-top: 5%;
+    margin-left: 2%;
+}
+
 button {
-    margin-top: 10%;
-    margin-left: 12%;
-    margin-right: 12%;
-    padding: 12px;
-    padding-right: 25px;
-    border-radius: 5px;
-    width: 18%;
-    align-content: center;
+    margin-top: 3%;
     font-size: 20px;
     text-align: center;
 }

@@ -4,7 +4,7 @@
             <img src="../assets/logo.png" height="45px">
         </div>
 
-        <div class="d-inline px-3 home raksha-primary-color">
+        <div class="d-inline px-3 home raksha-primary-color " (click)="footerscroll()">
             <b>About</b>
         </div>
         <div class="d-inline px-3 raksha-primary-color home" (click)="home()">
@@ -39,7 +39,8 @@
                             <div class="card-body-left">
                                 <i class="fa fa-id-card d-inline" style="font-size: 20px;" aria-hidden="true"></i>
                                 <h5 class="d-inline"> {{userDetail.photoIdType}} number</h5>
-                                <h5 class="">{{userDetail.photoId}}</h5>
+                                <h5 class="">{{userDetail.photoId}}</h5><br>
+                                <button class="btn btn-outline-info" (click)="home()">Add Insurances</button>
                             </div>
                         </div>
                     </div>

@@ -4,7 +4,7 @@
             <img src="../assets/logo.png" height="45px">
         </div>
 
-        <div class="d-inline px-3 home raksha-primary-color">
+        <div class="d-inline px-3 home raksha-primary-color " (click)="footerscroll()">
             <b>About</b>
         </div>
         <div class="d-inline px-3 raksha-primary-color home" (click)="home()">
@@ -12,12 +12,22 @@
         </div>
     </div>
     <div>
-        <div class="d-inline px-3">
-            <button class="btn btn-outline-success  btn-sm mxy-0 my-sm-0" (click)="login()">Login</button>
+        <div *ngIf="logindetails.isLogged" class="d-inline px-3 raksha-primary-color home" hidden (click)="dashboard()">
+            <b>Dashboard</b>
         </div>
-        <div class="d-inline px-3 raksha-primary-color">
+
+        <div *ngIf="logindetails.isLogged" class="d-inline px-3">
+            <button class="btn btn-outline-success  btn-sm mxy-0 my-sm-0" (click)="loginout()" hidden>{{this.loginoutBtn}}</button>
+            <button class="btn btn-outline-danger  btn-sm mxy-0 my-sm-0" (click)="loginout()">{{this.loginoutBtn}}</button>
+        </div>
+        <div *ngIf="!(logindetails.isLogged)" class="d-inline px-3">
+            <button class="btn btn-outline-success  btn-sm mxy-0 my-sm-0" (click)="loginout()">{{this.loginoutBtn}}</button>
+        </div>
+
+        <div class="d-inline px-3 raksha-primary-color home">
             <b>Help</b>
         </div>
+
     </div>
 </nav>
 <div class="banner bgColor">
@@ -37,7 +47,7 @@
                         <div class="row ">
                             <div class="col-md-8 col-sm-8">
                                 <h4 class="card-title font-weight textColor">Third Party Plan</h4>
-                                <p class="card-text">Only covers tihrd party losses, damage to your bike is not covered <a href="#" class="text-decoration-none">See details</a></p>
+                                <p class="card-text">Only covers third party losses, damage to your bike is not covered </p>
                             </div>
                             <div class="col-md-4 col-sm-8">
                                 <img src="../assets/car-run-over-man.png" height="50" width="50" alt="icon">
@@ -47,7 +57,7 @@
                             <div class="col-md-8">
                                 <br>
                                 <input type="radio" name="three_year" id="three_year" value="third 3 year" checked [(ngModel)]="plan" />
-                                <label>3 year plan</label>
+                                <label>3 year plan<small>(30% discount)</small></label>
                             </div>
                             <div class="col-md-4">
                                 <br>
@@ -57,7 +67,7 @@
                         <div class="row ">
                             <div class="col-md-8">
                                 <input type="radio" name="three_year" id="two_year" value="third 2 year" [(ngModel)]="plan" />
-                                <label>2 year plan</label>
+                                <label>2 year plan<small>(10% discount)</small></label>
                             </div>
                             <div class="col-md-4">
                                 <p><b>{{ insurancePlans.thirdYear2 }}</b></p>
@@ -84,7 +94,7 @@
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
                                 <h4 class="card-title textColor font-weight">Comprehensive Plan</h4>
-                                <p class="card-text">Only covers tihrd party losses, damage to your bike is not covered <a href="#" class="text-decoration-none">See details</a></p>
+                                <p class="card-text">Only covers tihrd party losses, damage to your bike is not covered</p>
                             </div>
 
                         </div>
@@ -92,7 +102,7 @@
                             <div class="col-md-8">
                                 <br>
                                 <input type="radio" name="three_year" id="three_year" value="compre 3 year" [(ngModel)]="plan" />
-                                <label>3 year plan</label>
+                                <label>3 year plan<small>(30% discount)</small></label>
                             </div>
                             <div class="col-md-4">
                                 <br>
@@ -102,7 +112,7 @@
                         <div class="row">
                             <div class="col-md-8">
                                 <input type="radio" name="three_year" id="two_year" value="compre 2 year" [(ngModel)]="plan" />
-                                <label>2 year plan</label>
+                                <label>2 year plan<small>(10% discount)</small></label>
                             </div>
                             <div class="col-md-4">
                                 <p><b>{{insurancePlans.compreYear2 }}</b></p>
@@ -125,6 +135,8 @@
                     </div>
                 </div>
             </div>
+            <div class="backalign" onclick="history.back()"><i class="fa fa-chevron-left raksha-primary-color" aria-hidden="true"></i></div>
+
         </div>
     </div>
 </div>

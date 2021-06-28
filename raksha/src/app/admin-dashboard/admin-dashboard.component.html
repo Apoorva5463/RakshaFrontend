@@ -4,7 +4,7 @@
             <img src="../assets/logo.png" height="45px">
         </div>
 
-        <div class="d-inline px-3 home raksha-primary-color">
+        <div class="d-inline px-3 home raksha-primary-color " (click)="footerscroll()">
             <b>About</b>
         </div>
         <div class="d-inline px-3 raksha-primary-color home" (click)="home()">
@@ -15,7 +15,7 @@
         <div class="d-inline px-3">
             <button class="btn btn-outline-danger  btn-sm mxy-0 my-sm-0" (click)="logout()">Logout</button>
         </div>
-        <div class="d-inline px-3 raksha-primary-color">
+        <div class="d-inline px-3 raksha-primary-color home" (click)="help()">
             <b>Help</b>
         </div>
     </div>
@@ -209,3 +209,46 @@
         </div>
     </div>
 </div>
+<!-- footer-begin -->
+
+<footer id="footer1" class="page-footer font-small indigo">
+    <div class="container text-center text-md-left">
+        <div class="row">
+            <div class="col-md-3 mx-auto">
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Products</h5>
+                <ul>
+                    <li>Car Insurance </li>
+                    <li>Bike Insurance</li>
+                </ul>
+
+            </div>
+            <hr class="clearfix w-100 d-md-none">
+            <div class="col-md-3 mx-auto">
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Board of Directors</h5>
+                <ul>
+                    <li> Bhogendra</li>
+                    <li>Ayushi</li>
+                    <li> Kavana</li>
+                    <li> Gagan </li>
+                    <li> Apoorva</li>
+                </ul>
+            </div>
+            <hr class="clearfix w-100 d-md-none">
+            <div class="col-md-3 mx-auto">
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">contact Us</h5>
+                <ul>
+                    <li><i class="fa fa-envelope"></i> raksha.vehicle.service.com</li>
+                    <li><i class="fa fa-phone fa-lg"></i> +918764978345</li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer-copyright text-center text-dark py-3">
+        © 2020 Copyright: <b class="raksha-primary-color">Raksha Vehicle Insurance Pvt. Ltd.</b>
+    </div>
+</footer>
+
+<!-- footer-end -->

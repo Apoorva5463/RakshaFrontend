@@ -74,3 +74,13 @@
 .align {
     margin-top: 20px;
 }
+
+small {
+    color: #513992;
+}
+
+.backalign {
+    margin-top: 5%;
+    align-content: center;
+    margin-left: 50%;
+}

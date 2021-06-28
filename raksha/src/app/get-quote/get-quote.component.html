@@ -1,10 +1,13 @@
+<!-- navigation-begin -->
+
+
 <nav class="navbar fixed-top" style="background-color: #ffffff; ">
     <div>
         <div class="d-inline px-4">
             <img src="../assets/logo.png" height="45px">
         </div>
 
-        <div class="d-inline px-3 home raksha-primary-color">
+        <div class="d-inline px-3 home raksha-primary-color " (click)="footerscroll()">
             <b>About</b>
         </div>
         <div class="d-inline px-3 raksha-primary-color home" (click)="home()">
@@ -13,18 +16,23 @@
 
     </div>
     <div>
-        <div class="d-inline px-3 raksha-primary-color home" [hidden]="logindetails.isLogged" (click)="dashboard()">
-            <b>Dashboard</b>
-        </div>
-        <div class="d-inline px-3">
-            <button class="btn btn-outline-success  btn-sm mxy-0 my-sm-0" (click)="loginout()">{{this.loginoutBtn}}</button>
+        <div *ngIf="logindetails.isLogged" class="d-inline px-3 raksha-primary-color home" hidden (click)="dashboard()">
         </div>
 
-        <div class="d-inline px-3 raksha-primary-color home">
+        <div *ngIf="logindetails.isLogged" class="d-inline px-3">
+            <button class="btn btn-outline-success  btn-sm mxy-0 my-sm-0" (click)="loginout()" hidden>{{this.loginoutBtn}}</button>
+            <button class="btn btn-outline-danger  btn-sm mxy-0 my-sm-0" (click)="loginout()">{{this.loginoutBtn}}</button>
+        </div>
+        <div *ngIf="!(logindetails.isLogged)" class="d-inline px-3">
+            <button class="btn btn-outline-success  btn-sm mxy-0 my-sm-0" (click)="loginout()">{{this.loginoutBtn}}</button>
+        </div>
+        <div class="d-inline px-3 raksha-primary-color home" (click)="help()">
             <b>Help</b>
         </div>
     </div>
 </nav>
+<!-- navigation-end -->
+<!-- getcomponent-content-display-begin -->
 <div class="bbb-wrapper fl-wrap raksha-bg-primary-color">
     <div class="subcribe-form fl-wrap" id="aligning">
         <h2 class="text-center text-white"><b>Insurance Made Easy</b> </h2>
@@ -58,3 +66,4 @@
         </form>
     </div>
 </div>
+<!-- getcomponent-content-display-end -->

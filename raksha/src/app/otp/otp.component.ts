@@ -1,9 +1,7 @@
-
 import { NgStyle } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginDetails } from 'src/Login-details.model';
-
 import { Otp } from 'src/otp.model';
 import { UserLogin } from 'src/UserLogin.model';
 import { SharedService } from '../service/shared.service';
@@ -26,6 +24,8 @@ export class OtpComponent implements OnInit {
   public enteredOtp : number = 0;
   public vOTP : number = 0;
   public vsource: string='';
+  public uid: number=0;
+
   // public otpstatus: any ={
   //   otp: '',
   //   status:''
@@ -38,6 +38,7 @@ loginDetails:LoginDetails=new LoginDetails();
   constructor(private userLoginService: UserloginService, private router: Router, private sharedService: SharedService) { 
     this.vOTP = this.sharedService.getSharedData("OTP").data.otp;
     this.vsource = this.sharedService.getSharedData("OTP").src;
+    this.uid= this.sharedService.getSharedData("OTP").data.id;
   }
   //private userLoginService: UserloginService, private router: Router
   ngOnInit(): void {
@@ -54,7 +55,12 @@ loginDetails:LoginDetails=new LoginDetails();
   home(){
     this.router.navigate(['']);
   }
-
+  help(){
+    this.router.navigate(['helpsupport']);
+  }
+  footerscroll(){
+    window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
+  }
 
   // clickOnGetOTP(){
   //   console.log(this.userLogin.emailId);
@@ -86,13 +92,13 @@ loginDetails:LoginDetails=new LoginDetails();
         if(this.vsource=="AdminLogin"){
           this.loginDetails.isLogged=true;
           this.loginDetails.userType="Admin";
-          this.loginDetails.userID=1000;
+          this.loginDetails.userID=this.uid;
           this.sharedService.setLoginDetails(this.loginDetails);
           this.router.navigate(['admin']);
         }else{
           this.loginDetails.isLogged=true;
           this.loginDetails.userType="User";
-          this.loginDetails.userID=100;
+          this.loginDetails.userID=this.uid;
           this.sharedService.setLoginDetails(this.loginDetails);
         this.router.navigate(['user']);}
         

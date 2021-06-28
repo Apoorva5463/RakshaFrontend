@@ -25,8 +25,11 @@ export class InsuranceService {
   public  getInsurancePlans(vehicleType: string,modelid:number) {
     return  this.http.get<InsurancePlans>(this.baseUrl + "/getPlanes"+"/"+vehicleType+"/"+modelid).toPromise();
  };
+ public async sendWelcomeEmail(userID:number, insuranceID:number) {
+  return await this.http.get<string>(this.baseUrl + "/sendMail/"+userID+"/"+insuranceID).toPromise();
+};
  addInsurance(I: Insurance){
-  return this.http.post<number>(this.baseUrl+"/add",I);
+  return this.http.post<number>(this.baseUrl+"/addinsurance",I);
  }
 
 }

@@ -4,62 +4,59 @@
             <img src="../assets/logo.png" height="45px">
         </div>
 
-        <div class="d-inline px-3 home raksha-primary-color">
+        <div class="d-inline px-3 home raksha-primary-color " (click)="footerscroll()">
             <b>About</b>
         </div>
         <div class="d-inline px-3 raksha-primary-color home" (click)="home()">
             <b>Home</b>
         </div>
+
     </div>
     <div>
-
-        <div class="d-inline px-3 raksha-primary-color">
+        <div class="d-inline px-3 raksha-primary-color home " (click)="help()">
             <b>Help</b>
         </div>
     </div>
 </nav>
 
 <body>
+    <div>
 
-    <div class="sc-bdVaJa sc-bwzfXH sc-VigVT eVMMvy contentalign">
-        <div class="sc-bdVaJa sc-bwzfXH sc-jTzLTM cTYFAd">
-            <img src="https://container-app.ackoassets.com/am/myaccount_frontend/92201f8bb8b3b9820539e248c8bd3401.svg" alt="" class="sc-jzJRlG fOVlIp">
-            <div *ngIf="!getotp">
-                <div class="sc-bdVaJa sc-bwzfXH eSixem  login">
-                    <h4 class="sc-iwsKbI sc-fjdhpX OjjhL ">Login with your Mobile number/ Email</h4>
-                </div>
-                <div class="sc-bdVaJa sc-bwzfXH eSixem">
-                    <p font-size="12px" color="#151619" font-weight="400" style="margin-left: 10%;" class="sc-iwsKbI sc-fjdhpX iGkewh">Claim, edit or renew your policy</p>
-                </div>
-                <div class="sc-bdVaJa sc-bwzfXH hLhZTb">
-                    <div class="sc-bdVaJa sc-bwzfXH jxMvLV">
-                        <div class="sc-bdVaJa sc-bwzfXH sc-cvbbAY czBtSa">
+        <div class="aligning ">
+            <img class="itop " src="https://container-app.ackoassets.com/am/myaccount_frontend/92201f8bb8b3b9820539e248c8bd3401.svg " alt=" ">
+        </div>
+        <div class="aligning2 ">
 
-                            <input class="input100 input" type="email" name="Username" placeholder="Enter email id/mobile number" [(ngModel)]="userLogin.emailId" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #emailId=ngModel>
-                            <span class="focus-input100"></span> <span class="symbol-input100"></span>
-
-                        </div>
-                        <div class="text-center py-2">
-                            <a [routerLink]="['../adminlogin']" style="float: left;">Are you admin?</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="sc-bdVaJa sc-bwzfXH iQCuCr">
-                    <div class="sc-bdVaJa sc-bwzfXH jpburF">
-                        <div class="container-login100-form-btn p-t-40">
-                            <div class="row justify-content-center">
-                                <div class="form-group col-sm-10 ">
-
-                                    <button class="btn btn-outline-success btn-lg" type="submit" (click)="clickOnGetOTP()">Send OTP </button>
-                                </div>
-                            </div>
+            <h4 class="sc-iwsKbI sc-fjdhpX OjjhL ">Login with your Mobile number/ Email</h4>
 
 
+            <p font-size="12px " color="#151619 " font-weight="400 " class="sc-iwsKbI sc-fjdhpX iGkewh ">Claim, edit or renew your policy</p>
 
-                        </div>
-                    </div>
+        </div>
+
+        <div *ngIf="!getotp " class="aligning3 ">
+
+            <div>
+
+                <input class="input100 input " type="text" name="Username " placeholder="Enter email id/mobile number " [(ngModel)]="inputCred" required pattern="(^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$)|([0-9]{10})">
+                <span class="focus-input100 "></span> <span class="symbol-input100 "></span>
+
+            </div>
+            <div class="admin ">
+                <a [routerLink]="[ '../adminlogin'] ">Are you admin?</a>
+            </div>
+
+
+            <div class="row justify-content-center ">
+                <div class="form-group col-sm-10 ">
+
+                    <button class="btn btn-outline-success btn-lg " type="submit " (click)="clickOnGetOTP() ">Send OTP
+                    </button>
+                    <div class="backalign" [routerLink]="[ '../']"><i class="fa fa-chevron-left raksha-primary-color" aria-hidden="true"></i></div>
+
                 </div>
             </div>
         </div>
     </div>
+
 </body>

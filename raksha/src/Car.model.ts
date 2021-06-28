@@ -1,8 +1,8 @@
 export class Car{
-    Brand:string='';
-    Model:string='';
-    Year:number=0;
-    fuelType:string='';
+    brand:string='';
+    model:string='';
+    year:number=0;
+    fuel:string='';
     variant:string='';
  
    

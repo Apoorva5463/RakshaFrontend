@@ -52,6 +52,9 @@ export class GetQuoteComponent implements OnInit {
       this.loginoutBtn = "Login";
     }
   }
+  footerscroll(){
+    window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
+  }
   loginout() {
     if (this.logindetails.isLogged) {
       var answer: boolean = confirm("Are you sure you want to logout?");
@@ -80,6 +83,10 @@ export class GetQuoteComponent implements OnInit {
   home() {
     this.router.navigate(['']);
   }
+  help() {
+    this.router.navigate(['helpsupport']);
+  }
+  
   save() {
     this.service.getVehicleDetails(this.vehicleNumber).then((data) => {
       this.vehicle = data;

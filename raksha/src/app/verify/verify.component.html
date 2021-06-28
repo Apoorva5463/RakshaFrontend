@@ -23,26 +23,16 @@
 
 
 
-<div class="main"><h3 class="text-center raksha-primary-color">EMAIL AND MOBILE VERIFICATION</h3></div>
+<div class="main">
+    <h3 class="text-center raksha-primary-color">EMAIL AND MOBILE VERIFICATION</h3>
+</div>
 <form class="form-inline justify-content-center aligning">
-  <div class="form-group  ">
-    <label for="inputEmail" ></label>
-    <input name="email" type="email" class="form-control" id="inputEmail" value="{{this.verify.data.gmail}}">
-  </div>
-  <div class="ml-4">
-    <input name="otp" type="number" class="form-control" id="inputotp" placeholder="OTP">
-  </div>
-  <button type="submit" class="btn btn-outline-primary butalign" (click)="verifyEmail()">Send OTP</button>
+    <div class="form-group  ">
+        <label for="inputEmail"></label>
+        <input name="email" [(ngModel)]="email" type="email" class="form-control" id="inputEmail" value="{{this.verify.data.gmail}}">
+    </div>
+    <div class="ml-4">
+        <input name="otp" [(ngModel)]="otp" type="number" class="form-control" id="inputotp" placeholder="OTP">
+    </div>
+    <button type="submit" class="btn btn-outline-primary butalign" (click)="verifyEmail()">{{this.verifybutton}}</button>
 </form>
-<form class="form-inline justify-content-center align">
-  <div class="form-group ">
-    <label for="inputEmail" ></label>
-    <input name="email" type="text" class="form-control" id="mobileNo" value="{{this.verify.data.mobileNo}}">
-  </div>
-  <div class="ml-4">
-    <input name="otp" type="number" class="form-control" id="inputotp" placeholder="OTP">
-  </div>
-  <button type="submit" class="btn btn-outline-primary butalign" (click)="verifyMobile()" >Send OTP</button>
-</form>
-        
-           
