@@ -7,6 +7,4 @@ export class PersonalDetails{
     mobileNo:string='';
     photoId:string='';
     photoIdType:string='';
-
-
 }

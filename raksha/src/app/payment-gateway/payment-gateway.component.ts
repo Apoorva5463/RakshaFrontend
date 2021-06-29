@@ -11,17 +11,19 @@ import { SharedService } from '../service/shared.service';
 })
 export class PaymentGatewayComponent implements OnInit {
 
-  constructor(private router:Router,private service:InsuranceService,private sharedService: SharedService) { }
+  constructor(private router: Router, private service: InsuranceService, private sharedService: SharedService) { }
   public loginoutBtn: string = "Login";
   public logindetails: LoginDetails = new LoginDetails;
   ngOnInit(): void {
-  this.logindetails = this.sharedService.getLoginDetails();
-  if (this.logindetails.isLogged) {
-    this.loginoutBtn = "Logout";
+    this.logindetails = this.sharedService.getLoginDetails();
+    if (this.logindetails.isLogged) {
+      this.loginoutBtn = "Logout";
+    }
+    else {
+      this.loginoutBtn = "Login";
+    }
   }
-  else {
-    this.loginoutBtn = "Login";
-  }}
+
   loginout() {
     if (this.logindetails.isLogged) {
       var answer: boolean = confirm("Are you sure you want to logout?");
@@ -38,6 +40,7 @@ export class PaymentGatewayComponent implements OnInit {
       this.router.navigate(['login']);
     }
   }
+
   dashboard() {
     if (this.logindetails.userType == 'User') {
       this.router.navigate(['user']);
@@ -45,17 +48,20 @@ export class PaymentGatewayComponent implements OnInit {
       this.router.navigate(['admin']);
     }
   }
-  home(){
+
+  home() {
     this.router.navigate(['']);
   }
-  help(){
+
+  help() {
     this.router.navigate(['helpsupport']);
   }
-  footerscroll(){
+
+  footerscroll() {
     window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
   }
 
- save(){
-   this.router.navigate(['buffer'])
- }
+  save() {
+    this.router.navigate(['buffer'])
+  }
 }

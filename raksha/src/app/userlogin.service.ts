@@ -5,8 +5,8 @@ import { UserLogin } from 'src/UserLogin.model';
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserloginService {
-  // private userLogin: UserLogin[] = [];
   baseUrl : string = "http://localhost:8888" ;
 
   constructor(private http: HttpClient) { }

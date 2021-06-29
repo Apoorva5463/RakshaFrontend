@@ -15,7 +15,6 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewInsuranceComponent } from './view-insurance/view-insurance.component';
-import { UpdateComponent } from './update/update.component';
 import { OtpComponent } from './otp/otp.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { BufferComponent } from './buffer/buffer.component';
@@ -26,7 +25,7 @@ import { VerifyComponent } from './verify/verify.component';
   declarations: [
     AppComponent,
     GetQuoteComponent,
-    CarInsuranceComponent, 
+    CarInsuranceComponent,
     InsuranceComponent,
     LoginComponent,
     NotifyComponent,
@@ -37,14 +36,11 @@ import { VerifyComponent } from './verify/verify.component';
     BikeInsuranceComponent,
     AdminDashboardComponent,
     ViewInsuranceComponent,
-    UpdateComponent,
     OtpComponent,
     AdminloginComponent,
     BufferComponent,
     HelpsupportComponent,
     VerifyComponent,
-    
-
   ],
   imports: [
     BrowserModule,
@@ -54,7 +50,7 @@ import { VerifyComponent } from './verify/verify.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  
+
 
 })
 export class AppModule { }

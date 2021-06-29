@@ -39,7 +39,7 @@ export class HelpsupportComponent implements OnInit {
         this.sharedService.setLoginDetails(this.logindetails);
         this.loginoutBtn = "Login";
       }
-  
+
     }
     else {
       this.loginoutBtn = "Logout";
@@ -54,11 +54,11 @@ export class HelpsupportComponent implements OnInit {
       this.router.navigate(['admin']);
     }
   }
- 
-  home(){
+
+  home() {
     this.router.navigate(['']);
   }
-  footerscroll(){
+  footerscroll() {
     window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
   }
 }

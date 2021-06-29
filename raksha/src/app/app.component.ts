@@ -15,10 +15,5 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     this.service.incrementVisitorCount();
   }
-  login(){
-    this.router.navigate(['login']);
-  }
-  home(){
-    this.router.navigate(['']);
-  }
+ 
 }

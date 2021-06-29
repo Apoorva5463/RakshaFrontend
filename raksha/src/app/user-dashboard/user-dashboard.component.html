@@ -3,7 +3,6 @@
         <div class="d-inline px-4">
             <img src="../assets/logo.png" height="45px">
         </div>
-
         <div class="d-inline px-3 home raksha-primary-color " (click)="footerscroll()">
             <b>About</b>
         </div>
@@ -15,7 +14,7 @@
         <div class="d-inline px-3">
             <button class="btn btn-outline-danger  btn-sm mxy-0 my-sm-0" (click)="logout()">Logout</button>
         </div>
-        <div class="d-inline px-3 raksha-primary-color home">
+        <div class="d-inline px-3 raksha-primary-color home" (click)="help()">
             <b>Help</b>
         </div>
     </div>
@@ -74,7 +73,6 @@
                                     <div class="col" justify-content-center style="margin-top:1%; margin-bottom: 1%;">
                                         <button class="btn btn-outline-primary" (click)="viewUserInsurance(u.id)" role="button" style="margin-right: 10px;">view</button>
                                         <button class="btn btn-outline-primary" (click)="downloadlinkurl(u.id)" role="button">download</button>
-
                                     </div>
                                 </div>
                             </div>

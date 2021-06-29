@@ -12,22 +12,23 @@ import { SharedService } from '../service/shared.service';
   styleUrls: ['./bike-insurance.component.css']
 })
 export class BikeInsuranceComponent implements OnInit {
-  bike:Bike=new Bike();
-  public brandList:string[]=[];
-  public modelList:string[]=[];
+  bike: Bike = new Bike();
+  public brandList: string[] = [];
+  public modelList: string[] = [];
   public selectedBrand: string = '';
-  public selectedModel:string='';
- public year:number=0;
- public modelId:number=0;
- private toInsuranceData: any ={
-  vehicleType:'Bike',
-  modelId:0,
-  vehicleNumber:''
-};
-private sharedItem: SharedItem = new SharedItem();
-  constructor(private service:BikeService,private router:Router,private sharedService : SharedService) { }
+  public selectedModel: string = '';
+  public year: number = 0;
+  public modelId: number = 0;
+  private toInsuranceData: any = {
+    vehicleType: 'Bike',
+    modelId: 0,
+    vehicleNumber: ''
+  };
+  private sharedItem: SharedItem = new SharedItem();
+  constructor(private service: BikeService, private router: Router, private sharedService: SharedService) { }
   ngOnInit(): void {
-    this.service.getBrandList().then((data)=>{this.brandList = data;
+    this.service.getBrandList().then((data) => {
+      this.brandList = data;
       this.logindetails = this.sharedService.getLoginDetails();
       if (this.logindetails.isLogged) {
         this.loginoutBtn = "Logout";
@@ -35,13 +36,10 @@ private sharedItem: SharedItem = new SharedItem();
       else {
         this.loginoutBtn = "Login";
       }
-    }); 
+    });
   }
   public loginoutBtn: string = "Login";
   public logindetails: LoginDetails = new LoginDetails;
-  footerscroll(){
-    window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
-  }
   loginout() {
     if (this.logindetails.isLogged) {
       var answer: boolean = confirm("Are you sure you want to logout?");
@@ -65,35 +63,38 @@ private sharedItem: SharedItem = new SharedItem();
       this.router.navigate(['admin']);
     }
   }
- 
-  home(){
+
+  home() {
     this.router.navigate(['']);
   }
-  getModel(val:any): void{
-  
-    this.service.getModelFromBrand(this.selectedBrand).then((data)=>{
-      this.modelList=data;
+  help() {
+    this.router.navigate(['helpsupport']);
+  }
+  footerscroll() {
+    window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
+  }
+  getModel(val: any): void {
+
+    this.service.getModelFromBrand(this.selectedBrand).then((data) => {
+      this.modelList = data;
     });
-  
+
   }
 
-  save(){
+  save() {
 
-    this.bike.brand=this.selectedBrand;
-    this.bike.model=this.selectedModel;
-    this.bike.year=2018;
+    this.bike.brand = this.selectedBrand;
+    this.bike.model = this.selectedModel;
+    this.bike.year = 2018;
 
-    this.service.getBikeId(this.bike).subscribe((data)=>{
-      this.modelId=data;
+    this.service.getBikeId(this.bike).subscribe((data) => {
+      this.modelId = data;
       this.toInsuranceData.modelId = this.modelId;
       this.sharedItem.src = "Bikeinsurance";
-    this.sharedItem.data = this.toInsuranceData;
-    this.sharedService.setSharedData("Insurance", this.sharedItem);
-    this.router.navigate(['insurance']);
-
+      this.sharedItem.data = this.toInsuranceData;
+      this.sharedService.setSharedData("Insurance", this.sharedItem);
+      console.log(this.toInsuranceData);
+      this.router.navigate(['insurance']);
     });
-    
   }
- 
-  
 }

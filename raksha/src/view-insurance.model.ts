@@ -17,5 +17,4 @@ export class ViewInsurance{
     insuranceEndDate:string='';
     insurancePremiumPaid:string='';
     maxAmountInsured:string='';
-
 }

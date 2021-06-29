@@ -25,15 +25,15 @@
         <div class="col-md-2 no-gutters">
             <!-- Tabs nav -->
             <div class="nav flex-column nav-pills nav-pills-custom text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link mt-5 mb-5 py-3 shadow active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                <a class="nav-link mt-5 mb-5 py-3  active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
                     <i class="fa fa-bar-chart mr-2"></i>
                     <span class="font-weight-bold small text-uppercase">Statistics</span></a>
 
-                <a class="nav-link mt-5 mb-5 py-3 shadow" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                <a class="nav-link mt-5 mb-5 py-3" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
                     <i class="fa fa-user-circle-o mr-2"></i>
                     <span class="font-weight-bold small text-uppercase">User Details</span></a>
 
-                <a class="nav-link mt-5 mb-5 py-3 shadow" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                <a class="nav-link mt-5 mb-5 py-3" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">
                     <i class="fa fa-shield mr-2"></i>
                     <span class="font-weight-bold small text-uppercase">Insurance Details</span></a>
 
@@ -45,7 +45,7 @@
         <div class="col-md-10  no-gutters">
             <!-- Tabs content -->
             <div class="tab-content " id="v-pills-tabContent">
-                <div class="tab-pane fade shadow rounded  show active pl-4 pr-3 py-1" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                <div class="tab-pane fade rounded  show active pl-4 pr-3 py-1" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                     <h3 class="raksha-color font-weight-bold pl-3 mb-4">STATISTICS</h3>
                     <div class="container">
                         <div class="row">
@@ -109,7 +109,7 @@
                     </div>
                 </div>
 
-                <div class="tab-pane fade shadow rounded pl-4 pr-3 py-1" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                <div class="tab-pane fade rounded pl-4 pr-3 py-1" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                     <div class="mb-2">
                         <h3 class="raksha-color font-weight-bold pl-3 mb-4 d-inline">USER DETAILS</h3>
                         <div class="search-panel1 form-inline d-inline">
@@ -117,8 +117,8 @@
                                 <input type="search" (ngModelChange)="searchUser(key.value)" #key="ngModel" ngModel name="key" id="searchName" class="form-control" placeholder="Search..." required>
                             </form>
                             <button type="button" class="btn raksha-bg-color d-inline">
-                                    <i class="fa fa-search"></i>
-                                </button>
+                                <i class="fa fa-search"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="raksha-container">
@@ -133,7 +133,6 @@
                                         <th scope="col">Phone Number</th>
                                         <th scope="col">Photo ID Type</th>
                                         <th scope="col">Photo ID Details</th>
-                                        <th scope="col" colspan="2">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -144,13 +143,6 @@
                                         <td>{{u.mobileNo}}</td>
                                         <td>{{u.photoIdType}}</td>
                                         <td>{{u.photoId}}</td>
-
-                                        <td>
-                                            <button class="btn btn-outline-primary btn-md btn-block" data-original-title="Edit">Edit </button>
-                                        </td>
-                                        <td>
-                                            <button (click)="onDeleteUser(u.id)" class="btn btn-outline-danger btn-md btn-block">Delete</button>
-                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -158,7 +150,7 @@
                     </div>
                 </div>
 
-                <div class="tab-pane fade shadow rounded pl-4 pr-3 py-1" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                <div class="tab-pane fade rounded pl-4 pr-3 py-1" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
                     <div class="mb-2">
                         <h3 class="raksha-color font-weight-bold pl-3 mb-4 d-inline">INSURANCE DETAILS</h3>
                         <div class="search-panel1 form-inline d-inline">
@@ -166,8 +158,8 @@
                                 <input type="search" (ngModelChange)="searchUser(key.value)" #key="ngModel" ngModel name="key" id="searchName" class="form-control" placeholder="Search..." required>
                             </form>
                             <button type="button" class="btn raksha-bg-color d-inline">
-                                    <i class="fa fa-search"></i>
-                                </button>
+                                <i class="fa fa-search"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="raksha-container">
@@ -182,7 +174,6 @@
                                         <th scope="col">AMOUNT PAID </th>
                                         <th scope="col">VEHICLE TYPE</th>
                                         <th scope="col">REGISTRATION NUMBER</th>
-                                        <!-- <th scope="col" colspan="2">Action</th> -->
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -193,12 +184,6 @@
                                         <td>{{il.fee}}</td>
                                         <td>{{il.vehicleType}}</td>
                                         <td>{{il.vehicle_no}}</td>
-                                        <!--   <td>
-                                            <button class="btn btn-outline-primary btn-md btn-block">Edit</button>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-outline-danger btn-md btn-block">Delete</button>
-                                        </td> -->
                                     </tr>
                                 </tbody>
                             </table>
@@ -209,46 +194,3 @@
         </div>
     </div>
 </div>
-<!-- footer-begin -->
-
-<footer id="footer1" class="page-footer font-small indigo">
-    <div class="container text-center text-md-left">
-        <div class="row">
-            <div class="col-md-3 mx-auto">
-                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Products</h5>
-                <ul>
-                    <li>Car Insurance </li>
-                    <li>Bike Insurance</li>
-                </ul>
-
-            </div>
-            <hr class="clearfix w-100 d-md-none">
-            <div class="col-md-3 mx-auto">
-                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Board of Directors</h5>
-                <ul>
-                    <li> Bhogendra</li>
-                    <li>Ayushi</li>
-                    <li> Kavana</li>
-                    <li> Gagan </li>
-                    <li> Apoorva</li>
-                </ul>
-            </div>
-            <hr class="clearfix w-100 d-md-none">
-            <div class="col-md-3 mx-auto">
-                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">contact Us</h5>
-                <ul>
-                    <li><i class="fa fa-envelope"></i> raksha.vehicle.service.com</li>
-                    <li><i class="fa fa-phone fa-lg"></i> +918764978345</li>
-                </ul>
-
-            </div>
-
-        </div>
-    </div>
-
-    <div class="footer-copyright text-center text-dark py-3">
-        © 2020 Copyright: <b class="raksha-primary-color">Raksha Vehicle Insurance Pvt. Ltd.</b>
-    </div>
-</footer>
-
-<!-- footer-end -->

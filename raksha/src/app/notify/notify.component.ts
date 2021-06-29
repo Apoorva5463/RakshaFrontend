@@ -16,6 +16,7 @@ import { UserService } from '../service/user.service';
 
 export class NotifyComponent implements OnInit {
   public downloadurl: GetUrl = new GetUrl();
+  public logindetails:LoginDetails = new LoginDetails();
   details: any;
   userid: number = 0;
   policyid: number = 0;
@@ -36,28 +37,42 @@ export class NotifyComponent implements OnInit {
     this.insurance.plan = this.details.data.plan;
     this.insurance.fee = this.details.data.fee;
     this.insurance.vehicleType = this.details.data.vehicleType;
-    this.insurance.vehicle_no = this.details.data.VehicleNumber;
+    this.insurance.vehicle_no = this.details.data.VehicleNumber;  
   }
+
   public loginoutBtn: string = "Login";
-  public logindetails: LoginDetails = new LoginDetails;
   ngOnInit(): void {
-    this.service.addUser(this.user).subscribe((data) => {
-      this.userid = data;
-      this.insurance.userId = this.userid;
-      console.log(this.insurance);
+    this.logindetails = this.sharedService.getLoginDetails();
+    if (this.logindetails.isLogged) {
+      this.loginoutBtn = "Logout";
+      this.insurance.userId = this.logindetails.userID;
       this.services.addInsurance(this.insurance).subscribe((data) => {
         this.policyid = data;
-        this.services.sendWelcomeEmail(this.userid, this.policyid);
+        this.services.sendWelcomeEmail(this.logindetails.userID, this.policyid);
+      });  
+    }
+    else {
+      this.loginoutBtn = "Logout";
+      this.service.addUser(this.user).subscribe((data) => {
+        this.userid = data;
+        this.insurance.userId = this.userid;
+        this.login(this.userid);
+        console.log(this.insurance);
+        this.services.addInsurance(this.insurance).subscribe((data) => {
+          this.policyid = data;
+          this.services.sendWelcomeEmail(this.userid, this.policyid);
+        });  
       });
-      this.logindetails = this.sharedService.getLoginDetails();
-      if (this.logindetails.isLogged) {
-        this.loginoutBtn = "Logout";
-      }
-      else {
-        this.loginoutBtn = "Login";
-      }
-    });
+    }    
   }
+
+  login(uid:number){
+    this.logindetails.isLogged = true;
+    this.logindetails.userID = uid;
+    this.logindetails.userType = "User";
+    this.sharedService.setLoginDetails(this.logindetails);
+  }
+
   public downloadlinkurl(): void {
     this.services.getDownloadUrl('' + this.policyid).then((data) => {
       this.downloadurl = data;
@@ -66,6 +81,7 @@ export class NotifyComponent implements OnInit {
 
     });
   }
+
   loginout() {
     if (this.logindetails.isLogged) {
       var answer: boolean = confirm("Are you sure you want to logout?");
@@ -82,6 +98,7 @@ export class NotifyComponent implements OnInit {
       this.router.navigate(['login']);
     }
   }
+
   dashboard() {
     if (this.logindetails.userType == 'User') {
       this.router.navigate(['user']);
@@ -89,12 +106,15 @@ export class NotifyComponent implements OnInit {
       this.router.navigate(['admin']);
     }
   }
+
   home() {
     this.router.navigate(['']);
   }
+
   help() {
     this.router.navigate(['helpsupport']);
   }
+
   footerscroll() {
     window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
   }

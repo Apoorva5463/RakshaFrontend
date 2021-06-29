@@ -6,17 +6,21 @@ import { Otp } from 'src/otp.model';
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
-  baseUrl : string = "http://localhost:8888" ;
+  baseUrl: string = "http://localhost:8888";
+
   constructor(private http: HttpClient) { }
-  addUser(u: User){
-   return this.http.post<number>(this.baseUrl+"/add",u);
+
+  addUser(u: User) {
+    return this.http.post<number>(this.baseUrl + "/add", u);
   }
-  updateUser(u: User){
-    this.http.post(this.baseUrl+"/add",u).subscribe((data:any) => data = u);
+
+  updateUser(u: User) {
+    this.http.post(this.baseUrl + "/add", u).subscribe((data: any) => data = u);
   }
-  public async verifyEmail(email: string){
-    return await this.http.get<Otp>(this.baseUrl + "/verifyMail/"+email).toPromise();
-    
+
+  public async verifyEmail(email: string) {
+    return await this.http.get<Otp>(this.baseUrl + "/verifyMail/" + email).toPromise();
   }
 }

@@ -15,7 +15,6 @@
         <div *ngIf="logindetails.isLogged" class="d-inline px-3 raksha-primary-color home" hidden (click)="dashboard()">
             <b>Dashboard</b>
         </div>
-
         <div *ngIf="logindetails.isLogged" class="d-inline px-3">
             <button class="btn btn-outline-success  btn-sm mxy-0 my-sm-0" (click)="loginout()" hidden>{{this.loginoutBtn}}</button>
             <button class="btn btn-outline-danger  btn-sm mxy-0 my-sm-0" (click)="loginout()">{{this.loginoutBtn}}</button>
@@ -23,23 +22,15 @@
         <div *ngIf="!(logindetails.isLogged)" class="d-inline px-3">
             <button class="btn btn-outline-success  btn-sm mxy-0 my-sm-0" (click)="loginout()">{{this.loginoutBtn}}</button>
         </div>
-
-        <div class="d-inline px-3 raksha-primary-color home">
+        <div class="d-inline px-3 raksha-primary-color home " (click)="help()">
             <b>Help</b>
         </div>
-
     </div>
 </nav>
 <div class="banner bgColor">
     <br>
     <h3 class="font-weight text-center textColor">Plans for your vehicle</h3>
     <div class="container ">
-        <!-- <div >
-             <h6 class="text-center">Hero Motocorp Passion Pro 100CC. Bike Bought in 2011</h6>
-             
-            </div>
-          -->
-
         <div class="row aligning">
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="card text-left effect">
@@ -47,7 +38,8 @@
                         <div class="row ">
                             <div class="col-md-8 col-sm-8">
                                 <h4 class="card-title font-weight textColor">Third Party Plan</h4>
-                                <p class="card-text">Only covers third party losses, damage to your bike is not covered </p>
+                                <p class="card-text">Only covers third party losses, damage to your bike is not covered
+                                </p>
                             </div>
                             <div class="col-md-4 col-sm-8">
                                 <img src="../assets/car-run-over-man.png" height="50" width="50" alt="icon">
@@ -57,11 +49,11 @@
                             <div class="col-md-8">
                                 <br>
                                 <input type="radio" name="three_year" id="three_year" value="third 3 year" checked [(ngModel)]="plan" />
-                                <label>3 year plan<small>(30% discount)</small></label>
+                                <label>3 year plan<small>(25% discount)</small></label>
                             </div>
                             <div class="col-md-4">
                                 <br>
-                                <p><b>{{ insurancePlans.thirdYear3 }} </b></p>
+                                <p><b>{{ insurancePlans.thirdYear3 | currency:'INR' }} </b></p>
                             </div>
                         </div>
                         <div class="row ">
@@ -70,7 +62,7 @@
                                 <label>2 year plan<small>(10% discount)</small></label>
                             </div>
                             <div class="col-md-4">
-                                <p><b>{{ insurancePlans.thirdYear2 }}</b></p>
+                                <p><b>{{ insurancePlans.thirdYear2 | currency:'INR' }}</b></p>
                             </div>
                         </div>
                         <div class="row">
@@ -79,10 +71,9 @@
                                 <label>1 year plan</label>
                             </div>
                             <div class="col-md-4">
-                                <p><b>{{ insurancePlans.thirdYear1 }}</b></p>
+                                <p><b>{{ insurancePlans.thirdYear1 | currency:'INR' }}</b></p>
                             </div>
                         </div>
-
                         <br>
                         <button (click)="buy()" type="button" class="btn btn-outline-success">Buy Now</button>
                     </div>
@@ -94,19 +85,19 @@
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
                                 <h4 class="card-title textColor font-weight">Comprehensive Plan</h4>
-                                <p class="card-text">Only covers tihrd party losses, damage to your bike is not covered</p>
+                                <p class="card-text">Only covers tihrd party losses, damage to your bike is not covered
+                                </p>
                             </div>
-
                         </div>
                         <div class="row">
                             <div class="col-md-8">
                                 <br>
                                 <input type="radio" name="three_year" id="three_year" value="compre 3 year" [(ngModel)]="plan" />
-                                <label>3 year plan<small>(30% discount)</small></label>
+                                <label>3 year plan<small>(25% discount)</small></label>
                             </div>
                             <div class="col-md-4">
                                 <br>
-                                <p><b>{{ insurancePlans.compreYear3 }}</b></p>
+                                <p><b>{{ insurancePlans.compreYear3 | currency:'INR' }}</b></p>
                             </div>
                         </div>
                         <div class="row">
@@ -115,7 +106,7 @@
                                 <label>2 year plan<small>(10% discount)</small></label>
                             </div>
                             <div class="col-md-4">
-                                <p><b>{{insurancePlans.compreYear2 }}</b></p>
+                                <p><b>{{insurancePlans.compreYear2 | currency:'INR'}}</b></p>
                             </div>
                         </div>
                         <div class="row">
@@ -124,10 +115,9 @@
                                 <label>1 year plan</label>
                             </div>
                             <div class="col-md-4">
-                                <p><b> {{ insurancePlans.compreYear1 }} </b></p>
+                                <p><b> {{ insurancePlans.compreYear1 | currency:'INR' }} </b></p>
                             </div>
                         </div>
-
                         <div>
                             <br>
                             <button (click)="buy()" type="button" class="btn btn-outline-success">Buy Now</button>
@@ -136,7 +126,6 @@
                 </div>
             </div>
             <div class="backalign" onclick="history.back()"><i class="fa fa-chevron-left raksha-primary-color" aria-hidden="true"></i></div>
-
         </div>
     </div>
 </div>

@@ -45,6 +45,7 @@
 .admindash {
     background-color: rgb(250, 250, 250);
     height: 550px;
+    margin-top: 5%;
 }
 
 .nav-pills-custom .nav-link {

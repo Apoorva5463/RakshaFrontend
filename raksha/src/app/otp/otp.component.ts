@@ -1,8 +1,6 @@
-import { NgStyle } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginDetails } from 'src/Login-details.model';
-import { Otp } from 'src/otp.model';
 import { UserLogin } from 'src/UserLogin.model';
 import { SharedService } from '../service/shared.service';
 import { UserloginService } from '../userlogin.service';
@@ -12,107 +10,75 @@ import { UserloginService } from '../userlogin.service';
   templateUrl: './otp.component.html',
   styleUrls: ['./otp.component.css']
 })
+
 export class OtpComponent implements OnInit {
-  //userLogin: UserLogin = new UserLogin();
-  //userLogin: UserLogin = new UserLogin();
   userLogin!: UserLogin;
-  // otp:any;
-  //public otpdata: 
-  public email : string = '';
-  public mobile : string = '';
-  public password : string = '';
-  public enteredOtp : number = 0;
-  public vOTP : number = 0;
-  public vsource: string='';
-  public uid: number=0;
+  public email: string = '';
+  public mobile: string = '';
+  public password: string = '';
+  public enteredOtp: number = 0;
+  public vOTP: number = 0;
+  public vsource: string = '';
+  public uid: number = 0;
 
-  // public otpstatus: any ={
-  //   otp: '',
-  //   status:''
-  // };
+  loginDetails: LoginDetails = new LoginDetails();
 
-  // public getotp : boolean = false; 
-  // otpdata: any;
-loginDetails:LoginDetails=new LoginDetails();
-
-  constructor(private userLoginService: UserloginService, private router: Router, private sharedService: SharedService) { 
+  constructor(private userLoginService: UserloginService, private router: Router, private sharedService: SharedService) {
     this.vOTP = this.sharedService.getSharedData("OTP").data.otp;
     this.vsource = this.sharedService.getSharedData("OTP").src;
-    this.uid= this.sharedService.getSharedData("OTP").data.id;
+    this.uid = this.sharedService.getSharedData("OTP").data.id;
   }
-  //private userLoginService: UserloginService, private router: Router
+
   ngOnInit(): void {
     let loginDetail: LoginDetails = this.sharedService.getLoginDetails();
-    if(loginDetail.isLogged){
-      if(loginDetail.userType=="Admin"){
+    if (loginDetail.isLogged) {
+      if (loginDetail.userType == "Admin") {
         this.router.navigate(['admin']);
-      }else{
+      } else {
         this.router.navigate(['user']);
       }
     }
   }
-  
-  home(){
+
+  home() {
     this.router.navigate(['']);
   }
-  help(){
+
+  help() {
     this.router.navigate(['helpsupport']);
   }
-  footerscroll(){
+
+  footerscroll() {
     window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
   }
 
-  // clickOnGetOTP(){
-  //   console.log(this.userLogin.emailId);
-  //   this.userLoginService.getOtp(this.userLogin).then((data: any) =>{
-
-  //     this.otpdata = data;
-  //     this.otpstatus.otp=this.otpdata.otp;
-  //     this.otpstatus.status=this.otpdata.status;
-  //     console.log("Success");
-      
-  //     // if(this.otpstatus.status === "OTP IS NOT SENT")
-  //     //     {
-  //     //       alert('Email id is incorrect');
-  //     //     }
-  //     if(this.otpstatus.status === "OTP IS SENT")
-  //     {
-  //       this.getotp = true;
-  //       this.router.navigate(['/otp']);
-  //     }
-  //   });
-  // }
-
-
-  otpVerification(){
+  otpVerification() {
     console.log("Success");
-  
-      if(this.enteredOtp == this.vOTP){
-        console.log("Success");
-        if(this.vsource=="AdminLogin"){
-          this.loginDetails.isLogged=true;
-          this.loginDetails.userType="Admin";
-          this.loginDetails.userID=this.uid;
-          this.sharedService.setLoginDetails(this.loginDetails);
-          this.router.navigate(['admin']);
-        }else{
-          this.loginDetails.isLogged=true;
-          this.loginDetails.userType="User";
-          this.loginDetails.userID=this.uid;
-          this.sharedService.setLoginDetails(this.loginDetails);
-        this.router.navigate(['user']);}
-        
-        alert('Login Successful');
-        console.log("Success");
-        // this.router.navigate(['/admin'],{ queryParams: {email: this.userLogin.emailId, mobile: this.userLogin.mobileNo, password: this.userLogin.password}})
+    if (this.enteredOtp == this.vOTP) {
+      console.log("Success");
+      if (this.vsource == "AdminLogin") {
+        this.loginDetails.isLogged = true;
+        this.loginDetails.userType = "Admin";
+        this.loginDetails.userID = this.uid;
+        this.sharedService.setLoginDetails(this.loginDetails);
+        this.router.navigate(['admin']);
+      } else {
+        this.loginDetails.isLogged = true;
+        this.loginDetails.userType = "User";
+        this.loginDetails.userID = this.uid;
+        this.sharedService.setLoginDetails(this.loginDetails);
+        this.router.navigate(['user']);
       }
-    
-      else{
-        alert("Wrong otp");
-      }
-    
+      alert('Login Successful');
+      console.log("Success");
+    }
+    else {
+      alert("Wrong otp");
+    }
   }
-  onButtonClick(event : MouseEvent){
+
+  onButtonClick(event: MouseEvent) {
     (event.target as HTMLButtonElement).disabled = true;
-}
+  }
+  
 }

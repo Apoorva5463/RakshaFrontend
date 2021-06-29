@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginDetails } from 'src/Login-details.model';
 import { Otp } from 'src/otp.model';
 import { SharedService } from '../service/shared.service';
 import { UserService } from '../service/user.service';
@@ -28,15 +29,47 @@ export class VerifyComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  login() {
-    this.router.navigate(['login']);
+  
+  public loginoutBtn: string = "Login";
+  public logindetails: LoginDetails = new LoginDetails;
+
+  loginout() {
+    if (this.logindetails.isLogged) {
+      var answer: boolean = confirm("Are you sure you want to logout?");
+      if (answer) {
+        this.logindetails.isLogged = false;
+        this.logindetails.userType = "";
+        this.logindetails.userID = 0;
+        this.sharedService.setLoginDetails(this.logindetails);
+        this.loginoutBtn = "Login";
+      }
+    }
+    else {
+      this.loginoutBtn = "Logout";
+      this.router.navigate(['login']);
+    }
   }
+
+  dashboard() {
+    if (this.logindetails.userType == 'User') {
+      this.router.navigate(['user']);
+    } else {
+      this.router.navigate(['admin']);
+    }
+  }
+
   home() {
     this.router.navigate(['']);
   }
+
   help() {
     this.router.navigate(['helpsupport']);
   }
+
+  footerscroll() {
+    window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
+  }
+
   verifyEmail() {
     if (this.verifybutton == "Send OTP") {
       this.service.verifyEmail(this.email).then((data) => {
@@ -54,14 +87,13 @@ export class VerifyComponent implements OnInit {
         }
       });
     }
-    if(this.verifybutton=="Verify OTP"){
-      if(this.otpResponse.otp==this.otp){
+    if (this.verifybutton == "Verify OTP") {
+      if (this.otpResponse.otp == this.otp) {
         this.router.navigate(['payment']);
       }
-      else{
+      else {
         alert('Wrong OTP');
       }
     }
   }
-
 }

@@ -7,20 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./buffer.component.css']
 })
 export class BufferComponent implements OnInit {
-
-
-  constructor(private router:Router ) { }
-
+  constructor(private router: Router) { }
   ngOnInit(): void {
     var myVar;
-    myVar = setTimeout(()=>{
+    myVar = setTimeout(() => {
       this.router.navigate(['notify']);
     }, 1100);
   }
-
-
-
 }
-
-
-

@@ -8,6 +8,4 @@ export class Insurance{
     fee:number=0;
     vehicleType:string='';
     vehicle_no:string='';
-    
-   
 }

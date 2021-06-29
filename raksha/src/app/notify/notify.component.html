@@ -3,7 +3,6 @@
         <div class="d-inline px-4">
             <img src="../assets/logo.png" height="45px">
         </div>
-
         <div class="d-inline px-3 home raksha-primary-color " (click)="footerscroll()">
             <b>About</b>
         </div>
@@ -19,8 +18,7 @@
         <div *ngIf="!(logindetails.isLogged)" class="d-inline px-3">
             <button class="btn btn-outline-success  btn-sm mxy-0 my-sm-0" (click)="loginout()">{{this.loginoutBtn}}</button>
         </div>
-
-        <div class="d-inline px-3 raksha-primary-color home">
+        <div class="d-inline px-3 raksha-primary-color home" (click)="help()">
             <b>Help</b>
         </div>
 
@@ -38,10 +36,6 @@
         <div class="button-align">
             <button class="btn btn-outline-primary" (click)="dashboard()" role="button" style="margin-right: 10%;">Dashboard</button>
             <button class="btn btn-outline-primary" (click)="downloadlinkurl()" role="button">Download</button>
-
         </div>
     </div>
-
-
-
 </div>

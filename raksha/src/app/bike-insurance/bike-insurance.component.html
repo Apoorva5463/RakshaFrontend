@@ -24,7 +24,7 @@
             <button class="btn btn-outline-success  btn-sm mxy-0 my-sm-0" (click)="loginout()">{{this.loginoutBtn}}</button>
         </div>
 
-        <div class="d-inline px-3 raksha-primary-color home" (click)="home()">
+        <div class="d-inline px-3 raksha-primary-color home" (click)="help()">
             <b>Help</b>
         </div>
     </div>
@@ -38,15 +38,15 @@
                     <div class="form-group col-sm-6 flex-column d-flex ">
                         <label for="Inputselect" class="form-control-label px-3 ">Brand</label>
                         <select class="form-control inputstl   form-group col-sm-10 flex-column d-flex  form-control-label px-3" (change)="getModel($event)" [(ngModel)]="selectedBrand" name="brand">
-                      <option *ngFor="let brand of brandList" [value]= "this.brand" >{{ brand }}</option>
-                     </select>
+                            <option *ngFor="let brand of brandList" [value]="this.brand">{{ brand }}</option>
+                        </select>
                     </div>
                     <div class="form-group col-sm-6 flex-column d-flex">
                         <label for="Inputselect" class="form-control-label px-3">Model</label>
                         <select class="form-control inputstl  form-group col-sm-10 flex-column d-flex  form-control-label px-3" [(ngModel)]="selectedModel" name="model">
-                      <option *ngFor="let model of modelList" [value]= "this.model" >{{ model }}</option>
-                     
-                    </select>
+                            <option *ngFor="let model of modelList" [value]="this.model">{{ model }}</option>
+
+                        </select>
                     </div>
 
 
@@ -54,15 +54,23 @@
 
                         <label for="Inputselect" class="form-control-label">Year</label>
                         <select class="form-control inputstl   form-group col-sm-10 flex-column d-flex  form-control-label px-3" [(ngModel)]="year" #yr=ngModel name="year">
-                       <option>2006</option> <option>2007</option>
-                       <option>2008</option>  <option>2009</option>
-                       <option>2010</option> <option>2011</option>
-                       <option>2012</option> <option>2013</option>
-                       <option>2014</option> <option>2015</option>
-                       <option>2016</option> <option>2017</option>
-                       <option>2018</option> <option>2019</option>
-                       <option>2020</option> <option>2021</option>
-                      </select>
+                            <option>2006</option>
+                            <option>2007</option>
+                            <option>2008</option>
+                            <option>2009</option>
+                            <option>2010</option>
+                            <option>2011</option>
+                            <option>2012</option>
+                            <option>2013</option>
+                            <option>2014</option>
+                            <option>2015</option>
+                            <option>2016</option>
+                            <option>2017</option>
+                            <option>2018</option>
+                            <option>2019</option>
+                            <option>2020</option>
+                            <option>2021</option>
+                        </select>
 
                     </div>
                 </div>

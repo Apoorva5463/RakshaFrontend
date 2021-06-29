@@ -5,8 +5,8 @@ import { SharedItem } from 'src/shared-item.model';
 @Injectable({
   providedIn: 'root'
 })
-export class SharedService {
 
+export class SharedService {
   sharedData: {[dst: string] : SharedItem}= {};
   loginDetails:LoginDetails=new LoginDetails();
   constructor() { 
@@ -16,9 +16,11 @@ export class SharedService {
   var LoginDetailsStringObj : any= localStorage.getItem('RakshaLoginDetails');
     return JSON.parse(LoginDetailsStringObj);
   }
+
   setLoginDetails(data:LoginDetails){
     localStorage.setItem('RakshaLoginDetails',JSON.stringify(data));
   }
+
   getSharedData(dst:string): SharedItem{
     
     return this.sharedData[dst];
@@ -27,4 +29,5 @@ export class SharedService {
   setSharedData(dst: string, sharedDataItem: SharedItem){
     this.sharedData[dst] = sharedDataItem;
   }
+  
 }

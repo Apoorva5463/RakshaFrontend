@@ -25,6 +25,15 @@ export class AdminloginComponent implements OnInit {
   public getotp: boolean = false;
   inputCred: string = '';
   password: string = '';
+  toOtp= {
+    otp:'',
+    status:'',
+    email:'',
+    mobile:'',
+    userType:'',
+    password:'',
+    id:0
+  }
 
   constructor(private userLoginService: UserloginService, private router: Router, private sharedService: SharedService) { }
 
@@ -71,7 +80,14 @@ export class AdminloginComponent implements OnInit {
     this.userLoginService.getOtp(this.userLogin).then((data) => {
       this.otpdata = data;
       this.sharedItem.src = "AdminLogin";
-      this.sharedItem.data = this.otpdata;
+      this.toOtp.otp=this.otpdata.otp;
+      this.toOtp.status=this.otpdata.status;
+      this.toOtp.id=this.otpdata.id;
+      this.toOtp.userType="User";
+      this.toOtp.email=this.userLogin.emailId;
+      this.toOtp.mobile=this.userLogin.mobileNo;
+      this.toOtp.password = this.userLogin.password;
+      this.sharedItem.data = this.toOtp;
 
       this.sharedService.setSharedData("OTP", this.sharedItem);
       this.Votp.actualotp = this.otpdata.otp;
@@ -91,5 +107,3 @@ export class AdminloginComponent implements OnInit {
   }
 
 }
-
-
